@@ -1,0 +1,22 @@
+{
+  "name": "elasticemail-webapiclient",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ElasticEmail/ElasticEmail.WebApiClient-js.git"
+  },
+  "author": "Elastic Email Inc.",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ElasticEmail/ElasticEmail.WebApiClient-js/issues"
+  },
+  "homepage": "https://github.com/ElasticEmail/ElasticEmail.WebApiClient-js#readme",
+  "dependencies": {
+    "request": "^2.81.0"
+  }
+}
