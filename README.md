@@ -1,5 +1,8 @@
 **This library allows you to quickly and easily use the Elastic Email Web API v2 via JavaScript.**
 
+# Prerequisites #
+* [An Elastic Email account](https://elasticemail.com/account/)
+
 # Quick start #
 
 ## Getting account info in Node ##
