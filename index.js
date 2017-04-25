@@ -79,7 +79,7 @@ return function EEAPI( options ) {
 
         /* region Utilities */
 
-      var that = {Account: {}, Attachment: {}, Campaign: {}, Contact: {}, Domain: {}, List: {}, Segments: {}, SMS: {}, Status: {}, Template: {}};
+      var that = {};
 
       //Method to upload file with get params
       var uploadPostFile = function uploadPostFile(target, fileObj, query, callback) {
@@ -2281,20 +2281,20 @@ return function EEAPI( options ) {
 
       /*-- PUBLIC METHODS --*/
       that.setApiKey = setApiKey;
-      that.account = account;
-      that.attachment = attachment;
-      that.campaign = campaign;
-      that.channel = channel;
-      that.contact = contact;
-      that.domain = domain;
-      that.email = email;
-      that.export = Export;
-      that.list = list;
-      that.log = log;
-      that.segment = segment;
-      that.sms = sms;
-      that.survey = survey;
-      that.template = template;
+      that.Account = account;
+      that.Attachment = attachment;
+      that.Campaign = campaign;
+      that.Channel = channel;
+      that.Contact = contact;
+      that.Domain = domain;
+      that.Email = email;
+      that.Export = Export;
+      that.List = list;
+      that.Log = log;
+      that.Segment = segment;
+      that.Sms = sms;
+      that.Survey = survey;
+      that.Template = template;
       return that;
 
   };
