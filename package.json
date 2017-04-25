@@ -1,6 +1,6 @@
 {
   "name": "elasticemail-webapiclient",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "",
   "main": "ElasticEmailClient.js",
   "scripts": {
