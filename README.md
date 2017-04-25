@@ -4,6 +4,9 @@
 
 ## Getting account info in Node ##
 ```js	
+npm install elasticemail-webapiclient
+```
+```js	
 const ee = require('elasticemail-webapiclient');
 
 var eeClient = ee(
