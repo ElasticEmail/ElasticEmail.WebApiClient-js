@@ -83,17 +83,26 @@ var reqRequest = function request (target, query, callback, method) {
 
 //Method to upload file with get params
 var uploadPostFile = function uploadPostFile(target, query, callback) {
-        var fd = new FormData();
-        var xhr = new XMLHttpRequest();
-        query.apikey = cfg.ApiKey;
-        var queryString = parameterize(query);
+    var FormData = require('form-data');
+    var XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
+    var fd = new FormData();
+    var xhr = new XMLHttpRequest();
+    query.apikey = cfg.ApiKey;
+    var queryString = parameterize(query);
+    if(query.file)
         fd.append('foobarfilename', query.file);
-        xhr.open('POST', cfg.ApiUri + 'v' + cfg.Version + target + queryString, true);
-        xhr.onload = function (e) {
-            var result = e.target.responseText;
-            callback(JSON.parse(result));
-        };
+
+    xhr.open('POST', cfg.ApiUri + 'v' + cfg.Version + target + queryString, true);
+    xhr.responseType = 'json';
+    xhr.onload = function (e) {
+        var result = xhr.responseText;
+        callback(JSON.parse(result));
+    };
+    if(query.file)
         xhr.send(fd);
+    else
+        xhr.send();
+};
     };
 
     //Parametrize array params to url string
