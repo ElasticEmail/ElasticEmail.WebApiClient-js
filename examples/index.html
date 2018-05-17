@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Example ElasticEmail API library usage</title>
+        <script src="./../bin/ElasticEmailClient.js"></script>
+    </head>
+    <body>
+        <script>
+            document.addEventListener("DOMContentLoaded", function(event) {
+                var options = {
+                    apiKey: 'yourApiKey',
+                    apiUri: 'https://api.elasticemail.com/',
+                    apiVersion: 'v2'
+                }
+                var EE = new EEAPI.client(options);
+                EE.Account.Load().then(function(resp) {
+                    console.log(resp);
+                });
+            });
+        </script>
+    </body>
+</html>

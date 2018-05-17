@@ -1,0 +1,9 @@
+{
+    "comments": false,
+    "presets": ["es2016"],
+    "plugins": [
+        ["transform-es2015-modules-commonjs", {
+          "allowTopLevelThis": true
+        }]
+    ]
+}
