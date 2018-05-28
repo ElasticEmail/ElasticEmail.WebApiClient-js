@@ -31,9 +31,16 @@
 		<ul class="nav navbar-nav">
 			
 			<li class="dropdown">
+				<a href="modules.list.html" class="dropdown-toggle" data-toggle="dropdown">Modules<b class="caret"></b></a>
+				<ul class="dropdown-menu ">
+					<li><a href="module-EEAPI.html">EEAPI</a></li>
+				</ul>
+			</li>
+			
+			<li class="dropdown">
 				<a href="classes.list.html" class="dropdown-toggle" data-toggle="dropdown">Classes<b class="caret"></b></a>
 				<ul class="dropdown-menu ">
-					<li><a href="Account.html">Account</a></li><li><a href="Campaign.html">Campaign</a></li><li><a href="Channel.html">Channel</a></li><li><a href="Contact.html">Contact</a></li><li><a href="Domain.html">Domain</a></li><li><a href="Email.html">Email</a></li><li><a href="Export.html">Export</a></li><li><a href="File.html">File</a></li><li><a href="List.html">List</a></li><li><a href="Log.html">Log</a></li><li><a href="Segment.html">Segment</a></li><li><a href="Sms.html">Sms</a></li><li><a href="Survey.html">Survey</a></li><li><a href="Template.html">Template</a></li>
+					<li><a href="Accesstoken.html">Accesstoken</a></li><li><a href="Account.html">Account</a></li><li><a href="ApiCallAbstarct.html">ApiCallAbstarct</a></li><li><a href="Campaign.html">Campaign</a></li><li><a href="Channel.html">Channel</a></li><li><a href="Contact.html">Contact</a></li><li><a href="Domain.html">Domain</a></li><li><a href="EEAPI.html">EEAPI</a></li><li><a href="Email.html">Email</a></li><li><a href="Export.html">Export</a></li><li><a href="File.html">File</a></li><li><a href="List.html">List</a></li><li><a href="Log.html">Log</a></li><li><a href="module-EEAPI-Accesstoken.html">EEAPI~Accesstoken</a></li><li><a href="module-EEAPI-Account.html">EEAPI~Account</a></li><li><a href="module-EEAPI-ApiCallAbstarct.html">EEAPI~ApiCallAbstarct</a></li><li><a href="module-EEAPI-Campaign.html">EEAPI~Campaign</a></li><li><a href="module-EEAPI-Channel.html">EEAPI~Channel</a></li><li><a href="module-EEAPI-Contact.html">EEAPI~Contact</a></li><li><a href="module-EEAPI-Domain.html">EEAPI~Domain</a></li><li><a href="module-EEAPI-Email.html">EEAPI~Email</a></li><li><a href="module-EEAPI-Export.html">EEAPI~Export</a></li><li><a href="module-EEAPI-File.html">EEAPI~File</a></li><li><a href="module-EEAPI-List.html">EEAPI~List</a></li><li><a href="module-EEAPI-Log.html">EEAPI~Log</a></li><li><a href="module-EEAPI-Segment.html">EEAPI~Segment</a></li><li><a href="module-EEAPI-Sms.html">EEAPI~Sms</a></li><li><a href="module-EEAPI-Survey.html">EEAPI~Survey</a></li><li><a href="module-EEAPI-Template.html">EEAPI~Template</a></li><li><a href="Segment.html">Segment</a></li><li><a href="Sms.html">Sms</a></li><li><a href="Survey.html">Survey</a></li><li><a href="Template.html">Template</a></li>
 				</ul>
 			</li>
 			
@@ -73,8 +80,6 @@
         <h2>
         Sms
         </h2>
-        
-            <div class="class-description"><p>/* @class Sms</p></div>
         
     
 </header>
@@ -170,22 +175,154 @@
     
 
     
-        <h3 class="subsection-title">Members</h3>
+
+    
+        <h3 class="subsection-title">Methods</h3>
 
         <dl>
             
 <hr>
-<dt class="name" id=".Send">
-    <h4 id=".Send"><span class="type-signature">&lt;static> </span>Send<span class="type-signature"></span></h4>
-
+<dt>
+    <h4 class="name" id="Send"><span class="type-signature"></span>Send(data)</h4>
+    
     
 </dt>
 <dd>
+
     
     <div class="description">
         <p>Send a short SMS Message (maximum of 1600 characters) to any mobile phone.</p>
     </div>
     
+
+    
+
+    
+
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>data</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>data object.</p>
+                <h6 class="method-params-label method-subparams-label">Properties</h6>
+                
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>to</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Mobile number you want to message. Can be any valid mobile number in E.164 format. To provide the country code you need to provide &quot;+&quot; before the number.  If your URL is not encoded then you need to replace the &quot;+&quot; with &quot;%2B&quot; instead.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>body</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Body of your message. The maximum body length is 160 characters.  If the message body is greater than 160 characters it is split into multiple messages and you are charged per message for the number of message required to send your length</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+            </td>
+        </tr>
+
+    
+    </tbody>
+</table>
 
     
 
@@ -230,11 +367,41 @@
 
 
     
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Returns:</h5>
+    
+            
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Promise</span>
+
+
+
+    </dd>
+</dl>
+
+
+        
+
+    
 </dd>
 
         </dl>
-    
-
     
 
     
@@ -284,7 +451,7 @@
 <span class="jsdoc-message">
 	Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a>
 	
-		on May 17th 2018, 3:46:08 pm
+		on May 28th 2018, 12:37:28 pm
 	
 	using the <a href="https://github.com/docstrap/docstrap">DocStrap template</a>.
 </span>

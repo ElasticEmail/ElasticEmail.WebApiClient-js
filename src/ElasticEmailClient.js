@@ -2,18 +2,28 @@ import includes from 'lodash.includes';
 import isObject from 'lodash.isobject';
 import request from 'reqwest';
 
+/**
+* @class EEAPI
+*/
 class EEAPI {
+    /**
+    * @constructs EEAPI
+    * @param {Object} options - options object.
+    * @param {String} options.apiUri - elastic email api url.
+    * @param {String} options.apiVersion - elastic email api version
+    * @param {String} options.apiKey - elastic email api key
+    */
     constructor(options) {
         if (!options.apiUri || !options.apiVersion || !options.apiKey) {
             console.error('Missing mandatory options!');
             return;
         }
-
+        this.Accesstoken = new Accesstoken(options);
         this.Account = new Account(options);
         this.Campaign = new Campaign(options);
         this.Channel = new Channel(options);
         this.Contact = new Contact(options);
-        this.Domain =  new Domain(options);
+        this.Domain = new Domain(options);
         this.Email = new Email(options);
         this.Export = new Export(options);
         this.File = new File(options);
@@ -22,13 +32,28 @@ class EEAPI {
         this.Segment = new Segment(options);
         this.Sms = new Sms(options);
         this.Survey = new Survey(options);
-        this.Template = new Template(options);        
-    }        
+        this.Template = new Template(options);
+
+    }
+
 }
 
+/**
+ * @module EEAPI
+ */
 export const client = EEAPI;
 
+/**
+* @class ApiCallAbstarct
+*/
 class ApiCallAbstarct {
+    /**
+    * @constructs ApiCallAbstarct
+    * @param {Object} options - options object.
+    * @param {String} options.apiUri - elastic email api url.
+    * @param {String} options.apiVersion - elastic email api version
+    * @param {String} options.apiKey - elastic email api key
+    */
     constructor(options) {
         this._makeCall = (method, data, methodType) => {
             if (!includes(['POST', 'GET'], methodType.toUpperCase())) {
@@ -59,9 +84,77 @@ class ApiCallAbstarct {
 }
 
 /**
-/* @class Account
+* @class Accesstoken
+* @extends ApiCallAbstarct
+*/
+class Accesstoken extends ApiCallAbstarct {
+     /**
+     * @constructs Accesstoken
+     */
+    constructor(opt) {
+        super(opt);
+    }
+
+    /**
+     * Add new AccessToken
+     * @name Add
+     * @method Accesstoken#Add
+     * @param {Object} data - data object.
+     * @param {String} data.tokenName - 
+     * @param {AccessLevel} data.accessLevel - 
+     * @return {Promise}
+     */
+     Add(data) {
+        return this._makeCall('/accesstoken/add', data, 'POST');
+    }
+
+    /**
+     * Permanently delete AccessToken.
+     * @name Delete
+     * @method Accesstoken#Delete
+     * @param {Object} data - data object.
+     * @param {String} data.tokenName - 
+     * @return {Promise}
+     */
+     Delete(data) {
+        return this._makeCall('/accesstoken/delete', data, 'POST');
+    }
+
+    /**
+     * Edit AccessToken.
+     * @name Edit
+     * @method Accesstoken#Edit
+     * @param {Object} data - data object.
+     * @param {String} data.tokenName - 
+     * @param {AccessLevel} data.accessLevel - 
+     * @param {String} data.tokenNameNew - 
+     * @return {Promise}
+     */
+     Edit(data) {
+        return this._makeCall('/accesstoken/edit', data, 'POST');
+    }
+
+    /**
+     * Get AccessToken list.
+     * @name GetList
+     * @method Accesstoken#GetList
+     * @param {Object} data - data object.
+
+     * @return {Promise}
+     */
+     GetList(data) {
+        return this._makeCall('/accesstoken/getlist', data, 'POST');
+    }
+}
+
+/**
+* @class Account
+* @extends ApiCallAbstarct
 */
 class Account extends ApiCallAbstarct {
+     /**
+     * @constructs Account
+     */
     constructor(opt) {
         super(opt);
     }
@@ -69,7 +162,7 @@ class Account extends ApiCallAbstarct {
     /**
      * Create new subaccount and provide most important data about it.
      * @name AddSubAccount
-     * @memberof Account
+     * @method Account#AddSubAccount
      * @param {Object} data - data object.
      * @param {String} data.email - Proper email address.
      * @param {String} data.password - Current password.
@@ -95,7 +188,7 @@ class Account extends ApiCallAbstarct {
     /**
      * Add email, template or litmus credits to a sub-account
      * @name AddSubAccountCredits
-     * @memberof Account
+     * @method Account#AddSubAccountCredits
      * @param {Object} data - data object.
      * @param {Number} data.credits - Amount of credits to add
      * @param {String} data.notes - Specific notes about the transaction
@@ -111,7 +204,7 @@ class Account extends ApiCallAbstarct {
     /**
      * Change your email address. Remember, that your email address is used as login!
      * @name ChangeEmail
-     * @memberof Account
+     * @method Account#ChangeEmail
      * @param {Object} data - data object.
      * @param {String} data.newEmail - New email address.
      * @param {String} data.confirmEmail - New email address.
@@ -125,7 +218,7 @@ class Account extends ApiCallAbstarct {
     /**
      * Create new password for your account. Password needs to be at least 6 characters long.
      * @name ChangePassword
-     * @memberof Account
+     * @method Account#ChangePassword
      * @param {Object} data - data object.
      * @param {String} data.currentPassword - Current password.
      * @param {String} data.newPassword - New password for account.
@@ -139,7 +232,7 @@ class Account extends ApiCallAbstarct {
     /**
      * Deletes specified Subaccount
      * @name DeleteSubAccount
-     * @memberof Account
+     * @method Account#DeleteSubAccount
      * @param {Object} data - data object.
      * @param {Boolean} data.notify - True, if you want to send an email notification. Otherwise, false
      * @param {String} data.subAccountEmail - Email address of sub-account
@@ -154,7 +247,7 @@ class Account extends ApiCallAbstarct {
     /**
      * Validate account's ability to send e-mail
      * @name GetAccountAbilityToSendEmail
-     * @memberof Account
+     * @method Account#GetAccountAbilityToSendEmail
      * @param {Object} data - data object.
 
      * @return {Promise}
@@ -166,7 +259,7 @@ class Account extends ApiCallAbstarct {
     /**
      * Returns API Key for the given Sub Account.
      * @name GetSubAccountApiKey
-     * @memberof Account
+     * @method Account#GetSubAccountApiKey
      * @param {Object} data - data object.
      * @param {String} data.subAccountEmail - Email address of sub-account
      * @param {String} data.publicAccountID - Public key of sub-account to retrieve sub-account API Key. Use subAccountEmail or publicAccountID not both.
@@ -179,7 +272,7 @@ class Account extends ApiCallAbstarct {
     /**
      * Lists all of your subaccounts
      * @name GetSubAccountList
-     * @memberof Account
+     * @method Account#GetSubAccountList
      * @param {Object} data - data object.
      * @param {Number} data.limit - Maximum of loaded items.
      * @param {Number} data.offset - How many items should be loaded ahead.
@@ -192,7 +285,7 @@ class Account extends ApiCallAbstarct {
     /**
      * Loads your account. Returns detailed information about your account.
      * @name Load
-     * @memberof Account
+     * @method Account#Load
      * @param {Object} data - data object.
 
      * @return {Promise}
@@ -204,7 +297,7 @@ class Account extends ApiCallAbstarct {
     /**
      * Load advanced options of your account
      * @name LoadAdvancedOptions
-     * @memberof Account
+     * @method Account#LoadAdvancedOptions
      * @param {Object} data - data object.
 
      * @return {Promise}
@@ -216,7 +309,7 @@ class Account extends ApiCallAbstarct {
     /**
      * Lists email credits history
      * @name LoadEmailCreditsHistory
-     * @memberof Account
+     * @method Account#LoadEmailCreditsHistory
      * @param {Object} data - data object.
 
      * @return {Promise}
@@ -226,9 +319,21 @@ class Account extends ApiCallAbstarct {
     }
 
     /**
+     * Loads your account. Returns detailed information about your account.
+     * @name LoadInfo
+     * @method Account#LoadInfo
+     * @param {Object} data - data object.
+
+     * @return {Promise}
+     */
+     LoadInfo(data) {
+        return this._makeCall('/account/loadinfo', data, 'POST');
+    }
+
+    /**
      * Lists litmus credits history
      * @name LoadLitmusCreditsHistory
-     * @memberof Account
+     * @method Account#LoadLitmusCreditsHistory
      * @param {Object} data - data object.
 
      * @return {Promise}
@@ -240,7 +345,7 @@ class Account extends ApiCallAbstarct {
     /**
      * Shows queue of newest notifications - very useful when you want to check what happened with mails that were not received.
      * @name LoadNotificationQueue
-     * @memberof Account
+     * @method Account#LoadNotificationQueue
      * @param {Object} data - data object.
 
      * @return {Promise}
@@ -252,7 +357,7 @@ class Account extends ApiCallAbstarct {
     /**
      * Lists all payments
      * @name LoadPaymentHistory
-     * @memberof Account
+     * @method Account#LoadPaymentHistory
      * @param {Object} data - data object.
      * @param {Number} data.limit - Maximum of loaded items.
      * @param {Number} data.offset - How many items should be loaded ahead.
@@ -267,7 +372,7 @@ class Account extends ApiCallAbstarct {
     /**
      * Lists all referral payout history
      * @name LoadPayoutHistory
-     * @memberof Account
+     * @method Account#LoadPayoutHistory
      * @param {Object} data - data object.
 
      * @return {Promise}
@@ -279,7 +384,7 @@ class Account extends ApiCallAbstarct {
     /**
      * Shows information about your referral details
      * @name LoadReferralDetails
-     * @memberof Account
+     * @method Account#LoadReferralDetails
      * @param {Object} data - data object.
 
      * @return {Promise}
@@ -291,7 +396,7 @@ class Account extends ApiCallAbstarct {
     /**
      * Shows latest changes in your sending reputation
      * @name LoadReputationHistory
-     * @memberof Account
+     * @method Account#LoadReputationHistory
      * @param {Object} data - data object.
      * @param {Number} data.limit - Maximum of loaded items.
      * @param {Number} data.offset - How many items should be loaded ahead.
@@ -304,7 +409,7 @@ class Account extends ApiCallAbstarct {
     /**
      * Shows detailed information about your actual reputation score
      * @name LoadReputationImpact
-     * @memberof Account
+     * @method Account#LoadReputationImpact
      * @param {Object} data - data object.
 
      * @return {Promise}
@@ -316,7 +421,7 @@ class Account extends ApiCallAbstarct {
     /**
      * Returns detailed spam check.
      * @name LoadSpamCheck
-     * @memberof Account
+     * @method Account#LoadSpamCheck
      * @param {Object} data - data object.
      * @param {Number} data.limit - Maximum of loaded items.
      * @param {Number} data.offset - How many items should be loaded ahead.
@@ -329,7 +434,7 @@ class Account extends ApiCallAbstarct {
     /**
      * Lists email credits history for sub-account
      * @name LoadSubAccountsEmailCreditsHistory
-     * @memberof Account
+     * @method Account#LoadSubAccountsEmailCreditsHistory
      * @param {Object} data - data object.
      * @param {String} data.subAccountEmail - Email address of sub-account
      * @param {String} data.publicAccountID - Public key of sub-account to list history for. Use subAccountEmail or publicAccountID not both.
@@ -342,7 +447,7 @@ class Account extends ApiCallAbstarct {
     /**
      * Loads settings of subaccount
      * @name LoadSubAccountSettings
-     * @memberof Account
+     * @method Account#LoadSubAccountSettings
      * @param {Object} data - data object.
      * @param {String} data.subAccountEmail - Email address of sub-account
      * @param {String} data.publicAccountID - Public key of sub-account to load settings for. Use subAccountEmail or publicAccountID not both.
@@ -355,7 +460,7 @@ class Account extends ApiCallAbstarct {
     /**
      * Lists litmus credits history for sub-account
      * @name LoadSubAccountsLitmusCreditsHistory
-     * @memberof Account
+     * @method Account#LoadSubAccountsLitmusCreditsHistory
      * @param {Object} data - data object.
      * @param {String} data.subAccountEmail - Email address of sub-account
      * @param {String} data.publicAccountID - Public key of sub-account to list history for. Use subAccountEmail or publicAccountID not both.
@@ -368,7 +473,7 @@ class Account extends ApiCallAbstarct {
     /**
      * Shows usage of your account in given time.
      * @name LoadUsage
-     * @memberof Account
+     * @method Account#LoadUsage
      * @param {Object} data - data object.
      * @param {Date} data.from - Starting date for search in YYYY-MM-DDThh:mm:ss format.
      * @param {Date} data.to - Ending date for search in YYYY-MM-DDThh:mm:ss format.
@@ -381,7 +486,7 @@ class Account extends ApiCallAbstarct {
     /**
      * Shows summary for your account.
      * @name Overview
-     * @memberof Account
+     * @method Account#Overview
      * @param {Object} data - data object.
 
      * @return {Promise}
@@ -393,7 +498,7 @@ class Account extends ApiCallAbstarct {
     /**
      * Shows you account's profile basic overview
      * @name ProfileOverview
-     * @memberof Account
+     * @method Account#ProfileOverview
      * @param {Object} data - data object.
 
      * @return {Promise}
@@ -405,7 +510,7 @@ class Account extends ApiCallAbstarct {
     /**
      * Remove email, template or litmus credits from a sub-account
      * @name RemoveSubAccountCredits
-     * @memberof Account
+     * @method Account#RemoveSubAccountCredits
      * @param {Object} data - data object.
      * @param {CreditType} data.creditType - Type of credits to add (Email or Litmus)
      * @param {String} data.notes - Specific notes about the transaction
@@ -422,7 +527,7 @@ class Account extends ApiCallAbstarct {
     /**
      * Request a new default APIKey.
      * @name RequestNewApiKey
-     * @memberof Account
+     * @method Account#RequestNewApiKey
      * @param {Object} data - data object.
 
      * @return {Promise}
@@ -434,7 +539,7 @@ class Account extends ApiCallAbstarct {
     /**
      * Request premium support for your account
      * @name RequestPremiumSupport
-     * @memberof Account
+     * @method Account#RequestPremiumSupport
      * @param {Object} data - data object.
 
      * @return {Promise}
@@ -446,7 +551,7 @@ class Account extends ApiCallAbstarct {
     /**
      * Request a private IP for your Account
      * @name RequestPrivateIP
-     * @memberof Account
+     * @method Account#RequestPrivateIP
      * @param {Object} data - data object.
      * @param {Number} data.count - Number of items.
      * @param {String} data.notes - Free form field of notes
@@ -459,7 +564,7 @@ class Account extends ApiCallAbstarct {
     /**
      * Update sending and tracking options of your account.
      * @name UpdateAdvancedOptions
-     * @memberof Account
+     * @method Account#UpdateAdvancedOptions
      * @param {Object} data - data object.
      * @param {Boolean} data.enableClickTracking - True, if you want to track clicks. Otherwise, false
      * @param {Boolean} data.enableLinkClickTracking - True, if you want to track by link tracking. Otherwise, false
@@ -496,6 +601,7 @@ class Account extends ApiCallAbstarct {
      * @param {String} data.deliveryReason - Why your clients are receiving your emails.
      * @param {Boolean} data.tutorialsEnabled - True, if you want to enable Dashboard Tutotials
      * @param {Boolean} data.enableOpenTracking - True, if you want to track opens. Otherwise, false
+     * @param {Boolean} data.consentTrackingOnUnsubscribe - 
      * @return {Promise}
      */
      UpdateAdvancedOptions(data) {
@@ -505,7 +611,7 @@ class Account extends ApiCallAbstarct {
     /**
      * Update settings of your private branding. These settings are needed, if you want to use Elastic Email under your brand.
      * @name UpdateCustomBranding
-     * @memberof Account
+     * @method Account#UpdateCustomBranding
      * @param {Object} data - data object.
      * @param {Boolean} data.enablePrivateBranding - True: Turn on or off ability to send mails under your brand. Otherwise, false
      * @param {String} data.logoUrl - URL to your logo image.
@@ -523,7 +629,7 @@ class Account extends ApiCallAbstarct {
     /**
      * Update http notification URL.
      * @name UpdateHttpNotification
-     * @memberof Account
+     * @method Account#UpdateHttpNotification
      * @param {Object} data - data object.
      * @param {String} data.url - URL of notification.
      * @param {Boolean} data.notifyOncePerEmail - True, if you want to receive notifications for each type only once per email. Otherwise, false
@@ -537,7 +643,7 @@ class Account extends ApiCallAbstarct {
     /**
      * Update your profile.
      * @name UpdateProfile
-     * @memberof Account
+     * @method Account#UpdateProfile
      * @param {Object} data - data object.
      * @param {String} data.firstName - First name.
      * @param {String} data.lastName - Last name.
@@ -562,7 +668,7 @@ class Account extends ApiCallAbstarct {
     /**
      * Updates settings of specified subaccount
      * @name UpdateSubAccountSettings
-     * @memberof Account
+     * @method Account#UpdateSubAccountSettings
      * @param {Object} data - data object.
      * @param {Boolean} data.requiresEmailCredits - True, if account needs credits to send emails. Otherwise, false
      * @param {Number} data.monthlyRefillCredits - Amount of credits added to account automatically
@@ -585,9 +691,13 @@ class Account extends ApiCallAbstarct {
 }
 
 /**
-/* @class Campaign
+* @class Campaign
+* @extends ApiCallAbstarct
 */
 class Campaign extends ApiCallAbstarct {
+     /**
+     * @constructs Campaign
+     */
     constructor(opt) {
         super(opt);
     }
@@ -595,7 +705,7 @@ class Campaign extends ApiCallAbstarct {
     /**
      * Adds a campaign to the queue for processing based on the configuration
      * @name Add
-     * @memberof Campaign
+     * @method Campaign#Add
      * @param {Object} data - data object.
      * @param {Campaign} data.campaign - Json representation of a campaign
      * @return {Promise}
@@ -607,7 +717,7 @@ class Campaign extends ApiCallAbstarct {
     /**
      * Copy selected campaign
      * @name Copy
-     * @memberof Campaign
+     * @method Campaign#Copy
      * @param {Object} data - data object.
      * @param {Number} data.channelID - ID number of selected Channel.
      * @return {Promise}
@@ -619,7 +729,7 @@ class Campaign extends ApiCallAbstarct {
     /**
      * Delete selected campaign
      * @name Delete
-     * @memberof Campaign
+     * @method Campaign#Delete
      * @param {Object} data - data object.
      * @param {Number} data.channelID - ID number of selected Channel.
      * @return {Promise}
@@ -631,9 +741,9 @@ class Campaign extends ApiCallAbstarct {
     /**
      * Export selected campaigns to chosen file format.
      * @name Export
-     * @memberof Campaign
+     * @method Campaign#Export
      * @param {Object} data - data object.
-     * @param {Array.<Number>} data.channelIDs - List of campaign IDs used for processing
+     * @param {Object} data.channelIDs - List of campaign IDs used for processing
      * @param {ExportFileFormats} data.fileFormat - Format of the exported file
      * @param {CompressionFormat} data.compressionFormat - FileResponse compression format. None or Zip.
      * @param {String} data.fileName - Name of your file.
@@ -646,7 +756,7 @@ class Campaign extends ApiCallAbstarct {
     /**
      * List all of your campaigns
      * @name List
-     * @memberof Campaign
+     * @method Campaign#List
      * @param {Object} data - data object.
      * @param {String} data.search - Text fragment used for searching.
      * @param {Number} data.offset - How many items should be loaded ahead.
@@ -660,7 +770,7 @@ class Campaign extends ApiCallAbstarct {
     /**
      * Updates a previously added campaign.  Only Active and Paused campaigns can be updated.
      * @name Update
-     * @memberof Campaign
+     * @method Campaign#Update
      * @param {Object} data - data object.
      * @param {Campaign} data.campaign - Json representation of a campaign
      * @return {Promise}
@@ -671,9 +781,13 @@ class Campaign extends ApiCallAbstarct {
 }
 
 /**
-/* @class Channel
+* @class Channel
+* @extends ApiCallAbstarct
 */
 class Channel extends ApiCallAbstarct {
+     /**
+     * @constructs Channel
+     */
     constructor(opt) {
         super(opt);
     }
@@ -681,7 +795,7 @@ class Channel extends ApiCallAbstarct {
     /**
      * Manually add a channel to your account to group email
      * @name Add
-     * @memberof Channel
+     * @method Channel#Add
      * @param {Object} data - data object.
      * @param {String} data.name - Descriptive name of the channel
      * @return {Promise}
@@ -693,7 +807,7 @@ class Channel extends ApiCallAbstarct {
     /**
      * Delete the channel.
      * @name Delete
-     * @memberof Channel
+     * @method Channel#Delete
      * @param {Object} data - data object.
      * @param {String} data.name - The name of the channel to delete.
      * @return {Promise}
@@ -705,9 +819,9 @@ class Channel extends ApiCallAbstarct {
     /**
      * Export channels in CSV file format.
      * @name ExportCsv
-     * @memberof Channel
+     * @method Channel#ExportCsv
      * @param {Object} data - data object.
-     * @param {Array.<String>} data.channelNames - List of channel names used for processing
+     * @param {Object} data.channelNames - List of channel names used for processing
      * @param {CompressionFormat} data.compressionFormat - FileResponse compression format. None or Zip.
      * @param {String} data.fileName - Name of your file.
      * @return {Promise}
@@ -719,9 +833,9 @@ class Channel extends ApiCallAbstarct {
     /**
      * Export channels in JSON file format.
      * @name ExportJson
-     * @memberof Channel
+     * @method Channel#ExportJson
      * @param {Object} data - data object.
-     * @param {Array.<String>} data.channelNames - List of channel names used for processing
+     * @param {Object} data.channelNames - List of channel names used for processing
      * @param {CompressionFormat} data.compressionFormat - FileResponse compression format. None or Zip.
      * @param {String} data.fileName - Name of your file.
      * @return {Promise}
@@ -733,9 +847,9 @@ class Channel extends ApiCallAbstarct {
     /**
      * Export channels in XML file format.
      * @name ExportXml
-     * @memberof Channel
+     * @method Channel#ExportXml
      * @param {Object} data - data object.
-     * @param {Array.<String>} data.channelNames - List of channel names used for processing
+     * @param {Object} data.channelNames - List of channel names used for processing
      * @param {CompressionFormat} data.compressionFormat - FileResponse compression format. None or Zip.
      * @param {String} data.fileName - Name of your file.
      * @return {Promise}
@@ -747,7 +861,7 @@ class Channel extends ApiCallAbstarct {
     /**
      * List all of your channels
      * @name List
-     * @memberof Channel
+     * @method Channel#List
      * @param {Object} data - data object.
 
      * @return {Promise}
@@ -759,7 +873,7 @@ class Channel extends ApiCallAbstarct {
     /**
      * Rename an existing channel.
      * @name Update
-     * @memberof Channel
+     * @method Channel#Update
      * @param {Object} data - data object.
      * @param {String} data.name - The name of the channel to update.
      * @param {String} data.newName - The new name for the channel.
@@ -771,9 +885,13 @@ class Channel extends ApiCallAbstarct {
 }
 
 /**
-/* @class Contact
+* @class Contact
+* @extends ApiCallAbstarct
 */
 class Contact extends ApiCallAbstarct {
+     /**
+     * @constructs Contact
+     */
     constructor(opt) {
         super(opt);
     }
@@ -781,12 +899,12 @@ class Contact extends ApiCallAbstarct {
     /**
      * Add a new contact and optionally to one of your lists.  Note that your API KEY is not required for this call.
      * @name Add
-     * @memberof Contact
+     * @method Contact#Add
      * @param {Object} data - data object.
      * @param {String} data.publicAccountID - Public key for limited access to your account such as contact/add so you can use it safely on public websites.
      * @param {String} data.email - Proper email address.
-     * @param {Array.<String>} data.publicListID - ID code of list
-     * @param {StringArray.<String>} data.listName - Name of your list.
+     * @param {Object} data.publicListID - ID code of list
+     * @param {StringArray} data.listName - Name of your list.
      * @param {String} data.firstName - First name.
      * @param {String} data.lastName - Last name.
      * @param {ContactSource} data.source - Specifies the way of uploading the contact
@@ -810,7 +928,7 @@ class Contact extends ApiCallAbstarct {
     /**
      * Manually add or update a contacts status to Abuse or Unsubscribed status (blocked).
      * @name AddBlocked
-     * @memberof Contact
+     * @method Contact#AddBlocked
      * @param {Object} data - data object.
      * @param {String} data.email - Proper email address.
      * @param {ContactStatus} data.status - Name of status: Active, Engaged, Inactive, Abuse, Bounced, Unsubscribed.
@@ -823,7 +941,7 @@ class Contact extends ApiCallAbstarct {
     /**
      * Change any property on the contact record.
      * @name ChangeProperty
-     * @memberof Contact
+     * @method Contact#ChangeProperty
      * @param {Object} data - data object.
      * @param {String} data.email - Proper email address.
      * @param {String} data.name - Name of the contact property you want to change.
@@ -837,11 +955,11 @@ class Contact extends ApiCallAbstarct {
     /**
      * Changes status of selected Contacts. You may provide RULE for selection or specify list of Contact IDs.
      * @name ChangeStatus
-     * @memberof Contact
+     * @method Contact#ChangeStatus
      * @param {Object} data - data object.
      * @param {ContactStatus} data.status - Name of status: Active, Engaged, Inactive, Abuse, Bounced, Unsubscribed.
      * @param {String} data.rule - Query used for filtering.
-     * @param {Array.<String>} data.emails - Comma delimited list of contact emails
+     * @param {Object} data.emails - Comma delimited list of contact emails
      * @return {Promise}
      */
      ChangeStatus(data) {
@@ -851,7 +969,7 @@ class Contact extends ApiCallAbstarct {
     /**
      * Returns number of Contacts, RULE specifies contact Status.
      * @name CountByStatus
-     * @memberof Contact
+     * @method Contact#CountByStatus
      * @param {Object} data - data object.
      * @param {String} data.rule - Query used for filtering.
      * @param {Boolean} data.allContacts - True: Include every Contact in your Account. Otherwise, false
@@ -864,7 +982,7 @@ class Contact extends ApiCallAbstarct {
     /**
      * Returns count of unsubscribe reasons for unsubscribed and complaint contacts.
      * @name CountByUnsubscribeReason
-     * @memberof Contact
+     * @method Contact#CountByUnsubscribeReason
      * @param {Object} data - data object.
      * @param {Date} data.from - Starting date for search in YYYY-MM-DDThh:mm:ss format.
      * @param {Date} data.to - Ending date for search in YYYY-MM-DDThh:mm:ss format.
@@ -877,10 +995,10 @@ class Contact extends ApiCallAbstarct {
     /**
      * Permanantly deletes the contacts provided.  You can provide either a qualified rule or a list of emails (comma separated string).
      * @name Delete
-     * @memberof Contact
+     * @method Contact#Delete
      * @param {Object} data - data object.
      * @param {String} data.rule - Query used for filtering.
-     * @param {Array.<String>} data.emails - Comma delimited list of contact emails
+     * @param {Object} data.emails - Comma delimited list of contact emails
      * @return {Promise}
      */
      Delete(data) {
@@ -890,11 +1008,11 @@ class Contact extends ApiCallAbstarct {
     /**
      * Export selected Contacts to file.
      * @name Export
-     * @memberof Contact
+     * @method Contact#Export
      * @param {Object} data - data object.
      * @param {ExportFileFormats} data.fileFormat - Format of the exported file
      * @param {String} data.rule - Query used for filtering.
-     * @param {Array.<String>} data.emails - Comma delimited list of contact emails
+     * @param {Object} data.emails - Comma delimited list of contact emails
      * @param {CompressionFormat} data.compressionFormat - FileResponse compression format. None or Zip.
      * @param {String} data.fileName - Name of your file.
      * @return {Promise}
@@ -906,7 +1024,7 @@ class Contact extends ApiCallAbstarct {
     /**
      * Export contacts' unsubscribe reasons count to file.
      * @name ExportUnsubscribeReasonCount
-     * @memberof Contact
+     * @method Contact#ExportUnsubscribeReasonCount
      * @param {Object} data - data object.
      * @param {Date} data.from - Starting date for search in YYYY-MM-DDThh:mm:ss format.
      * @param {Date} data.to - Ending date for search in YYYY-MM-DDThh:mm:ss format.
@@ -922,7 +1040,7 @@ class Contact extends ApiCallAbstarct {
     /**
      * Finds all Lists and Segments this email belongs to.
      * @name FindContact
-     * @memberof Contact
+     * @method Contact#FindContact
      * @param {Object} data - data object.
      * @param {String} data.email - Proper email address.
      * @return {Promise}
@@ -934,7 +1052,7 @@ class Contact extends ApiCallAbstarct {
     /**
      * List of Contacts for provided List
      * @name GetContactsByList
-     * @memberof Contact
+     * @method Contact#GetContactsByList
      * @param {Object} data - data object.
      * @param {String} data.listName - Name of your list.
      * @param {Number} data.limit - Maximum of loaded items.
@@ -948,7 +1066,7 @@ class Contact extends ApiCallAbstarct {
     /**
      * List of Contacts for provided Segment
      * @name GetContactsBySegment
-     * @memberof Contact
+     * @method Contact#GetContactsBySegment
      * @param {Object} data - data object.
      * @param {String} data.segmentName - Name of your segment.
      * @param {Number} data.limit - Maximum of loaded items.
@@ -962,7 +1080,7 @@ class Contact extends ApiCallAbstarct {
     /**
      * List of all contacts. If you have not specified RULE, all Contacts will be listed.
      * @name List
-     * @memberof Contact
+     * @method Contact#List
      * @param {Object} data - data object.
      * @param {String} data.rule - Query used for filtering.
      * @param {Number} data.limit - Maximum of loaded items.
@@ -976,9 +1094,9 @@ class Contact extends ApiCallAbstarct {
     /**
      * Load blocked contacts
      * @name LoadBlocked
-     * @memberof Contact
+     * @method Contact#LoadBlocked
      * @param {Object} data - data object.
-     * @param {Array.<ContactStatus>} data.statuses - List of blocked statuses: Abuse, Bounced or Unsubscribed
+     * @param {Object} data.statuses - List of blocked statuses: Abuse, Bounced or Unsubscribed
      * @param {String} data.search - Text fragment used for searching.
      * @param {Number} data.limit - Maximum of loaded items.
      * @param {Number} data.offset - How many items should be loaded ahead.
@@ -991,7 +1109,7 @@ class Contact extends ApiCallAbstarct {
     /**
      * Load detailed contact information
      * @name LoadContact
-     * @memberof Contact
+     * @method Contact#LoadContact
      * @param {Object} data - data object.
      * @param {String} data.email - Proper email address.
      * @return {Promise}
@@ -1003,7 +1121,7 @@ class Contact extends ApiCallAbstarct {
     /**
      * Shows detailed history of chosen Contact.
      * @name LoadHistory
-     * @memberof Contact
+     * @method Contact#LoadHistory
      * @param {Object} data - data object.
      * @param {String} data.email - Proper email address.
      * @param {Number} data.limit - Maximum of loaded items.
@@ -1017,9 +1135,9 @@ class Contact extends ApiCallAbstarct {
     /**
      * Add new Contact to one of your Lists.
      * @name QuickAdd
-     * @memberof Contact
+     * @method Contact#QuickAdd
      * @param {Object} data - data object.
-     * @param {Array.<String>} data.emails - Comma delimited list of contact emails
+     * @param {Object} data.emails - Comma delimited list of contact emails
      * @param {String} data.firstName - First name.
      * @param {String} data.lastName - Last name.
      * @param {String} data.publicListID - ID code of list
@@ -1040,7 +1158,7 @@ class Contact extends ApiCallAbstarct {
     /**
      * Basic double opt-in email subscribe form for your account.  This can be used for contacts that need to re-subscribe as well.
      * @name Subscribe
-     * @memberof Contact
+     * @method Contact#Subscribe
      * @param {Object} data - data object.
      * @param {String} data.publicAccountID - Public key for limited access to your account such as contact/add so you can use it safely on public websites.
      * @return {Promise}
@@ -1052,7 +1170,7 @@ class Contact extends ApiCallAbstarct {
     /**
      * Update selected contact. Omitted contact's fields will be reset by default (see the clearRestOfFields parameter)
      * @name Update
-     * @memberof Contact
+     * @method Contact#Update
      * @param {Object} data - data object.
      * @param {String} data.email - Proper email address.
      * @param {String} data.firstName - First name.
@@ -1069,9 +1187,9 @@ class Contact extends ApiCallAbstarct {
     /**
      * Upload contacts in CSV file.
      * @name Upload
-     * @memberof Contact
+     * @method Contact#Upload
      * @param {Object} data - data object.
-     * @param {{content: Object, filename: String}} data.contactFile - Name of CSV file with Contacts.
+     * @param {{content: {Object}, filename: {String}}} data.contactFile - Name of CSV file with Contacts.
      * @param {Boolean} data.allowUnsubscribe - True: Allow unsubscribing from this (optional) newly created list. Otherwise, false
      * @param {Number} data.listID - ID number of selected list.
      * @param {String} data.listName - Name of your list to upload contacts to, or how the new, automatically created list should be named
@@ -1087,9 +1205,13 @@ class Contact extends ApiCallAbstarct {
 }
 
 /**
-/* @class Domain
+* @class Domain
+* @extends ApiCallAbstarct
 */
 class Domain extends ApiCallAbstarct {
+     /**
+     * @constructs Domain
+     */
     constructor(opt) {
         super(opt);
     }
@@ -1097,7 +1219,7 @@ class Domain extends ApiCallAbstarct {
     /**
      * Add new domain to account
      * @name Add
-     * @memberof Domain
+     * @method Domain#Add
      * @param {Object} data - data object.
      * @param {String} data.domain - Name of selected domain.
      * @param {TrackingType} data.trackingType - 
@@ -1110,7 +1232,7 @@ class Domain extends ApiCallAbstarct {
     /**
      * Deletes configured domain from account
      * @name Delete
-     * @memberof Domain
+     * @method Domain#Delete
      * @param {Object} data - data object.
      * @param {String} data.domain - Name of selected domain.
      * @return {Promise}
@@ -1122,7 +1244,7 @@ class Domain extends ApiCallAbstarct {
     /**
      * Lists all domains configured for this account.
      * @name List
-     * @memberof Domain
+     * @method Domain#List
      * @param {Object} data - data object.
 
      * @return {Promise}
@@ -1134,7 +1256,7 @@ class Domain extends ApiCallAbstarct {
     /**
      * Verification of email addres set for domain.
      * @name SetDefault
-     * @memberof Domain
+     * @method Domain#SetDefault
      * @param {Object} data - data object.
      * @param {String} data.domain - Default email sender, example: mail@yourdomain.com
      * @return {Promise}
@@ -1146,7 +1268,7 @@ class Domain extends ApiCallAbstarct {
     /**
      * Verification of DKIM record for domain
      * @name VerifyDkim
-     * @memberof Domain
+     * @method Domain#VerifyDkim
      * @param {Object} data - data object.
      * @param {String} data.domain - Name of selected domain.
      * @return {Promise}
@@ -1158,7 +1280,7 @@ class Domain extends ApiCallAbstarct {
     /**
      * Verification of MX record for domain
      * @name VerifyMX
-     * @memberof Domain
+     * @method Domain#VerifyMX
      * @param {Object} data - data object.
      * @param {String} data.domain - Name of selected domain.
      * @return {Promise}
@@ -1170,7 +1292,7 @@ class Domain extends ApiCallAbstarct {
     /**
      * Verification of SPF record for domain
      * @name VerifySpf
-     * @memberof Domain
+     * @method Domain#VerifySpf
      * @param {Object} data - data object.
      * @param {String} data.domain - Name of selected domain.
      * @return {Promise}
@@ -1182,7 +1304,7 @@ class Domain extends ApiCallAbstarct {
     /**
      * Verification of tracking CNAME record for domain
      * @name VerifyTracking
-     * @memberof Domain
+     * @method Domain#VerifyTracking
      * @param {Object} data - data object.
      * @param {String} data.domain - Name of selected domain.
      * @param {TrackingType} data.trackingType - 
@@ -1194,9 +1316,13 @@ class Domain extends ApiCallAbstarct {
 }
 
 /**
-/* @class Email
+* @class Email
+* @extends ApiCallAbstarct
 */
 class Email extends ApiCallAbstarct {
+     /**
+     * @constructs Email
+     */
     constructor(opt) {
         super(opt);
     }
@@ -1204,7 +1330,7 @@ class Email extends ApiCallAbstarct {
     /**
      * Get email batch status
      * @name GetStatus
-     * @memberof Email
+     * @method Email#GetStatus
      * @param {Object} data - data object.
      * @param {String} data.transactionID - Transaction identifier
      * @param {Boolean} data.showFailed - Include Bounced email addresses.
@@ -1226,7 +1352,7 @@ class Email extends ApiCallAbstarct {
     /**
      * Submit emails. The HTTP POST request is suggested. The default, maximum (accepted by us) size of an email is 10 MB in total, with or without attachments included. For suggested implementations please refer to https://elasticemail.com/support/http-api/
      * @name Send
-     * @memberof Email
+     * @method Email#Send
      * @param {Object} data - data object.
      * @param {String} data.subject - Email subject
      * @param {String} data.from - From email address
@@ -1237,12 +1363,12 @@ class Email extends ApiCallAbstarct {
      * @param {String} data.msgFromName - Optional parameter. Sets FROM name of MIME header.
      * @param {String} data.replyTo - Email address to reply to
      * @param {String} data.replyToName - Display name of the reply to address
-     * @param {Array.<String>} data.to - List of email recipients (each email is treated separately, like a BCC). Separated by comma or semicolon. We suggest using the "msgTo" parameter if backward compatibility with API version 1 is not a must.
-     * @param {Array.<String>} data.msgTo - Optional parameter. Will be ignored if the 'to' parameter is also provided. List of email recipients (visible to all other recipients of the message as TO MIME header). Separated by comma or semicolon.
-     * @param {Array.<String>} data.msgCC - Optional parameter. Will be ignored if the 'to' parameter is also provided. List of email recipients (visible to all other recipients of the message as CC MIME header). Separated by comma or semicolon.
-     * @param {Array.<String>} data.msgBcc - Optional parameter. Will be ignored if the 'to' parameter is also provided. List of email recipients (each email is treated seperately). Separated by comma or semicolon.
-     * @param {Array.<String>} data.lists - The name of a contact list you would like to send to. Separate multiple contact lists by commas or semicolons.
-     * @param {Array.<String>} data.segments - The name of a segment you would like to send to. Separate multiple segments by comma or semicolon. Insert "0" for all Active contacts.
+     * @param {Object} data.to - List of email recipients (each email is treated separately, like a BCC). Separated by comma or semicolon. We suggest using the "msgTo" parameter if backward compatibility with API version 1 is not a must.
+     * @param {Object} data.msgTo - Optional parameter. Will be ignored if the 'to' parameter is also provided. List of email recipients (visible to all other recipients of the message as TO MIME header). Separated by comma or semicolon.
+     * @param {Object} data.msgCC - Optional parameter. Will be ignored if the 'to' parameter is also provided. List of email recipients (visible to all other recipients of the message as CC MIME header). Separated by comma or semicolon.
+     * @param {Object} data.msgBcc - Optional parameter. Will be ignored if the 'to' parameter is also provided. List of email recipients (each email is treated seperately). Separated by comma or semicolon.
+     * @param {Object} data.lists - The name of a contact list you would like to send to. Separate multiple contact lists by commas or semicolons.
+     * @param {Object} data.segments - The name of a segment you would like to send to. Separate multiple segments by comma or semicolon. Insert "0" for all Active contacts.
      * @param {String} data.mergeSourceFilename - File name one of attachments which is a CSV list of Recipients.
      * @param {String} data.dataSource - Name or ID of the previously uploaded file which should be a CSV list of Recipients.
      * @param {String} data.channel - An ID field (max 191 chars) that can be used for reporting [will default to HTTP API or SMTP API]
@@ -1253,14 +1379,14 @@ class Email extends ApiCallAbstarct {
      * @param {String} data.charsetBodyText - Sets charset for body text MIME part (overrides default value from charset parameter)
      * @param {EncodingType} data.encodingType - 0 for None, 1 for Raw7Bit, 2 for Raw8Bit, 3 for QuotedPrintable, 4 for Base64 (Default), 5 for Uue  note that you can also provide the text version such as "Raw7Bit" for value 1.  NOTE: Base64 or QuotedPrintable is recommended if you are validating your domain(s) with DKIM.
      * @param {String} data.template - The ID of an email template you have created in your account.
-     * @param {{content: Object, filename: String}} data.attachmentFiles - Attachment files. These files should be provided with the POST multipart file upload, not directly in the request's URL. Can also include merge CSV file
+     * @param {{content: {Object}, filename: {String}}} data.attachmentFiles - Attachment files. These files should be provided with the POST multipart file upload, not directly in the request's URL. Can also include merge CSV file
      * @param {Object} data.headers - Optional Custom Headers. Request parameters prefixed by headers_ like headers_customheader1, headers_customheader2. Note: a space is required after the colon before the custom header value. headers_xmailer=xmailer: header-value1
      * @param {String} data.postBack - Optional header returned in notifications.
      * @param {Object} data.merge - Request parameters prefixed by merge_ like merge_firstname, merge_lastname. If sending to a template you can send merge_ fields to merge data with the template. Template fields are entered with {firstname}, {lastname} etc.
      * @param {String} data.timeOffSetMinutes - Number of minutes in the future this email should be sent up to a maximum of 1 year (524160 minutes)
      * @param {String} data.poolName - Name of your custom IP Pool to be used in the sending process
      * @param {Boolean} data.isTransactional - True, if email is transactional (non-bulk, non-marketing, non-commercial). Otherwise, false
-     * @param {Array.<String>} data.attachments - Names or IDs of attachments previously uploaded to your account that should be sent with this e-mail.
+     * @param {Object} data.attachments - Names or IDs of attachments previously uploaded to your account that should be sent with this e-mail.
      * @param {Boolean} data.trackOpens - Should the opens be tracked? If no value has been provided, account's default setting will be used.
      * @param {Boolean} data.trackClicks - Should the clicks be tracked? If no value has been provided, account's default setting will be used.
      * @return {Promise}
@@ -1272,7 +1398,7 @@ class Email extends ApiCallAbstarct {
     /**
      * Detailed status of a unique email sent through your account. Returns a 'Email has expired and the status is unknown.' error, if the email has not been fully processed yet.
      * @name Status
-     * @memberof Email
+     * @method Email#Status
      * @param {Object} data - data object.
      * @param {String} data.messageID - Unique identifier for this email.
      * @return {Promise}
@@ -1284,7 +1410,7 @@ class Email extends ApiCallAbstarct {
     /**
      * View email
      * @name View
-     * @memberof Email
+     * @method Email#View
      * @param {Object} data - data object.
      * @param {String} data.messageID - Message identifier
      * @return {Promise}
@@ -1295,9 +1421,13 @@ class Email extends ApiCallAbstarct {
 }
 
 /**
-/* @class Export
+* @class Export
+* @extends ApiCallAbstarct
 */
 class Export extends ApiCallAbstarct {
+     /**
+     * @constructs Export
+     */
     constructor(opt) {
         super(opt);
     }
@@ -1305,7 +1435,7 @@ class Export extends ApiCallAbstarct {
     /**
      * Check the current status of the export.
      * @name CheckStatus
-     * @memberof Export
+     * @method Export#CheckStatus
      * @param {Object} data - data object.
      * @param {String} data.publicExportID - 
      * @return {Promise}
@@ -1317,7 +1447,7 @@ class Export extends ApiCallAbstarct {
     /**
      * Summary of export type counts.
      * @name CountByType
-     * @memberof Export
+     * @method Export#CountByType
      * @param {Object} data - data object.
 
      * @return {Promise}
@@ -1329,7 +1459,7 @@ class Export extends ApiCallAbstarct {
     /**
      * Delete the specified export.
      * @name Delete
-     * @memberof Export
+     * @method Export#Delete
      * @param {Object} data - data object.
      * @param {String} data.publicExportID - 
      * @return {Promise}
@@ -1341,7 +1471,7 @@ class Export extends ApiCallAbstarct {
     /**
      * Returns a list of all exported data.
      * @name List
-     * @memberof Export
+     * @method Export#List
      * @param {Object} data - data object.
      * @param {Number} data.limit - Maximum of loaded items.
      * @param {Number} data.offset - How many items should be loaded ahead.
@@ -1353,9 +1483,13 @@ class Export extends ApiCallAbstarct {
 }
 
 /**
-/* @class File
+* @class File
+* @extends ApiCallAbstarct
 */
 class File extends ApiCallAbstarct {
+     /**
+     * @constructs File
+     */
     constructor(opt) {
         super(opt);
     }
@@ -1363,7 +1497,7 @@ class File extends ApiCallAbstarct {
     /**
      * Permanently deletes the file from your account
      * @name Delete
-     * @memberof File
+     * @method File#Delete
      * @param {Object} data - data object.
      * @param {Number} data.fileID - 
      * @param {String} data.filename - Name of your file.
@@ -1376,7 +1510,7 @@ class File extends ApiCallAbstarct {
     /**
      * Gets content of the chosen File
      * @name Download
-     * @memberof File
+     * @method File#Download
      * @param {Object} data - data object.
      * @param {String} data.filename - Name of your file.
      * @param {Number} data.fileID - 
@@ -1389,7 +1523,7 @@ class File extends ApiCallAbstarct {
     /**
      * Lists your available Attachments in the given email
      * @name List
-     * @memberof File
+     * @method File#List
      * @param {Object} data - data object.
      * @param {String} data.msgID - ID number of selected message.
      * @return {Promise}
@@ -1401,7 +1535,7 @@ class File extends ApiCallAbstarct {
     /**
      * Lists all your available files
      * @name ListAll
-     * @memberof File
+     * @method File#ListAll
      * @param {Object} data - data object.
 
      * @return {Promise}
@@ -1413,7 +1547,7 @@ class File extends ApiCallAbstarct {
     /**
      * Gets chosen File
      * @name Load
-     * @memberof File
+     * @method File#Load
      * @param {Object} data - data object.
      * @param {String} data.filename - Name of your file.
      * @return {Promise}
@@ -1425,9 +1559,9 @@ class File extends ApiCallAbstarct {
     /**
      * Uploads selected file to the server using http form upload format (MIME multipart/form-data) or PUT method.
      * @name Upload
-     * @memberof File
+     * @method File#Upload
      * @param {Object} data - data object.
-     * @param {{content: Object, filename: String}} data.file - 
+     * @param {{content: {Object}, filename: {String}}} data.file - 
      * @param {String} data.name - Filename
      * @param {Number} data.expiresAfterDays - After how many days should the file be deleted.
      * @return {Promise}
@@ -1438,9 +1572,13 @@ class File extends ApiCallAbstarct {
 }
 
 /**
-/* @class List
+* @class List
+* @extends ApiCallAbstarct
 */
 class List extends ApiCallAbstarct {
+     /**
+     * @constructs List
+     */
     constructor(opt) {
         super(opt);
     }
@@ -1448,13 +1586,13 @@ class List extends ApiCallAbstarct {
     /**
      * Create new list, based on filtering rule or list of IDs
      * @name Add
-     * @memberof List
+     * @method List#Add
      * @param {Object} data - data object.
      * @param {String} data.listName - Name of your list.
      * @param {Boolean} data.createEmptyList - True to create an empty list, otherwise false. Ignores rule and emails parameters if provided.
      * @param {Boolean} data.allowUnsubscribe - True: Allow unsubscribing from this list. Otherwise, false
      * @param {String} data.rule - Query used for filtering.
-     * @param {Array.<String>} data.emails - Comma delimited list of contact emails
+     * @param {Object} data.emails - Comma delimited list of contact emails
      * @param {Boolean} data.allContacts - True: Include every Contact in your Account. Otherwise, false
      * @return {Promise}
      */
@@ -1465,11 +1603,11 @@ class List extends ApiCallAbstarct {
     /**
      * Add existing Contacts to chosen list
      * @name AddContacts
-     * @memberof List
+     * @method List#AddContacts
      * @param {Object} data - data object.
      * @param {String} data.listName - Name of your list.
      * @param {String} data.rule - Query used for filtering.
-     * @param {Array.<String>} data.emails - Comma delimited list of contact emails
+     * @param {Object} data.emails - Comma delimited list of contact emails
      * @param {Boolean} data.allContacts - True: Include every Contact in your Account. Otherwise, false
      * @return {Promise}
      */
@@ -1480,7 +1618,7 @@ class List extends ApiCallAbstarct {
     /**
      * Copy your existing List with the option to provide new settings to it. Some fields, when left empty, default to the source list's settings
      * @name Copy
-     * @memberof List
+     * @method List#Copy
      * @param {Object} data - data object.
      * @param {String} data.sourceListName - The name of the list you want to copy
      * @param {String} data.newlistName - Name of your list if you want to change it.
@@ -1496,11 +1634,11 @@ class List extends ApiCallAbstarct {
     /**
      * Create a new list from the recipients of the given campaign, using the given statuses of Messages
      * @name CreateFromCampaign
-     * @memberof List
+     * @method List#CreateFromCampaign
      * @param {Object} data - data object.
      * @param {Number} data.campaignID - ID of the campaign which recipients you want to copy
      * @param {String} data.listName - Name of your list.
-     * @param {Array.<LogJobStatus>} data.statuses - Statuses of a campaign's emails you want to include in the new list (but NOT the contacts' statuses)
+     * @param {Object} data.statuses - Statuses of a campaign's emails you want to include in the new list (but NOT the contacts' statuses)
      * @return {Promise}
      */
      CreateFromCampaign(data) {
@@ -1510,7 +1648,7 @@ class List extends ApiCallAbstarct {
     /**
      * Create a series of nth selection lists from an existing list or segment
      * @name CreateNthSelectionLists
-     * @memberof List
+     * @method List#CreateNthSelectionLists
      * @param {Object} data - data object.
      * @param {String} data.listName - Name of your list.
      * @param {Number} data.numberOfLists - The number of evenly distributed lists to create.
@@ -1527,7 +1665,7 @@ class List extends ApiCallAbstarct {
     /**
      * Create a new list with randomized contacts from an existing list or segment
      * @name CreateRandomList
-     * @memberof List
+     * @method List#CreateRandomList
      * @param {Object} data - data object.
      * @param {String} data.listName - Name of your list.
      * @param {Number} data.count - Number of items.
@@ -1544,7 +1682,7 @@ class List extends ApiCallAbstarct {
     /**
      * Deletes List and removes all the Contacts from it (does not delete Contacts).
      * @name Delete
-     * @memberof List
+     * @method List#Delete
      * @param {Object} data - data object.
      * @param {String} data.listName - Name of your list.
      * @return {Promise}
@@ -1556,7 +1694,7 @@ class List extends ApiCallAbstarct {
     /**
      * Exports all the contacts from the provided list
      * @name Export
-     * @memberof List
+     * @method List#Export
      * @param {Object} data - data object.
      * @param {String} data.listName - Name of your list.
      * @param {ExportFileFormats} data.fileFormat - Format of the exported file
@@ -1571,7 +1709,7 @@ class List extends ApiCallAbstarct {
     /**
      * Shows all your existing lists
      * @name list
-     * @memberof List
+     * @method List#list
      * @param {Object} data - data object.
      * @param {Date} data.from - Starting date for search in YYYY-MM-DDThh:mm:ss format.
      * @param {Date} data.to - Ending date for search in YYYY-MM-DDThh:mm:ss format.
@@ -1584,7 +1722,7 @@ class List extends ApiCallAbstarct {
     /**
      * Returns detailed information about specific list.
      * @name Load
-     * @memberof List
+     * @method List#Load
      * @param {Object} data - data object.
      * @param {String} data.listName - Name of your list.
      * @return {Promise}
@@ -1596,13 +1734,13 @@ class List extends ApiCallAbstarct {
     /**
      * Move selected contacts from one List to another
      * @name MoveContacts
-     * @memberof List
+     * @method List#MoveContacts
      * @param {Object} data - data object.
      * @param {String} data.oldListName - The name of the list from which the contacts will be copied from
      * @param {String} data.newListName - The name of the list to copy the contacts to
-     * @param {Array.<String>} data.emails - Comma delimited list of contact emails
+     * @param {Object} data.emails - Comma delimited list of contact emails
      * @param {Boolean} data.moveAll - TRUE - moves all contacts; FALSE - moves contacts provided in the 'emails' parameter. This is ignored if the 'statuses' parameter has been provided
-     * @param {Array.<ContactStatus>} data.statuses - List of contact statuses which are eligible to move. This ignores the 'moveAll' parameter
+     * @param {Object} data.statuses - List of contact statuses which are eligible to move. This ignores the 'moveAll' parameter
      * @param {String} data.rule - Query used for filtering.
      * @return {Promise}
      */
@@ -1613,11 +1751,11 @@ class List extends ApiCallAbstarct {
     /**
      * Remove selected Contacts from your list
      * @name RemoveContacts
-     * @memberof List
+     * @method List#RemoveContacts
      * @param {Object} data - data object.
      * @param {String} data.listName - Name of your list.
      * @param {String} data.rule - Query used for filtering.
-     * @param {Array.<String>} data.emails - Comma delimited list of contact emails
+     * @param {Object} data.emails - Comma delimited list of contact emails
      * @return {Promise}
      */
      RemoveContacts(data) {
@@ -1627,7 +1765,7 @@ class List extends ApiCallAbstarct {
     /**
      * Update existing list
      * @name Update
-     * @memberof List
+     * @method List#Update
      * @param {Object} data - data object.
      * @param {String} data.listName - Name of your list.
      * @param {String} data.newListName - Name of your list if you want to change it.
@@ -1640,9 +1778,13 @@ class List extends ApiCallAbstarct {
 }
 
 /**
-/* @class Log
+* @class Log
+* @extends ApiCallAbstarct
 */
 class Log extends ApiCallAbstarct {
+     /**
+     * @constructs Log
+     */
     constructor(opt) {
         super(opt);
     }
@@ -1650,7 +1792,7 @@ class Log extends ApiCallAbstarct {
     /**
      * Cancels emails that are waiting to be sent.
      * @name CancelInProgress
-     * @memberof Log
+     * @method Log#CancelInProgress
      * @param {Object} data - data object.
      * @param {String} data.channelName - Name of selected channel.
      * @param {String} data.transactionID - ID number of transaction
@@ -1663,16 +1805,16 @@ class Log extends ApiCallAbstarct {
     /**
      * Export email log information to the specified file format.
      * @name Export
-     * @memberof Log
+     * @method Log#Export
      * @param {Object} data - data object.
-     * @param {Array.<LogJobStatus>} data.statuses - List of comma separated message statuses: 0 for all, 1 for ReadyToSend, 2 for InProgress, 4 for Bounced, 5 for Sent, 6 for Opened, 7 for Clicked, 8 for Unsubscribed, 9 for Abuse Report
+     * @param {Object} data.statuses - List of comma separated message statuses: 0 for all, 1 for ReadyToSend, 2 for InProgress, 4 for Bounced, 5 for Sent, 6 for Opened, 7 for Clicked, 8 for Unsubscribed, 9 for Abuse Report
      * @param {ExportFileFormats} data.fileFormat - Format of the exported file
      * @param {Date} data.from - Start date.
      * @param {Date} data.to - End date.
      * @param {String} data.channelName - Name of selected channel.
      * @param {Boolean} data.includeEmail - True: Search includes emails. Otherwise, false.
      * @param {Boolean} data.includeSms - True: Search includes SMS. Otherwise, false.
-     * @param {Array.<MessageCategory>} data.messageCategory - ID of message category
+     * @param {Object} data.messageCategory - ID of message category
      * @param {CompressionFormat} data.compressionFormat - FileResponse compression format. None or Zip.
      * @param {String} data.fileName - Name of your file.
      * @param {String} data.email - Proper email address.
@@ -1685,7 +1827,7 @@ class Log extends ApiCallAbstarct {
     /**
      * Export detailed link tracking information to the specified file format.
      * @name ExportLinkTracking
-     * @memberof Log
+     * @method Log#ExportLinkTracking
      * @param {Object} data - data object.
      * @param {Date} data.from - Starting date for search in YYYY-MM-DDThh:mm:ss format.
      * @param {Date} data.to - Ending date for search in YYYY-MM-DDThh:mm:ss format.
@@ -1704,7 +1846,7 @@ class Log extends ApiCallAbstarct {
     /**
      * Track link clicks
      * @name LinkTracking
-     * @memberof Log
+     * @method Log#LinkTracking
      * @param {Object} data - data object.
      * @param {Date} data.from - Starting date for search in YYYY-MM-DDThh:mm:ss format.
      * @param {Date} data.to - Ending date for search in YYYY-MM-DDThh:mm:ss format.
@@ -1720,9 +1862,9 @@ class Log extends ApiCallAbstarct {
     /**
      * Returns logs filtered by specified parameters.
      * @name Load
-     * @memberof Log
+     * @method Log#Load
      * @param {Object} data - data object.
-     * @param {Array.<LogJobStatus>} data.statuses - List of comma separated message statuses: 0 for all, 1 for ReadyToSend, 2 for InProgress, 4 for Bounced, 5 for Sent, 6 for Opened, 7 for Clicked, 8 for Unsubscribed, 9 for Abuse Report
+     * @param {Object} data.statuses - List of comma separated message statuses: 0 for all, 1 for ReadyToSend, 2 for InProgress, 4 for Bounced, 5 for Sent, 6 for Opened, 7 for Clicked, 8 for Unsubscribed, 9 for Abuse Report
      * @param {Date} data.from - Starting date for search in YYYY-MM-DDThh:mm:ss format.
      * @param {Date} data.to - Ending date for search in YYYY-MM-DDThh:mm:ss format.
      * @param {String} data.channelName - Name of selected channel.
@@ -1730,7 +1872,7 @@ class Log extends ApiCallAbstarct {
      * @param {Number} data.offset - How many items should be loaded ahead.
      * @param {Boolean} data.includeEmail - True: Search includes emails. Otherwise, false.
      * @param {Boolean} data.includeSms - True: Search includes SMS. Otherwise, false.
-     * @param {Array.<MessageCategory>} data.messageCategory - ID of message category
+     * @param {Object} data.messageCategory - ID of message category
      * @param {String} data.email - Proper email address.
      * @param {Boolean} data.useStatusChangeDate - True, if 'from' and 'to' parameters should resolve to the Status Change date. To resolve to the creation date - false
      * @return {Promise}
@@ -1742,14 +1884,14 @@ class Log extends ApiCallAbstarct {
     /**
      * Returns notification logs filtered by specified parameters.
      * @name LoadNotifications
-     * @memberof Log
+     * @method Log#LoadNotifications
      * @param {Object} data - data object.
-     * @param {Array.<LogJobStatus>} data.statuses - List of comma separated message statuses: 0 for all, 1 for ReadyToSend, 2 for InProgress, 4 for Bounced, 5 for Sent, 6 for Opened, 7 for Clicked, 8 for Unsubscribed, 9 for Abuse Report
+     * @param {Object} data.statuses - List of comma separated message statuses: 0 for all, 1 for ReadyToSend, 2 for InProgress, 4 for Bounced, 5 for Sent, 6 for Opened, 7 for Clicked, 8 for Unsubscribed, 9 for Abuse Report
      * @param {Date} data.from - Starting date for search in YYYY-MM-DDThh:mm:ss format.
      * @param {Date} data.to - Ending date for search in YYYY-MM-DDThh:mm:ss format.
      * @param {Number} data.limit - Maximum of loaded items.
      * @param {Number} data.offset - How many items should be loaded ahead.
-     * @param {Array.<MessageCategory>} data.messageCategory - ID of message category
+     * @param {Object} data.messageCategory - ID of message category
      * @param {Boolean} data.useStatusChangeDate - True, if 'from' and 'to' parameters should resolve to the Status Change date. To resolve to the creation date - false
      * @param {NotificationType} data.notificationType - 
      * @return {Promise}
@@ -1761,7 +1903,7 @@ class Log extends ApiCallAbstarct {
     /**
      * Retry sending of temporarily not delivered message.
      * @name RetryNow
-     * @memberof Log
+     * @method Log#RetryNow
      * @param {Object} data - data object.
      * @param {String} data.msgID - ID number of selected message.
      * @return {Promise}
@@ -1773,7 +1915,7 @@ class Log extends ApiCallAbstarct {
     /**
      * Loads summary information about activity in chosen date range.
      * @name Summary
-     * @memberof Log
+     * @method Log#Summary
      * @param {Object} data - data object.
      * @param {Date} data.from - Starting date for search in YYYY-MM-DDThh:mm:ss format.
      * @param {Date} data.to - Ending date for search in YYYY-MM-DDThh:mm:ss format.
@@ -1788,9 +1930,13 @@ class Log extends ApiCallAbstarct {
 }
 
 /**
-/* @class Segment
+* @class Segment
+* @extends ApiCallAbstarct
 */
 class Segment extends ApiCallAbstarct {
+     /**
+     * @constructs Segment
+     */
     constructor(opt) {
         super(opt);
     }
@@ -1798,7 +1944,7 @@ class Segment extends ApiCallAbstarct {
     /**
      * Create new segment, based on specified RULE.
      * @name Add
-     * @memberof Segment
+     * @method Segment#Add
      * @param {Object} data - data object.
      * @param {String} data.segmentName - Name of your segment.
      * @param {String} data.rule - Query used for filtering.
@@ -1811,7 +1957,7 @@ class Segment extends ApiCallAbstarct {
     /**
      * Copy your existing Segment with the optional new rule and custom name
      * @name Copy
-     * @memberof Segment
+     * @method Segment#Copy
      * @param {Object} data - data object.
      * @param {String} data.sourceSegmentName - The name of the segment you want to copy
      * @param {String} data.newSegmentName - New name of your segment if you want to change it.
@@ -1825,7 +1971,7 @@ class Segment extends ApiCallAbstarct {
     /**
      * Delete existing segment.
      * @name Delete
-     * @memberof Segment
+     * @method Segment#Delete
      * @param {Object} data - data object.
      * @param {String} data.segmentName - Name of your segment.
      * @return {Promise}
@@ -1837,7 +1983,7 @@ class Segment extends ApiCallAbstarct {
     /**
      * Exports all the contacts from the provided segment
      * @name Export
-     * @memberof Segment
+     * @method Segment#Export
      * @param {Object} data - data object.
      * @param {String} data.segmentName - Name of your segment.
      * @param {ExportFileFormats} data.fileFormat - Format of the exported file
@@ -1852,7 +1998,7 @@ class Segment extends ApiCallAbstarct {
     /**
      * Lists all your available Segments
      * @name List
-     * @memberof Segment
+     * @method Segment#List
      * @param {Object} data - data object.
      * @param {Boolean} data.includeHistory - True: Include history of last 30 days. Otherwise, false.
      * @param {Date} data.from - From what date should the segment history be shown. In YYYY-MM-DDThh:mm:ss format.
@@ -1866,9 +2012,9 @@ class Segment extends ApiCallAbstarct {
     /**
      * Lists your available Segments using the provided names
      * @name LoadByName
-     * @memberof Segment
+     * @method Segment#LoadByName
      * @param {Object} data - data object.
-     * @param {Array.<String>} data.segmentNames - Names of segments you want to load. Will load all contacts if left empty or the 'All Contacts' name has been provided
+     * @param {Object} data.segmentNames - Names of segments you want to load. Will load all contacts if left empty or the 'All Contacts' name has been provided
      * @param {Boolean} data.includeHistory - True: Include history of last 30 days. Otherwise, false.
      * @param {Date} data.from - From what date should the segment history be shown. In YYYY-MM-DDThh:mm:ss format.
      * @param {Date} data.to - To what date should the segment history be shown. In YYYY-MM-DDThh:mm:ss format.
@@ -1881,7 +2027,7 @@ class Segment extends ApiCallAbstarct {
     /**
      * Rename or change RULE for your segment
      * @name Update
-     * @memberof Segment
+     * @method Segment#Update
      * @param {Object} data - data object.
      * @param {String} data.segmentName - Name of your segment.
      * @param {String} data.newSegmentName - New name of your segment if you want to change it.
@@ -1894,9 +2040,13 @@ class Segment extends ApiCallAbstarct {
 }
 
 /**
-/* @class Sms
+* @class Sms
+* @extends ApiCallAbstarct
 */
 class Sms extends ApiCallAbstarct {
+     /**
+     * @constructs Sms
+     */
     constructor(opt) {
         super(opt);
     }
@@ -1904,7 +2054,7 @@ class Sms extends ApiCallAbstarct {
     /**
      * Send a short SMS Message (maximum of 1600 characters) to any mobile phone.
      * @name Send
-     * @memberof Sms
+     * @method Sms#Send
      * @param {Object} data - data object.
      * @param {String} data.to - Mobile number you want to message. Can be any valid mobile number in E.164 format. To provide the country code you need to provide "+" before the number.  If your URL is not encoded then you need to replace the "+" with "%2B" instead.
      * @param {String} data.body - Body of your message. The maximum body length is 160 characters.  If the message body is greater than 160 characters it is split into multiple messages and you are charged per message for the number of message required to send your length
@@ -1916,9 +2066,13 @@ class Sms extends ApiCallAbstarct {
 }
 
 /**
-/* @class Survey
+* @class Survey
+* @extends ApiCallAbstarct
 */
 class Survey extends ApiCallAbstarct {
+     /**
+     * @constructs Survey
+     */
     constructor(opt) {
         super(opt);
     }
@@ -1926,7 +2080,7 @@ class Survey extends ApiCallAbstarct {
     /**
      * Adds a new survey
      * @name Add
-     * @memberof Survey
+     * @method Survey#Add
      * @param {Object} data - data object.
      * @param {Survey} data.survey - Json representation of a survey
      * @return {Promise}
@@ -1938,7 +2092,7 @@ class Survey extends ApiCallAbstarct {
     /**
      * Deletes the survey
      * @name Delete
-     * @memberof Survey
+     * @method Survey#Delete
      * @param {Object} data - data object.
      * @param {String} data.publicSurveyID - Survey identifier
      * @return {Promise}
@@ -1950,7 +2104,7 @@ class Survey extends ApiCallAbstarct {
     /**
      * Export given survey's data to provided format
      * @name Export
-     * @memberof Survey
+     * @method Survey#Export
      * @param {Object} data - data object.
      * @param {String} data.publicSurveyID - Survey identifier
      * @param {String} data.fileName - Name of your file.
@@ -1965,7 +2119,7 @@ class Survey extends ApiCallAbstarct {
     /**
      * Shows all your existing surveys
      * @name List
-     * @memberof Survey
+     * @method Survey#List
      * @param {Object} data - data object.
 
      * @return {Promise}
@@ -1977,7 +2131,7 @@ class Survey extends ApiCallAbstarct {
     /**
      * Get list of personal answers for the specific survey
      * @name LoadResponseList
-     * @memberof Survey
+     * @method Survey#LoadResponseList
      * @param {Object} data - data object.
      * @param {String} data.publicSurveyID - Survey identifier
      * @return {Promise}
@@ -1989,7 +2143,7 @@ class Survey extends ApiCallAbstarct {
     /**
      * Get general results of the specific survey
      * @name LoadResults
-     * @memberof Survey
+     * @method Survey#LoadResults
      * @param {Object} data - data object.
      * @param {String} data.publicSurveyID - Survey identifier
      * @return {Promise}
@@ -2001,7 +2155,7 @@ class Survey extends ApiCallAbstarct {
     /**
      * Update the survey information
      * @name Update
-     * @memberof Survey
+     * @method Survey#Update
      * @param {Object} data - data object.
      * @param {Survey} data.survey - Json representation of a survey
      * @return {Promise}
@@ -2012,9 +2166,13 @@ class Survey extends ApiCallAbstarct {
 }
 
 /**
-/* @class Template
+* @class Template
+* @extends ApiCallAbstarct
 */
 class Template extends ApiCallAbstarct {
+     /**
+     * @constructs Template
+     */
     constructor(opt) {
         super(opt);
     }
@@ -2022,7 +2180,7 @@ class Template extends ApiCallAbstarct {
     /**
      * Create new Template. Needs to be sent using POST method
      * @name Add
-     * @memberof Template
+     * @method Template#Add
      * @param {Object} data - data object.
      * @param {String} data.name - Filename
      * @param {String} data.subject - Default subject of email.
@@ -2043,7 +2201,7 @@ class Template extends ApiCallAbstarct {
     /**
      * Check if template is used by campaign.
      * @name CheckUsage
-     * @memberof Template
+     * @method Template#CheckUsage
      * @param {Object} data - data object.
      * @param {Number} data.templateID - ID number of template.
      * @return {Promise}
@@ -2055,7 +2213,7 @@ class Template extends ApiCallAbstarct {
     /**
      * Copy Selected Template
      * @name Copy
-     * @memberof Template
+     * @method Template#Copy
      * @param {Object} data - data object.
      * @param {Number} data.templateID - ID number of template.
      * @param {String} data.name - Filename
@@ -2071,7 +2229,7 @@ class Template extends ApiCallAbstarct {
     /**
      * Delete template with the specified ID
      * @name Delete
-     * @memberof Template
+     * @method Template#Delete
      * @param {Object} data - data object.
      * @param {Number} data.templateID - ID number of template.
      * @return {Promise}
@@ -2083,7 +2241,7 @@ class Template extends ApiCallAbstarct {
     /**
      * Search for references to images and replaces them with base64 code.
      * @name GetEmbeddedHtml
-     * @memberof Template
+     * @method Template#GetEmbeddedHtml
      * @param {Object} data - data object.
      * @param {Number} data.templateID - ID number of template.
      * @return {Promise}
@@ -2095,7 +2253,7 @@ class Template extends ApiCallAbstarct {
     /**
      * Lists your templates
      * @name GetList
-     * @memberof Template
+     * @method Template#GetList
      * @param {Object} data - data object.
      * @param {Number} data.limit - Maximum of loaded items.
      * @param {Number} data.offset - How many items should be loaded ahead.
@@ -2108,7 +2266,7 @@ class Template extends ApiCallAbstarct {
     /**
      * Load template with content
      * @name LoadTemplate
-     * @memberof Template
+     * @method Template#LoadTemplate
      * @param {Object} data - data object.
      * @param {Number} data.templateID - ID number of template.
      * @param {Boolean} data.ispublic - 
@@ -2121,19 +2279,19 @@ class Template extends ApiCallAbstarct {
     /**
      * Removes previously generated screenshot of template
      * @name RemoveScreenshot
-     * @memberof Template
+     * @method Template#RemoveScreenshot
      * @param {Object} data - data object.
      * @param {Number} data.templateID - ID number of template.
      * @return {Promise}
      */
      RemoveScreenshot(data) {
         return this._makeCall('/template/removescreenshot', data, 'POST');
-    }
+    } 
 
     /**
      * Saves screenshot of chosen Template
      * @name SaveScreenshot
-     * @memberof Template
+     * @method Template#SaveScreenshot
      * @param {Object} data - data object.
      * @param {String} data.base64Image - Image, base64 coded.
      * @param {Number} data.templateID - ID number of template.
@@ -2146,7 +2304,7 @@ class Template extends ApiCallAbstarct {
     /**
      * Update existing template, overwriting existing data. Needs to be sent using POST method.
      * @name Update
-     * @memberof Template
+     * @method Template#Update
      * @param {Object} data - data object.
      * @param {Number} data.templateID - ID number of template.
      * @param {TemplateScope} data.templateScope - Enum: 0 - private, 1 - public, 2 - mockup

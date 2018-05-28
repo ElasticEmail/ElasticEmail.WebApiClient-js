@@ -31,9 +31,16 @@
 		<ul class="nav navbar-nav">
 			
 			<li class="dropdown">
+				<a href="modules.list.html" class="dropdown-toggle" data-toggle="dropdown">Modules<b class="caret"></b></a>
+				<ul class="dropdown-menu ">
+					<li><a href="module-EEAPI.html">EEAPI</a></li>
+				</ul>
+			</li>
+			
+			<li class="dropdown">
 				<a href="classes.list.html" class="dropdown-toggle" data-toggle="dropdown">Classes<b class="caret"></b></a>
 				<ul class="dropdown-menu ">
-					<li><a href="Account.html">Account</a></li><li><a href="Campaign.html">Campaign</a></li><li><a href="Channel.html">Channel</a></li><li><a href="Contact.html">Contact</a></li><li><a href="Domain.html">Domain</a></li><li><a href="Email.html">Email</a></li><li><a href="Export.html">Export</a></li><li><a href="File.html">File</a></li><li><a href="List.html">List</a></li><li><a href="Log.html">Log</a></li><li><a href="Segment.html">Segment</a></li><li><a href="Sms.html">Sms</a></li><li><a href="Survey.html">Survey</a></li><li><a href="Template.html">Template</a></li>
+					<li><a href="Accesstoken.html">Accesstoken</a></li><li><a href="Account.html">Account</a></li><li><a href="ApiCallAbstarct.html">ApiCallAbstarct</a></li><li><a href="Campaign.html">Campaign</a></li><li><a href="Channel.html">Channel</a></li><li><a href="Contact.html">Contact</a></li><li><a href="Domain.html">Domain</a></li><li><a href="EEAPI.html">EEAPI</a></li><li><a href="Email.html">Email</a></li><li><a href="Export.html">Export</a></li><li><a href="File.html">File</a></li><li><a href="List.html">List</a></li><li><a href="Log.html">Log</a></li><li><a href="module-EEAPI-Accesstoken.html">EEAPI~Accesstoken</a></li><li><a href="module-EEAPI-Account.html">EEAPI~Account</a></li><li><a href="module-EEAPI-ApiCallAbstarct.html">EEAPI~ApiCallAbstarct</a></li><li><a href="module-EEAPI-Campaign.html">EEAPI~Campaign</a></li><li><a href="module-EEAPI-Channel.html">EEAPI~Channel</a></li><li><a href="module-EEAPI-Contact.html">EEAPI~Contact</a></li><li><a href="module-EEAPI-Domain.html">EEAPI~Domain</a></li><li><a href="module-EEAPI-Email.html">EEAPI~Email</a></li><li><a href="module-EEAPI-Export.html">EEAPI~Export</a></li><li><a href="module-EEAPI-File.html">EEAPI~File</a></li><li><a href="module-EEAPI-List.html">EEAPI~List</a></li><li><a href="module-EEAPI-Log.html">EEAPI~Log</a></li><li><a href="module-EEAPI-Segment.html">EEAPI~Segment</a></li><li><a href="module-EEAPI-Sms.html">EEAPI~Sms</a></li><li><a href="module-EEAPI-Survey.html">EEAPI~Survey</a></li><li><a href="module-EEAPI-Template.html">EEAPI~Template</a></li><li><a href="Segment.html">Segment</a></li><li><a href="Sms.html">Sms</a></li><li><a href="Survey.html">Survey</a></li><li><a href="Template.html">Template</a></li>
 				</ul>
 			</li>
 			
@@ -73,8 +80,6 @@
         <h2>
         Email
         </h2>
-        
-            <div class="class-description"><p>/* @class Email</p></div>
         
     
 </header>
@@ -170,17 +175,20 @@
     
 
     
-        <h3 class="subsection-title">Members</h3>
+
+    
+        <h3 class="subsection-title">Methods</h3>
 
         <dl>
             
 <hr>
-<dt class="name" id=".GetStatus">
-    <h4 id=".GetStatus"><span class="type-signature">&lt;static> </span>GetStatus<span class="type-signature"></span></h4>
-
+<dt>
+    <h4 class="name" id="GetStatus"><span class="type-signature"></span>GetStatus(data)</h4>
+    
     
 </dt>
 <dd>
+
     
     <div class="description">
         <p>Get email batch status</p>
@@ -190,6 +198,351 @@
     
 
     
+
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>data</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>data object.</p>
+                <h6 class="method-params-label method-subparams-label">Properties</h6>
+                
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>transactionID</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Transaction identifier</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>showFailed</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Boolean</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Include Bounced email addresses.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>showSent</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Boolean</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Include Sent email addresses.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>showDelivered</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Boolean</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Include all delivered email addresses.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>showPending</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Boolean</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Include Ready to send email addresses.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>showOpened</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Boolean</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Include Opened email addresses.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>showClicked</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Boolean</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Include Clicked email addresses.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>showAbuse</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Boolean</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Include Reported as abuse email addresses.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>showUnsubscribed</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Boolean</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Include Unsubscribed email addresses.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>showErrors</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Boolean</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Include error messages for bounced emails.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>showMessageIDs</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Boolean</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Include all MessageIDs for this transaction</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+            </td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
 <dl class="details">
     
 
@@ -230,17 +583,50 @@
 
 
     
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Returns:</h5>
+    
+            
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Promise</span>
+
+
+
+    </dd>
+</dl>
+
+
+        
+
+    
 </dd>
 
         
             
 <hr>
-<dt class="name" id=".Send">
-    <h4 id=".Send"><span class="type-signature">&lt;static> </span>Send<span class="type-signature"></span></h4>
-
+<dt>
+    <h4 class="name" id="Send"><span class="type-signature"></span>Send(data)</h4>
+    
     
 </dt>
 <dd>
+
     
     <div class="description">
         <p>Submit emails. The HTTP POST request is suggested. The default, maximum (accepted by us) size of an email is 10 MB in total, with or without attachments included. For suggested implementations please refer to https://elasticemail.com/support/http-api/</p>
@@ -250,6 +636,927 @@
     
 
     
+
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>data</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>data object.</p>
+                <h6 class="method-params-label method-subparams-label">Properties</h6>
+                
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>subject</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Email subject</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>from</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>From email address</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>fromName</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Display name for from email address</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>sender</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Email address of the sender</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>senderName</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Display name sender</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>msgFrom</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Optional parameter. Sets FROM MIME header.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>msgFromName</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Optional parameter. Sets FROM name of MIME header.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>replyTo</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Email address to reply to</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>replyToName</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Display name of the reply to address</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>to</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>List of email recipients (each email is treated separately, like a BCC). Separated by comma or semicolon. We suggest using the &quot;msgTo&quot; parameter if backward compatibility with API version 1 is not a must.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>msgTo</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Optional parameter. Will be ignored if the 'to' parameter is also provided. List of email recipients (visible to all other recipients of the message as TO MIME header). Separated by comma or semicolon.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>msgCC</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Optional parameter. Will be ignored if the 'to' parameter is also provided. List of email recipients (visible to all other recipients of the message as CC MIME header). Separated by comma or semicolon.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>msgBcc</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Optional parameter. Will be ignored if the 'to' parameter is also provided. List of email recipients (each email is treated seperately). Separated by comma or semicolon.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>lists</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The name of a contact list you would like to send to. Separate multiple contact lists by commas or semicolons.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>segments</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The name of a segment you would like to send to. Separate multiple segments by comma or semicolon. Insert &quot;0&quot; for all Active contacts.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>mergeSourceFilename</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>File name one of attachments which is a CSV list of Recipients.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>dataSource</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Name or ID of the previously uploaded file which should be a CSV list of Recipients.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>channel</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>An ID field (max 191 chars) that can be used for reporting [will default to HTTP API or SMTP API]</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>bodyHtml</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Html email body</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>bodyText</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Text email body</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>charset</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Text value of charset encoding for example: iso-8859-1, windows-1251, utf-8, us-ascii, windows-1250 and more…</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>charsetBodyHtml</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Sets charset for body html MIME part (overrides default value from charset parameter)</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>charsetBodyText</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Sets charset for body text MIME part (overrides default value from charset parameter)</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>encodingType</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">EncodingType</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>0 for None, 1 for Raw7Bit, 2 for Raw8Bit, 3 for QuotedPrintable, 4 for Base64 (Default), 5 for Uue  note that you can also provide the text version such as &quot;Raw7Bit&quot; for value 1.  NOTE: Base64 or QuotedPrintable is recommended if you are validating your domain(s) with DKIM.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>template</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The ID of an email template you have created in your account.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>attachmentFiles</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Attachment files. These files should be provided with the POST multipart file upload, not directly in the request's URL. Can also include merge CSV file</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>headers</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Optional Custom Headers. Request parameters prefixed by headers_ like headers_customheader1, headers_customheader2. Note: a space is required after the colon before the custom header value. headers_xmailer=xmailer: header-value1</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>postBack</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Optional header returned in notifications.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>merge</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Request parameters prefixed by merge_ like merge_firstname, merge_lastname. If sending to a template you can send merge_ fields to merge data with the template. Template fields are entered with {firstname}, {lastname} etc.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>timeOffSetMinutes</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Number of minutes in the future this email should be sent up to a maximum of 1 year (524160 minutes)</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>poolName</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Name of your custom IP Pool to be used in the sending process</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>isTransactional</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Boolean</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>True, if email is transactional (non-bulk, non-marketing, non-commercial). Otherwise, false</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>attachments</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Names or IDs of attachments previously uploaded to your account that should be sent with this e-mail.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>trackOpens</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Boolean</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Should the opens be tracked? If no value has been provided, account's default setting will be used.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>trackClicks</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Boolean</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Should the clicks be tracked? If no value has been provided, account's default setting will be used.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+            </td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
 <dl class="details">
     
 
@@ -290,17 +1597,50 @@
 
 
     
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Returns:</h5>
+    
+            
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Promise</span>
+
+
+
+    </dd>
+</dl>
+
+
+        
+
+    
 </dd>
 
         
             
 <hr>
-<dt class="name" id=".Status">
-    <h4 id=".Status"><span class="type-signature">&lt;static> </span>Status<span class="type-signature"></span></h4>
-
+<dt>
+    <h4 class="name" id="Status"><span class="type-signature"></span>Status(data)</h4>
+    
     
 </dt>
 <dd>
+
     
     <div class="description">
         <p>Detailed status of a unique email sent through your account. Returns a 'Email has expired and the status is unknown.' error, if the email has not been fully processed yet.</p>
@@ -310,6 +1650,111 @@
     
 
     
+
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>data</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>data object.</p>
+                <h6 class="method-params-label method-subparams-label">Properties</h6>
+                
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>messageID</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Unique identifier for this email.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+            </td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
 <dl class="details">
     
 
@@ -350,17 +1795,50 @@
 
 
     
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Returns:</h5>
+    
+            
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Promise</span>
+
+
+
+    </dd>
+</dl>
+
+
+        
+
+    
 </dd>
 
         
             
 <hr>
-<dt class="name" id=".View">
-    <h4 id=".View"><span class="type-signature">&lt;static> </span>View<span class="type-signature"></span></h4>
-
+<dt>
+    <h4 class="name" id="View"><span class="type-signature"></span>View(data)</h4>
+    
     
 </dt>
 <dd>
+
     
     <div class="description">
         <p>View email</p>
@@ -370,6 +1848,111 @@
     
 
     
+
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>data</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>data object.</p>
+                <h6 class="method-params-label method-subparams-label">Properties</h6>
+                
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>messageID</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Message identifier</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+            </td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
 <dl class="details">
     
 
@@ -410,11 +1993,41 @@
 
 
     
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Returns:</h5>
+    
+            
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Promise</span>
+
+
+
+    </dd>
+</dl>
+
+
+        
+
+    
 </dd>
 
         </dl>
-    
-
     
 
     
@@ -464,7 +2077,7 @@
 <span class="jsdoc-message">
 	Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a>
 	
-		on May 17th 2018, 3:46:08 pm
+		on May 28th 2018, 12:37:28 pm
 	
 	using the <a href="https://github.com/docstrap/docstrap">DocStrap template</a>.
 </span>

@@ -31,9 +31,16 @@
 		<ul class="nav navbar-nav">
 			
 			<li class="dropdown">
+				<a href="modules.list.html" class="dropdown-toggle" data-toggle="dropdown">Modules<b class="caret"></b></a>
+				<ul class="dropdown-menu ">
+					<li><a href="module-EEAPI.html">EEAPI</a></li>
+				</ul>
+			</li>
+			
+			<li class="dropdown">
 				<a href="classes.list.html" class="dropdown-toggle" data-toggle="dropdown">Classes<b class="caret"></b></a>
 				<ul class="dropdown-menu ">
-					<li><a href="Account.html">Account</a></li><li><a href="Campaign.html">Campaign</a></li><li><a href="Channel.html">Channel</a></li><li><a href="Contact.html">Contact</a></li><li><a href="Domain.html">Domain</a></li><li><a href="Email.html">Email</a></li><li><a href="Export.html">Export</a></li><li><a href="File.html">File</a></li><li><a href="List.html">List</a></li><li><a href="Log.html">Log</a></li><li><a href="Segment.html">Segment</a></li><li><a href="Sms.html">Sms</a></li><li><a href="Survey.html">Survey</a></li><li><a href="Template.html">Template</a></li>
+					<li><a href="Accesstoken.html">Accesstoken</a></li><li><a href="Account.html">Account</a></li><li><a href="ApiCallAbstarct.html">ApiCallAbstarct</a></li><li><a href="Campaign.html">Campaign</a></li><li><a href="Channel.html">Channel</a></li><li><a href="Contact.html">Contact</a></li><li><a href="Domain.html">Domain</a></li><li><a href="EEAPI.html">EEAPI</a></li><li><a href="Email.html">Email</a></li><li><a href="Export.html">Export</a></li><li><a href="File.html">File</a></li><li><a href="List.html">List</a></li><li><a href="Log.html">Log</a></li><li><a href="module-EEAPI-Accesstoken.html">EEAPI~Accesstoken</a></li><li><a href="module-EEAPI-Account.html">EEAPI~Account</a></li><li><a href="module-EEAPI-ApiCallAbstarct.html">EEAPI~ApiCallAbstarct</a></li><li><a href="module-EEAPI-Campaign.html">EEAPI~Campaign</a></li><li><a href="module-EEAPI-Channel.html">EEAPI~Channel</a></li><li><a href="module-EEAPI-Contact.html">EEAPI~Contact</a></li><li><a href="module-EEAPI-Domain.html">EEAPI~Domain</a></li><li><a href="module-EEAPI-Email.html">EEAPI~Email</a></li><li><a href="module-EEAPI-Export.html">EEAPI~Export</a></li><li><a href="module-EEAPI-File.html">EEAPI~File</a></li><li><a href="module-EEAPI-List.html">EEAPI~List</a></li><li><a href="module-EEAPI-Log.html">EEAPI~Log</a></li><li><a href="module-EEAPI-Segment.html">EEAPI~Segment</a></li><li><a href="module-EEAPI-Sms.html">EEAPI~Sms</a></li><li><a href="module-EEAPI-Survey.html">EEAPI~Survey</a></li><li><a href="module-EEAPI-Template.html">EEAPI~Template</a></li><li><a href="Segment.html">Segment</a></li><li><a href="Sms.html">Sms</a></li><li><a href="Survey.html">Survey</a></li><li><a href="Template.html">Template</a></li>
 				</ul>
 			</li>
 			
@@ -73,8 +80,6 @@
         <h2>
         Template
         </h2>
-        
-            <div class="class-description"><p>/* @class Template</p></div>
         
     
 </header>
@@ -170,17 +175,20 @@
     
 
     
-        <h3 class="subsection-title">Members</h3>
+
+    
+        <h3 class="subsection-title">Methods</h3>
 
         <dl>
             
 <hr>
-<dt class="name" id=".Add">
-    <h4 id=".Add"><span class="type-signature">&lt;static> </span>Add<span class="type-signature"></span></h4>
-
+<dt>
+    <h4 class="name" id="Add"><span class="type-signature"></span>Add(data)</h4>
+    
     
 </dt>
 <dd>
+
     
     <div class="description">
         <p>Create new Template. Needs to be sent using POST method</p>
@@ -190,6 +198,327 @@
     
 
     
+
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>data</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>data object.</p>
+                <h6 class="method-params-label method-subparams-label">Properties</h6>
+                
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>name</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Filename</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>subject</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Default subject of email.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>fromEmail</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Default From: email address.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>fromName</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Default From: name.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>templateType</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">TemplateType</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>0 for API connections</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>templateScope</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">TemplateScope</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Enum: 0 - private, 1 - public, 2 - mockup</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>bodyHtml</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>HTML code of email (needs escaping).</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>bodyText</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Text body of email.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>css</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>CSS style</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>originalTemplateID</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>ID number of original template.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+            </td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
 <dl class="details">
     
 
@@ -230,17 +559,50 @@
 
 
     
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Returns:</h5>
+    
+            
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Promise</span>
+
+
+
+    </dd>
+</dl>
+
+
+        
+
+    
 </dd>
 
         
             
 <hr>
-<dt class="name" id=".CheckUsage">
-    <h4 id=".CheckUsage"><span class="type-signature">&lt;static> </span>CheckUsage<span class="type-signature"></span></h4>
-
+<dt>
+    <h4 class="name" id="CheckUsage"><span class="type-signature"></span>CheckUsage(data)</h4>
+    
     
 </dt>
 <dd>
+
     
     <div class="description">
         <p>Check if template is used by campaign.</p>
@@ -250,6 +612,111 @@
     
 
     
+
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>data</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>data object.</p>
+                <h6 class="method-params-label method-subparams-label">Properties</h6>
+                
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>templateID</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>ID number of template.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+            </td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
 <dl class="details">
     
 
@@ -290,17 +757,50 @@
 
 
     
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Returns:</h5>
+    
+            
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Promise</span>
+
+
+
+    </dd>
+</dl>
+
+
+        
+
+    
 </dd>
 
         
             
 <hr>
-<dt class="name" id=".Copy">
-    <h4 id=".Copy"><span class="type-signature">&lt;static> </span>Copy<span class="type-signature"></span></h4>
-
+<dt>
+    <h4 class="name" id="Copy"><span class="type-signature"></span>Copy(data)</h4>
+    
     
 </dt>
 <dd>
+
     
     <div class="description">
         <p>Copy Selected Template</p>
@@ -310,6 +810,207 @@
     
 
     
+
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>data</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>data object.</p>
+                <h6 class="method-params-label method-subparams-label">Properties</h6>
+                
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>templateID</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>ID number of template.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>name</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Filename</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>subject</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Default subject of email.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>fromEmail</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Default From: email address.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>fromName</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Default From: name.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+            </td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
 <dl class="details">
     
 
@@ -350,17 +1051,50 @@
 
 
     
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Returns:</h5>
+    
+            
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Promise</span>
+
+
+
+    </dd>
+</dl>
+
+
+        
+
+    
 </dd>
 
         
             
 <hr>
-<dt class="name" id=".Delete">
-    <h4 id=".Delete"><span class="type-signature">&lt;static> </span>Delete<span class="type-signature"></span></h4>
-
+<dt>
+    <h4 class="name" id="Delete"><span class="type-signature"></span>Delete(data)</h4>
+    
     
 </dt>
 <dd>
+
     
     <div class="description">
         <p>Delete template with the specified ID</p>
@@ -370,6 +1104,111 @@
     
 
     
+
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>data</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>data object.</p>
+                <h6 class="method-params-label method-subparams-label">Properties</h6>
+                
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>templateID</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>ID number of template.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+            </td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
 <dl class="details">
     
 
@@ -410,17 +1249,50 @@
 
 
     
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Returns:</h5>
+    
+            
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Promise</span>
+
+
+
+    </dd>
+</dl>
+
+
+        
+
+    
 </dd>
 
         
             
 <hr>
-<dt class="name" id=".GetEmbeddedHtml">
-    <h4 id=".GetEmbeddedHtml"><span class="type-signature">&lt;static> </span>GetEmbeddedHtml<span class="type-signature"></span></h4>
-
+<dt>
+    <h4 class="name" id="GetEmbeddedHtml"><span class="type-signature"></span>GetEmbeddedHtml(data)</h4>
+    
     
 </dt>
 <dd>
+
     
     <div class="description">
         <p>Search for references to images and replaces them with base64 code.</p>
@@ -430,6 +1302,111 @@
     
 
     
+
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>data</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>data object.</p>
+                <h6 class="method-params-label method-subparams-label">Properties</h6>
+                
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>templateID</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>ID number of template.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+            </td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
 <dl class="details">
     
 
@@ -470,17 +1447,50 @@
 
 
     
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Returns:</h5>
+    
+            
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Promise</span>
+
+
+
+    </dd>
+</dl>
+
+
+        
+
+    
 </dd>
 
         
             
 <hr>
-<dt class="name" id=".GetList">
-    <h4 id=".GetList"><span class="type-signature">&lt;static> </span>GetList<span class="type-signature"></span></h4>
-
+<dt>
+    <h4 class="name" id="GetList"><span class="type-signature"></span>GetList(data)</h4>
+    
     
 </dt>
 <dd>
+
     
     <div class="description">
         <p>Lists your templates</p>
@@ -490,6 +1500,135 @@
     
 
     
+
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>data</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>data object.</p>
+                <h6 class="method-params-label method-subparams-label">Properties</h6>
+                
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>limit</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Maximum of loaded items.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>offset</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>How many items should be loaded ahead.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+            </td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
 <dl class="details">
     
 
@@ -530,17 +1669,50 @@
 
 
     
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Returns:</h5>
+    
+            
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Promise</span>
+
+
+
+    </dd>
+</dl>
+
+
+        
+
+    
 </dd>
 
         
             
 <hr>
-<dt class="name" id=".LoadTemplate">
-    <h4 id=".LoadTemplate"><span class="type-signature">&lt;static> </span>LoadTemplate<span class="type-signature"></span></h4>
-
+<dt>
+    <h4 class="name" id="LoadTemplate"><span class="type-signature"></span>LoadTemplate(data)</h4>
+    
     
 </dt>
 <dd>
+
     
     <div class="description">
         <p>Load template with content</p>
@@ -550,6 +1722,135 @@
     
 
     
+
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>data</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>data object.</p>
+                <h6 class="method-params-label method-subparams-label">Properties</h6>
+                
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>templateID</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>ID number of template.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>ispublic</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Boolean</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>-</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+            </td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
 <dl class="details">
     
 
@@ -590,17 +1891,50 @@
 
 
     
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Returns:</h5>
+    
+            
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Promise</span>
+
+
+
+    </dd>
+</dl>
+
+
+        
+
+    
 </dd>
 
         
             
 <hr>
-<dt class="name" id=".RemoveScreenshot">
-    <h4 id=".RemoveScreenshot"><span class="type-signature">&lt;static> </span>RemoveScreenshot<span class="type-signature"></span></h4>
-
+<dt>
+    <h4 class="name" id="RemoveScreenshot"><span class="type-signature"></span>RemoveScreenshot(data)</h4>
+    
     
 </dt>
 <dd>
+
     
     <div class="description">
         <p>Removes previously generated screenshot of template</p>
@@ -610,6 +1944,111 @@
     
 
     
+
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>data</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>data object.</p>
+                <h6 class="method-params-label method-subparams-label">Properties</h6>
+                
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>templateID</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>ID number of template.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+            </td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
 <dl class="details">
     
 
@@ -650,17 +2089,50 @@
 
 
     
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Returns:</h5>
+    
+            
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Promise</span>
+
+
+
+    </dd>
+</dl>
+
+
+        
+
+    
 </dd>
 
         
             
 <hr>
-<dt class="name" id=".SaveScreenshot">
-    <h4 id=".SaveScreenshot"><span class="type-signature">&lt;static> </span>SaveScreenshot<span class="type-signature"></span></h4>
-
+<dt>
+    <h4 class="name" id="SaveScreenshot"><span class="type-signature"></span>SaveScreenshot(data)</h4>
+    
     
 </dt>
 <dd>
+
     
     <div class="description">
         <p>Saves screenshot of chosen Template</p>
@@ -670,6 +2142,135 @@
     
 
     
+
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>data</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>data object.</p>
+                <h6 class="method-params-label method-subparams-label">Properties</h6>
+                
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>base64Image</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Image, base64 coded.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>templateID</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>ID number of template.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+            </td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
 <dl class="details">
     
 
@@ -710,17 +2311,50 @@
 
 
     
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Returns:</h5>
+    
+            
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Promise</span>
+
+
+
+    </dd>
+</dl>
+
+
+        
+
+    
 </dd>
 
         
             
 <hr>
-<dt class="name" id=".Update">
-    <h4 id=".Update"><span class="type-signature">&lt;static> </span>Update<span class="type-signature"></span></h4>
-
+<dt>
+    <h4 class="name" id="Update"><span class="type-signature"></span>Update(data)</h4>
+    
     
 </dt>
 <dd>
+
     
     <div class="description">
         <p>Update existing template, overwriting existing data. Needs to be sent using POST method.</p>
@@ -730,6 +2364,327 @@
     
 
     
+
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>data</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>data object.</p>
+                <h6 class="method-params-label method-subparams-label">Properties</h6>
+                
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>templateID</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>ID number of template.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>templateScope</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">TemplateScope</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Enum: 0 - private, 1 - public, 2 - mockup</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>name</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Filename</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>subject</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Default subject of email.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>fromEmail</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Default From: email address.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>fromName</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Default From: name.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>bodyHtml</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>HTML code of email (needs escaping).</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>bodyText</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Text body of email.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>css</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>CSS style</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>removeScreenshot</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Boolean</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>-</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+            </td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
 <dl class="details">
     
 
@@ -770,11 +2725,41 @@
 
 
     
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Returns:</h5>
+    
+            
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Promise</span>
+
+
+
+    </dd>
+</dl>
+
+
+        
+
+    
 </dd>
 
         </dl>
-    
-
     
 
     
@@ -824,7 +2809,7 @@
 <span class="jsdoc-message">
 	Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a>
 	
-		on May 17th 2018, 3:46:08 pm
+		on May 28th 2018, 12:37:28 pm
 	
 	using the <a href="https://github.com/docstrap/docstrap">DocStrap template</a>.
 </span>

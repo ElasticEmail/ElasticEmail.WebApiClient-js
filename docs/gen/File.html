@@ -31,9 +31,16 @@
 		<ul class="nav navbar-nav">
 			
 			<li class="dropdown">
+				<a href="modules.list.html" class="dropdown-toggle" data-toggle="dropdown">Modules<b class="caret"></b></a>
+				<ul class="dropdown-menu ">
+					<li><a href="module-EEAPI.html">EEAPI</a></li>
+				</ul>
+			</li>
+			
+			<li class="dropdown">
 				<a href="classes.list.html" class="dropdown-toggle" data-toggle="dropdown">Classes<b class="caret"></b></a>
 				<ul class="dropdown-menu ">
-					<li><a href="Account.html">Account</a></li><li><a href="Campaign.html">Campaign</a></li><li><a href="Channel.html">Channel</a></li><li><a href="Contact.html">Contact</a></li><li><a href="Domain.html">Domain</a></li><li><a href="Email.html">Email</a></li><li><a href="Export.html">Export</a></li><li><a href="File.html">File</a></li><li><a href="List.html">List</a></li><li><a href="Log.html">Log</a></li><li><a href="Segment.html">Segment</a></li><li><a href="Sms.html">Sms</a></li><li><a href="Survey.html">Survey</a></li><li><a href="Template.html">Template</a></li>
+					<li><a href="Accesstoken.html">Accesstoken</a></li><li><a href="Account.html">Account</a></li><li><a href="ApiCallAbstarct.html">ApiCallAbstarct</a></li><li><a href="Campaign.html">Campaign</a></li><li><a href="Channel.html">Channel</a></li><li><a href="Contact.html">Contact</a></li><li><a href="Domain.html">Domain</a></li><li><a href="EEAPI.html">EEAPI</a></li><li><a href="Email.html">Email</a></li><li><a href="Export.html">Export</a></li><li><a href="File.html">File</a></li><li><a href="List.html">List</a></li><li><a href="Log.html">Log</a></li><li><a href="module-EEAPI-Accesstoken.html">EEAPI~Accesstoken</a></li><li><a href="module-EEAPI-Account.html">EEAPI~Account</a></li><li><a href="module-EEAPI-ApiCallAbstarct.html">EEAPI~ApiCallAbstarct</a></li><li><a href="module-EEAPI-Campaign.html">EEAPI~Campaign</a></li><li><a href="module-EEAPI-Channel.html">EEAPI~Channel</a></li><li><a href="module-EEAPI-Contact.html">EEAPI~Contact</a></li><li><a href="module-EEAPI-Domain.html">EEAPI~Domain</a></li><li><a href="module-EEAPI-Email.html">EEAPI~Email</a></li><li><a href="module-EEAPI-Export.html">EEAPI~Export</a></li><li><a href="module-EEAPI-File.html">EEAPI~File</a></li><li><a href="module-EEAPI-List.html">EEAPI~List</a></li><li><a href="module-EEAPI-Log.html">EEAPI~Log</a></li><li><a href="module-EEAPI-Segment.html">EEAPI~Segment</a></li><li><a href="module-EEAPI-Sms.html">EEAPI~Sms</a></li><li><a href="module-EEAPI-Survey.html">EEAPI~Survey</a></li><li><a href="module-EEAPI-Template.html">EEAPI~Template</a></li><li><a href="Segment.html">Segment</a></li><li><a href="Sms.html">Sms</a></li><li><a href="Survey.html">Survey</a></li><li><a href="Template.html">Template</a></li>
 				</ul>
 			</li>
 			
@@ -73,8 +80,6 @@
         <h2>
         File
         </h2>
-        
-            <div class="class-description"><p>/* @class File</p></div>
         
     
 </header>
@@ -170,17 +175,20 @@
     
 
     
-        <h3 class="subsection-title">Members</h3>
+
+    
+        <h3 class="subsection-title">Methods</h3>
 
         <dl>
             
 <hr>
-<dt class="name" id=".Delete">
-    <h4 id=".Delete"><span class="type-signature">&lt;static> </span>Delete<span class="type-signature"></span></h4>
-
+<dt>
+    <h4 class="name" id="Delete"><span class="type-signature"></span>Delete(data)</h4>
+    
     
 </dt>
 <dd>
+
     
     <div class="description">
         <p>Permanently deletes the file from your account</p>
@@ -190,6 +198,135 @@
     
 
     
+
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>data</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>data object.</p>
+                <h6 class="method-params-label method-subparams-label">Properties</h6>
+                
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>fileID</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>-</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>filename</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Name of your file.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+            </td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
 <dl class="details">
     
 
@@ -230,17 +367,50 @@
 
 
     
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Returns:</h5>
+    
+            
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Promise</span>
+
+
+
+    </dd>
+</dl>
+
+
+        
+
+    
 </dd>
 
         
             
 <hr>
-<dt class="name" id=".Download">
-    <h4 id=".Download"><span class="type-signature">&lt;static> </span>Download<span class="type-signature"></span></h4>
-
+<dt>
+    <h4 class="name" id="Download"><span class="type-signature"></span>Download(data)</h4>
+    
     
 </dt>
 <dd>
+
     
     <div class="description">
         <p>Gets content of the chosen File</p>
@@ -250,6 +420,135 @@
     
 
     
+
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>data</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>data object.</p>
+                <h6 class="method-params-label method-subparams-label">Properties</h6>
+                
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>filename</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Name of your file.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>fileID</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>-</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+            </td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
 <dl class="details">
     
 
@@ -290,17 +589,50 @@
 
 
     
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Returns:</h5>
+    
+            
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Promise</span>
+
+
+
+    </dd>
+</dl>
+
+
+        
+
+    
 </dd>
 
         
             
 <hr>
-<dt class="name" id=".List">
-    <h4 id=".List"><span class="type-signature">&lt;static> </span>List<span class="type-signature"></span></h4>
-
+<dt>
+    <h4 class="name" id="List"><span class="type-signature"></span>List(data)</h4>
+    
     
 </dt>
 <dd>
+
     
     <div class="description">
         <p>Lists your available Attachments in the given email</p>
@@ -310,6 +642,111 @@
     
 
     
+
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>data</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>data object.</p>
+                <h6 class="method-params-label method-subparams-label">Properties</h6>
+                
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>msgID</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>ID number of selected message.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+            </td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
 <dl class="details">
     
 
@@ -350,17 +787,50 @@
 
 
     
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Returns:</h5>
+    
+            
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Promise</span>
+
+
+
+    </dd>
+</dl>
+
+
+        
+
+    
 </dd>
 
         
             
 <hr>
-<dt class="name" id=".ListAll">
-    <h4 id=".ListAll"><span class="type-signature">&lt;static> </span>ListAll<span class="type-signature"></span></h4>
-
+<dt>
+    <h4 class="name" id="ListAll"><span class="type-signature"></span>ListAll(data)</h4>
+    
     
 </dt>
 <dd>
+
     
     <div class="description">
         <p>Lists all your available files</p>
@@ -370,6 +840,61 @@
     
 
     
+
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>data</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>data object.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
 <dl class="details">
     
 
@@ -410,17 +935,50 @@
 
 
     
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Returns:</h5>
+    
+            
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Promise</span>
+
+
+
+    </dd>
+</dl>
+
+
+        
+
+    
 </dd>
 
         
             
 <hr>
-<dt class="name" id=".Load">
-    <h4 id=".Load"><span class="type-signature">&lt;static> </span>Load<span class="type-signature"></span></h4>
-
+<dt>
+    <h4 class="name" id="Load"><span class="type-signature"></span>Load(data)</h4>
+    
     
 </dt>
 <dd>
+
     
     <div class="description">
         <p>Gets chosen File</p>
@@ -430,6 +988,111 @@
     
 
     
+
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>data</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>data object.</p>
+                <h6 class="method-params-label method-subparams-label">Properties</h6>
+                
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>filename</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Name of your file.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+            </td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
 <dl class="details">
     
 
@@ -470,17 +1133,50 @@
 
 
     
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Returns:</h5>
+    
+            
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Promise</span>
+
+
+
+    </dd>
+</dl>
+
+
+        
+
+    
 </dd>
 
         
             
 <hr>
-<dt class="name" id=".Upload">
-    <h4 id=".Upload"><span class="type-signature">&lt;static> </span>Upload<span class="type-signature"></span></h4>
-
+<dt>
+    <h4 class="name" id="Upload"><span class="type-signature"></span>Upload(data)</h4>
+    
     
 </dt>
 <dd>
+
     
     <div class="description">
         <p>Uploads selected file to the server using http form upload format (MIME multipart/form-data) or PUT method.</p>
@@ -490,6 +1186,159 @@
     
 
     
+
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>data</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>data object.</p>
+                <h6 class="method-params-label method-subparams-label">Properties</h6>
+                
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>file</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>-</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>name</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Filename</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>expiresAfterDays</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>After how many days should the file be deleted.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+            </td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
 <dl class="details">
     
 
@@ -530,11 +1379,41 @@
 
 
     
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Returns:</h5>
+    
+            
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Promise</span>
+
+
+
+    </dd>
+</dl>
+
+
+        
+
+    
 </dd>
 
         </dl>
-    
-
     
 
     
@@ -584,7 +1463,7 @@
 <span class="jsdoc-message">
 	Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a>
 	
-		on May 17th 2018, 3:46:08 pm
+		on May 28th 2018, 12:37:28 pm
 	
 	using the <a href="https://github.com/docstrap/docstrap">DocStrap template</a>.
 </span>

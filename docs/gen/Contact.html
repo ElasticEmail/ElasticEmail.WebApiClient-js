@@ -31,9 +31,16 @@
 		<ul class="nav navbar-nav">
 			
 			<li class="dropdown">
+				<a href="modules.list.html" class="dropdown-toggle" data-toggle="dropdown">Modules<b class="caret"></b></a>
+				<ul class="dropdown-menu ">
+					<li><a href="module-EEAPI.html">EEAPI</a></li>
+				</ul>
+			</li>
+			
+			<li class="dropdown">
 				<a href="classes.list.html" class="dropdown-toggle" data-toggle="dropdown">Classes<b class="caret"></b></a>
 				<ul class="dropdown-menu ">
-					<li><a href="Account.html">Account</a></li><li><a href="Campaign.html">Campaign</a></li><li><a href="Channel.html">Channel</a></li><li><a href="Contact.html">Contact</a></li><li><a href="Domain.html">Domain</a></li><li><a href="Email.html">Email</a></li><li><a href="Export.html">Export</a></li><li><a href="File.html">File</a></li><li><a href="List.html">List</a></li><li><a href="Log.html">Log</a></li><li><a href="Segment.html">Segment</a></li><li><a href="Sms.html">Sms</a></li><li><a href="Survey.html">Survey</a></li><li><a href="Template.html">Template</a></li>
+					<li><a href="Accesstoken.html">Accesstoken</a></li><li><a href="Account.html">Account</a></li><li><a href="ApiCallAbstarct.html">ApiCallAbstarct</a></li><li><a href="Campaign.html">Campaign</a></li><li><a href="Channel.html">Channel</a></li><li><a href="Contact.html">Contact</a></li><li><a href="Domain.html">Domain</a></li><li><a href="EEAPI.html">EEAPI</a></li><li><a href="Email.html">Email</a></li><li><a href="Export.html">Export</a></li><li><a href="File.html">File</a></li><li><a href="List.html">List</a></li><li><a href="Log.html">Log</a></li><li><a href="module-EEAPI-Accesstoken.html">EEAPI~Accesstoken</a></li><li><a href="module-EEAPI-Account.html">EEAPI~Account</a></li><li><a href="module-EEAPI-ApiCallAbstarct.html">EEAPI~ApiCallAbstarct</a></li><li><a href="module-EEAPI-Campaign.html">EEAPI~Campaign</a></li><li><a href="module-EEAPI-Channel.html">EEAPI~Channel</a></li><li><a href="module-EEAPI-Contact.html">EEAPI~Contact</a></li><li><a href="module-EEAPI-Domain.html">EEAPI~Domain</a></li><li><a href="module-EEAPI-Email.html">EEAPI~Email</a></li><li><a href="module-EEAPI-Export.html">EEAPI~Export</a></li><li><a href="module-EEAPI-File.html">EEAPI~File</a></li><li><a href="module-EEAPI-List.html">EEAPI~List</a></li><li><a href="module-EEAPI-Log.html">EEAPI~Log</a></li><li><a href="module-EEAPI-Segment.html">EEAPI~Segment</a></li><li><a href="module-EEAPI-Sms.html">EEAPI~Sms</a></li><li><a href="module-EEAPI-Survey.html">EEAPI~Survey</a></li><li><a href="module-EEAPI-Template.html">EEAPI~Template</a></li><li><a href="Segment.html">Segment</a></li><li><a href="Sms.html">Sms</a></li><li><a href="Survey.html">Survey</a></li><li><a href="Template.html">Template</a></li>
 				</ul>
 			</li>
 			
@@ -73,8 +80,6 @@
         <h2>
         Contact
         </h2>
-        
-            <div class="class-description"><p>/* @class Contact</p></div>
         
     
 </header>
@@ -170,17 +175,20 @@
     
 
     
-        <h3 class="subsection-title">Members</h3>
+
+    
+        <h3 class="subsection-title">Methods</h3>
 
         <dl>
             
 <hr>
-<dt class="name" id=".Add">
-    <h4 id=".Add"><span class="type-signature">&lt;static> </span>Add<span class="type-signature"></span></h4>
-
+<dt>
+    <h4 class="name" id="Add"><span class="type-signature"></span>Add(data)</h4>
+    
     
 </dt>
 <dd>
+
     
     <div class="description">
         <p>Add a new contact and optionally to one of your lists.  Note that your API KEY is not required for this call.</p>
@@ -190,6 +198,519 @@
     
 
     
+
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>data</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>data object.</p>
+                <h6 class="method-params-label method-subparams-label">Properties</h6>
+                
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>publicAccountID</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Public key for limited access to your account such as contact/add so you can use it safely on public websites.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>email</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Proper email address.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>publicListID</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>ID code of list</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>listName</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">StringArray</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Name of your list.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>firstName</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>First name.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>lastName</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Last name.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>source</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">ContactSource</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Specifies the way of uploading the contact</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>returnUrl</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>URL to navigate to after account creation</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>sourceUrl</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>URL from which request was sent.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>activationReturnUrl</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The url to return the contact to after activation.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>activationTemplate</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>-</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>sendActivation</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Boolean</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>True, if you want to send activation email to this account. Otherwise, false</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>consentDate</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Date</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Date of consent to send this contact(s) your email. If not provided current date is used for consent.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>consentIP</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>IP address of consent to send this contact(s) your email. If not provided your current public IP address is used for consent.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>field</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Custom contact field like firstname, lastname, city etc. Request parameters prefixed by field_ like field_firstname, field_lastname</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>notifyEmail</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Emails, separated by semicolon, to which the notification about contact subscribing should be sent to</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>alreadyActiveUrl</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>-</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>consentTracking</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">ConsentTracking</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>-</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+            </td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
 <dl class="details">
     
 
@@ -230,17 +751,50 @@
 
 
     
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Returns:</h5>
+    
+            
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Promise</span>
+
+
+
+    </dd>
+</dl>
+
+
+        
+
+    
 </dd>
 
         
             
 <hr>
-<dt class="name" id=".AddBlocked">
-    <h4 id=".AddBlocked"><span class="type-signature">&lt;static> </span>AddBlocked<span class="type-signature"></span></h4>
-
+<dt>
+    <h4 class="name" id="AddBlocked"><span class="type-signature"></span>AddBlocked(data)</h4>
+    
     
 </dt>
 <dd>
+
     
     <div class="description">
         <p>Manually add or update a contacts status to Abuse or Unsubscribed status (blocked).</p>
@@ -250,6 +804,135 @@
     
 
     
+
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>data</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>data object.</p>
+                <h6 class="method-params-label method-subparams-label">Properties</h6>
+                
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>email</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Proper email address.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>status</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">ContactStatus</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Name of status: Active, Engaged, Inactive, Abuse, Bounced, Unsubscribed.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+            </td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
 <dl class="details">
     
 
@@ -290,17 +973,50 @@
 
 
     
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Returns:</h5>
+    
+            
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Promise</span>
+
+
+
+    </dd>
+</dl>
+
+
+        
+
+    
 </dd>
 
         
             
 <hr>
-<dt class="name" id=".ChangeProperty">
-    <h4 id=".ChangeProperty"><span class="type-signature">&lt;static> </span>ChangeProperty<span class="type-signature"></span></h4>
-
+<dt>
+    <h4 class="name" id="ChangeProperty"><span class="type-signature"></span>ChangeProperty(data)</h4>
+    
     
 </dt>
 <dd>
+
     
     <div class="description">
         <p>Change any property on the contact record.</p>
@@ -310,6 +1026,159 @@
     
 
     
+
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>data</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>data object.</p>
+                <h6 class="method-params-label method-subparams-label">Properties</h6>
+                
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>email</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Proper email address.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>name</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Name of the contact property you want to change.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>value</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Value you would like to change the contact property to.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+            </td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
 <dl class="details">
     
 
@@ -350,17 +1219,50 @@
 
 
     
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Returns:</h5>
+    
+            
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Promise</span>
+
+
+
+    </dd>
+</dl>
+
+
+        
+
+    
 </dd>
 
         
             
 <hr>
-<dt class="name" id=".ChangeStatus">
-    <h4 id=".ChangeStatus"><span class="type-signature">&lt;static> </span>ChangeStatus<span class="type-signature"></span></h4>
-
+<dt>
+    <h4 class="name" id="ChangeStatus"><span class="type-signature"></span>ChangeStatus(data)</h4>
+    
     
 </dt>
 <dd>
+
     
     <div class="description">
         <p>Changes status of selected Contacts. You may provide RULE for selection or specify list of Contact IDs.</p>
@@ -370,6 +1272,159 @@
     
 
     
+
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>data</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>data object.</p>
+                <h6 class="method-params-label method-subparams-label">Properties</h6>
+                
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>status</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">ContactStatus</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Name of status: Active, Engaged, Inactive, Abuse, Bounced, Unsubscribed.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>rule</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Query used for filtering.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>emails</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Comma delimited list of contact emails</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+            </td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
 <dl class="details">
     
 
@@ -410,17 +1465,50 @@
 
 
     
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Returns:</h5>
+    
+            
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Promise</span>
+
+
+
+    </dd>
+</dl>
+
+
+        
+
+    
 </dd>
 
         
             
 <hr>
-<dt class="name" id=".CountByStatus">
-    <h4 id=".CountByStatus"><span class="type-signature">&lt;static> </span>CountByStatus<span class="type-signature"></span></h4>
-
+<dt>
+    <h4 class="name" id="CountByStatus"><span class="type-signature"></span>CountByStatus(data)</h4>
+    
     
 </dt>
 <dd>
+
     
     <div class="description">
         <p>Returns number of Contacts, RULE specifies contact Status.</p>
@@ -430,6 +1518,135 @@
     
 
     
+
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>data</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>data object.</p>
+                <h6 class="method-params-label method-subparams-label">Properties</h6>
+                
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>rule</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Query used for filtering.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>allContacts</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Boolean</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>True: Include every Contact in your Account. Otherwise, false</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+            </td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
 <dl class="details">
     
 
@@ -470,17 +1687,50 @@
 
 
     
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Returns:</h5>
+    
+            
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Promise</span>
+
+
+
+    </dd>
+</dl>
+
+
+        
+
+    
 </dd>
 
         
             
 <hr>
-<dt class="name" id=".CountByUnsubscribeReason">
-    <h4 id=".CountByUnsubscribeReason"><span class="type-signature">&lt;static> </span>CountByUnsubscribeReason<span class="type-signature"></span></h4>
-
+<dt>
+    <h4 class="name" id="CountByUnsubscribeReason"><span class="type-signature"></span>CountByUnsubscribeReason(data)</h4>
+    
     
 </dt>
 <dd>
+
     
     <div class="description">
         <p>Returns count of unsubscribe reasons for unsubscribed and complaint contacts.</p>
@@ -490,6 +1740,135 @@
     
 
     
+
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>data</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>data object.</p>
+                <h6 class="method-params-label method-subparams-label">Properties</h6>
+                
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>from</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Date</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Starting date for search in YYYY-MM-DDThh:mm:ss format.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>to</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Date</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Ending date for search in YYYY-MM-DDThh:mm:ss format.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+            </td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
 <dl class="details">
     
 
@@ -530,17 +1909,50 @@
 
 
     
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Returns:</h5>
+    
+            
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Promise</span>
+
+
+
+    </dd>
+</dl>
+
+
+        
+
+    
 </dd>
 
         
             
 <hr>
-<dt class="name" id=".Delete">
-    <h4 id=".Delete"><span class="type-signature">&lt;static> </span>Delete<span class="type-signature"></span></h4>
-
+<dt>
+    <h4 class="name" id="Delete"><span class="type-signature"></span>Delete(data)</h4>
+    
     
 </dt>
 <dd>
+
     
     <div class="description">
         <p>Permanantly deletes the contacts provided.  You can provide either a qualified rule or a list of emails (comma separated string).</p>
@@ -550,6 +1962,135 @@
     
 
     
+
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>data</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>data object.</p>
+                <h6 class="method-params-label method-subparams-label">Properties</h6>
+                
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>rule</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Query used for filtering.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>emails</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Comma delimited list of contact emails</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+            </td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
 <dl class="details">
     
 
@@ -590,17 +2131,50 @@
 
 
     
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Returns:</h5>
+    
+            
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Promise</span>
+
+
+
+    </dd>
+</dl>
+
+
+        
+
+    
 </dd>
 
         
             
 <hr>
-<dt class="name" id=".Export">
-    <h4 id=".Export"><span class="type-signature">&lt;static> </span>Export<span class="type-signature"></span></h4>
-
+<dt>
+    <h4 class="name" id="Export"><span class="type-signature"></span>Export(data)</h4>
+    
     
 </dt>
 <dd>
+
     
     <div class="description">
         <p>Export selected Contacts to file.</p>
@@ -610,6 +2184,207 @@
     
 
     
+
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>data</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>data object.</p>
+                <h6 class="method-params-label method-subparams-label">Properties</h6>
+                
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>fileFormat</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">ExportFileFormats</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Format of the exported file</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>rule</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Query used for filtering.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>emails</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Comma delimited list of contact emails</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>compressionFormat</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">CompressionFormat</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>FileResponse compression format. None or Zip.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>fileName</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Name of your file.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+            </td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
 <dl class="details">
     
 
@@ -650,17 +2425,50 @@
 
 
     
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Returns:</h5>
+    
+            
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Promise</span>
+
+
+
+    </dd>
+</dl>
+
+
+        
+
+    
 </dd>
 
         
             
 <hr>
-<dt class="name" id=".ExportUnsubscribeReasonCount">
-    <h4 id=".ExportUnsubscribeReasonCount"><span class="type-signature">&lt;static> </span>ExportUnsubscribeReasonCount<span class="type-signature"></span></h4>
-
+<dt>
+    <h4 class="name" id="ExportUnsubscribeReasonCount"><span class="type-signature"></span>ExportUnsubscribeReasonCount(data)</h4>
+    
     
 </dt>
 <dd>
+
     
     <div class="description">
         <p>Export contacts' unsubscribe reasons count to file.</p>
@@ -670,6 +2478,207 @@
     
 
     
+
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>data</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>data object.</p>
+                <h6 class="method-params-label method-subparams-label">Properties</h6>
+                
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>from</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Date</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Starting date for search in YYYY-MM-DDThh:mm:ss format.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>to</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Date</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Ending date for search in YYYY-MM-DDThh:mm:ss format.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>fileFormat</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">ExportFileFormats</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Format of the exported file</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>compressionFormat</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">CompressionFormat</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>FileResponse compression format. None or Zip.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>fileName</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Name of your file.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+            </td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
 <dl class="details">
     
 
@@ -710,17 +2719,50 @@
 
 
     
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Returns:</h5>
+    
+            
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Promise</span>
+
+
+
+    </dd>
+</dl>
+
+
+        
+
+    
 </dd>
 
         
             
 <hr>
-<dt class="name" id=".FindContact">
-    <h4 id=".FindContact"><span class="type-signature">&lt;static> </span>FindContact<span class="type-signature"></span></h4>
-
+<dt>
+    <h4 class="name" id="FindContact"><span class="type-signature"></span>FindContact(data)</h4>
+    
     
 </dt>
 <dd>
+
     
     <div class="description">
         <p>Finds all Lists and Segments this email belongs to.</p>
@@ -730,6 +2772,111 @@
     
 
     
+
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>data</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>data object.</p>
+                <h6 class="method-params-label method-subparams-label">Properties</h6>
+                
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>email</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Proper email address.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+            </td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
 <dl class="details">
     
 
@@ -770,17 +2917,50 @@
 
 
     
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Returns:</h5>
+    
+            
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Promise</span>
+
+
+
+    </dd>
+</dl>
+
+
+        
+
+    
 </dd>
 
         
             
 <hr>
-<dt class="name" id=".GetContactsByList">
-    <h4 id=".GetContactsByList"><span class="type-signature">&lt;static> </span>GetContactsByList<span class="type-signature"></span></h4>
-
+<dt>
+    <h4 class="name" id="GetContactsByList"><span class="type-signature"></span>GetContactsByList(data)</h4>
+    
     
 </dt>
 <dd>
+
     
     <div class="description">
         <p>List of Contacts for provided List</p>
@@ -790,6 +2970,159 @@
     
 
     
+
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>data</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>data object.</p>
+                <h6 class="method-params-label method-subparams-label">Properties</h6>
+                
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>listName</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Name of your list.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>limit</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Maximum of loaded items.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>offset</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>How many items should be loaded ahead.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+            </td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
 <dl class="details">
     
 
@@ -830,17 +3163,50 @@
 
 
     
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Returns:</h5>
+    
+            
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Promise</span>
+
+
+
+    </dd>
+</dl>
+
+
+        
+
+    
 </dd>
 
         
             
 <hr>
-<dt class="name" id=".GetContactsBySegment">
-    <h4 id=".GetContactsBySegment"><span class="type-signature">&lt;static> </span>GetContactsBySegment<span class="type-signature"></span></h4>
-
+<dt>
+    <h4 class="name" id="GetContactsBySegment"><span class="type-signature"></span>GetContactsBySegment(data)</h4>
+    
     
 </dt>
 <dd>
+
     
     <div class="description">
         <p>List of Contacts for provided Segment</p>
@@ -850,6 +3216,159 @@
     
 
     
+
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>data</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>data object.</p>
+                <h6 class="method-params-label method-subparams-label">Properties</h6>
+                
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>segmentName</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Name of your segment.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>limit</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Maximum of loaded items.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>offset</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>How many items should be loaded ahead.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+            </td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
 <dl class="details">
     
 
@@ -890,17 +3409,50 @@
 
 
     
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Returns:</h5>
+    
+            
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Promise</span>
+
+
+
+    </dd>
+</dl>
+
+
+        
+
+    
 </dd>
 
         
             
 <hr>
-<dt class="name" id=".List">
-    <h4 id=".List"><span class="type-signature">&lt;static> </span>List<span class="type-signature"></span></h4>
-
+<dt>
+    <h4 class="name" id="List"><span class="type-signature"></span>List(data)</h4>
+    
     
 </dt>
 <dd>
+
     
     <div class="description">
         <p>List of all contacts. If you have not specified RULE, all Contacts will be listed.</p>
@@ -910,6 +3462,159 @@
     
 
     
+
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>data</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>data object.</p>
+                <h6 class="method-params-label method-subparams-label">Properties</h6>
+                
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>rule</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Query used for filtering.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>limit</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Maximum of loaded items.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>offset</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>How many items should be loaded ahead.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+            </td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
 <dl class="details">
     
 
@@ -950,17 +3655,50 @@
 
 
     
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Returns:</h5>
+    
+            
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Promise</span>
+
+
+
+    </dd>
+</dl>
+
+
+        
+
+    
 </dd>
 
         
             
 <hr>
-<dt class="name" id=".LoadBlocked">
-    <h4 id=".LoadBlocked"><span class="type-signature">&lt;static> </span>LoadBlocked<span class="type-signature"></span></h4>
-
+<dt>
+    <h4 class="name" id="LoadBlocked"><span class="type-signature"></span>LoadBlocked(data)</h4>
+    
     
 </dt>
 <dd>
+
     
     <div class="description">
         <p>Load blocked contacts</p>
@@ -970,6 +3708,183 @@
     
 
     
+
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>data</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>data object.</p>
+                <h6 class="method-params-label method-subparams-label">Properties</h6>
+                
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>statuses</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>List of blocked statuses: Abuse, Bounced or Unsubscribed</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>search</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Text fragment used for searching.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>limit</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Maximum of loaded items.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>offset</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>How many items should be loaded ahead.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+            </td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
 <dl class="details">
     
 
@@ -1010,17 +3925,50 @@
 
 
     
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Returns:</h5>
+    
+            
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Promise</span>
+
+
+
+    </dd>
+</dl>
+
+
+        
+
+    
 </dd>
 
         
             
 <hr>
-<dt class="name" id=".LoadContact">
-    <h4 id=".LoadContact"><span class="type-signature">&lt;static> </span>LoadContact<span class="type-signature"></span></h4>
-
+<dt>
+    <h4 class="name" id="LoadContact"><span class="type-signature"></span>LoadContact(data)</h4>
+    
     
 </dt>
 <dd>
+
     
     <div class="description">
         <p>Load detailed contact information</p>
@@ -1030,6 +3978,111 @@
     
 
     
+
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>data</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>data object.</p>
+                <h6 class="method-params-label method-subparams-label">Properties</h6>
+                
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>email</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Proper email address.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+            </td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
 <dl class="details">
     
 
@@ -1070,17 +4123,50 @@
 
 
     
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Returns:</h5>
+    
+            
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Promise</span>
+
+
+
+    </dd>
+</dl>
+
+
+        
+
+    
 </dd>
 
         
             
 <hr>
-<dt class="name" id=".LoadHistory">
-    <h4 id=".LoadHistory"><span class="type-signature">&lt;static> </span>LoadHistory<span class="type-signature"></span></h4>
-
+<dt>
+    <h4 class="name" id="LoadHistory"><span class="type-signature"></span>LoadHistory(data)</h4>
+    
     
 </dt>
 <dd>
+
     
     <div class="description">
         <p>Shows detailed history of chosen Contact.</p>
@@ -1090,6 +4176,159 @@
     
 
     
+
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>data</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>data object.</p>
+                <h6 class="method-params-label method-subparams-label">Properties</h6>
+                
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>email</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Proper email address.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>limit</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Maximum of loaded items.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>offset</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>How many items should be loaded ahead.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+            </td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
 <dl class="details">
     
 
@@ -1130,17 +4369,50 @@
 
 
     
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Returns:</h5>
+    
+            
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Promise</span>
+
+
+
+    </dd>
+</dl>
+
+
+        
+
+    
 </dd>
 
         
             
 <hr>
-<dt class="name" id=".QuickAdd">
-    <h4 id=".QuickAdd"><span class="type-signature">&lt;static> </span>QuickAdd<span class="type-signature"></span></h4>
-
+<dt>
+    <h4 class="name" id="QuickAdd"><span class="type-signature"></span>QuickAdd(data)</h4>
+    
     
 </dt>
 <dd>
+
     
     <div class="description">
         <p>Add new Contact to one of your Lists.</p>
@@ -1150,6 +4422,375 @@
     
 
     
+
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>data</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>data object.</p>
+                <h6 class="method-params-label method-subparams-label">Properties</h6>
+                
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>emails</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Comma delimited list of contact emails</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>firstName</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>First name.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>lastName</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Last name.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>publicListID</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>ID code of list</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>listName</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Name of your list.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>status</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">ContactStatus</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Name of status: Active, Engaged, Inactive, Abuse, Bounced, Unsubscribed.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>notes</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Free form field of notes</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>consentDate</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Date</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Date of consent to send this contact(s) your email. If not provided current date is used for consent.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>consentIP</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>IP address of consent to send this contact(s) your email. If not provided your current public IP address is used for consent.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>field</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Custom contact field like firstname, lastname, city etc. Request parameters prefixed by field_ like field_firstname, field_lastname</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>notifyEmail</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Emails, separated by semicolon, to which the notification about contact subscribing should be sent to</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>consentTracking</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">ConsentTracking</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>-</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+            </td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
 <dl class="details">
     
 
@@ -1190,17 +4831,50 @@
 
 
     
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Returns:</h5>
+    
+            
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Promise</span>
+
+
+
+    </dd>
+</dl>
+
+
+        
+
+    
 </dd>
 
         
             
 <hr>
-<dt class="name" id=".Subscribe">
-    <h4 id=".Subscribe"><span class="type-signature">&lt;static> </span>Subscribe<span class="type-signature"></span></h4>
-
+<dt>
+    <h4 class="name" id="Subscribe"><span class="type-signature"></span>Subscribe(data)</h4>
+    
     
 </dt>
 <dd>
+
     
     <div class="description">
         <p>Basic double opt-in email subscribe form for your account.  This can be used for contacts that need to re-subscribe as well.</p>
@@ -1210,6 +4884,111 @@
     
 
     
+
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>data</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>data object.</p>
+                <h6 class="method-params-label method-subparams-label">Properties</h6>
+                
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>publicAccountID</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Public key for limited access to your account such as contact/add so you can use it safely on public websites.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+            </td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
 <dl class="details">
     
 
@@ -1250,17 +5029,50 @@
 
 
     
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Returns:</h5>
+    
+            
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Promise</span>
+
+
+
+    </dd>
+</dl>
+
+
+        
+
+    
 </dd>
 
         
             
 <hr>
-<dt class="name" id=".Update">
-    <h4 id=".Update"><span class="type-signature">&lt;static> </span>Update<span class="type-signature"></span></h4>
-
+<dt>
+    <h4 class="name" id="Update"><span class="type-signature"></span>Update(data)</h4>
+    
     
 </dt>
 <dd>
+
     
     <div class="description">
         <p>Update selected contact. Omitted contact's fields will be reset by default (see the clearRestOfFields parameter)</p>
@@ -1270,6 +5082,231 @@
     
 
     
+
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>data</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>data object.</p>
+                <h6 class="method-params-label method-subparams-label">Properties</h6>
+                
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>email</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Proper email address.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>firstName</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>First name.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>lastName</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Last name.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>clearRestOfFields</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Boolean</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>States if the fields that were omitted in this request are to be reset or should they be left with their current value</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>field</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Custom contact field like firstname, lastname, city etc. Request parameters prefixed by field_ like field_firstname, field_lastname</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>customFields</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Custom contact field like firstname, lastname, city etc. JSON serialized text like { &quot;city&quot;:&quot;london&quot; }</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+            </td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
 <dl class="details">
     
 
@@ -1310,17 +5347,50 @@
 
 
     
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Returns:</h5>
+    
+            
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Promise</span>
+
+
+
+    </dd>
+</dl>
+
+
+        
+
+    
 </dd>
 
         
             
 <hr>
-<dt class="name" id=".Upload">
-    <h4 id=".Upload"><span class="type-signature">&lt;static> </span>Upload<span class="type-signature"></span></h4>
-
+<dt>
+    <h4 class="name" id="Upload"><span class="type-signature"></span>Upload(data)</h4>
+    
     
 </dt>
 <dd>
+
     
     <div class="description">
         <p>Upload contacts in CSV file.</p>
@@ -1330,6 +5400,279 @@
     
 
     
+
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>data</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>data object.</p>
+                <h6 class="method-params-label method-subparams-label">Properties</h6>
+                
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>contactFile</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Name of CSV file with Contacts.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>allowUnsubscribe</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Boolean</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>True: Allow unsubscribing from this (optional) newly created list. Otherwise, false</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>listID</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>ID number of selected list.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>listName</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Name of your list to upload contacts to, or how the new, automatically created list should be named</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>status</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">ContactStatus</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Name of status: Active, Engaged, Inactive, Abuse, Bounced, Unsubscribed.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>consentDate</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Date</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Date of consent to send this contact(s) your email. If not provided current date is used for consent.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>consentIP</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>IP address of consent to send this contact(s) your email. If not provided your current public IP address is used for consent.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>consentTracking</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">ConsentTracking</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>-</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+            </td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
 <dl class="details">
     
 
@@ -1370,11 +5713,41 @@
 
 
     
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Returns:</h5>
+    
+            
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Promise</span>
+
+
+
+    </dd>
+</dl>
+
+
+        
+
+    
 </dd>
 
         </dl>
-    
-
     
 
     
@@ -1424,7 +5797,7 @@
 <span class="jsdoc-message">
 	Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a>
 	
-		on May 17th 2018, 3:46:08 pm
+		on May 28th 2018, 12:37:28 pm
 	
 	using the <a href="https://github.com/docstrap/docstrap">DocStrap template</a>.
 </span>

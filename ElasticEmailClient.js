@@ -34,7 +34,7 @@ var EEAPI = function EEAPI(options) {
         console.error('Missing mandatory options!');
         return;
     }
-
+    this.Accesstoken = new Accesstoken(options);
     this.Account = new Account(options);
     this.Campaign = new Campaign(options);
     this.Channel = new Channel(options);
@@ -84,8 +84,42 @@ var ApiCallAbstarct = function ApiCallAbstarct(options) {
     };
 };
 
-var Account = function (_ApiCallAbstarct) {
-    _inherits(Account, _ApiCallAbstarct);
+var Accesstoken = function (_ApiCallAbstarct) {
+    _inherits(Accesstoken, _ApiCallAbstarct);
+
+    function Accesstoken(opt) {
+        _classCallCheck(this, Accesstoken);
+
+        return _possibleConstructorReturn(this, (Accesstoken.__proto__ || Object.getPrototypeOf(Accesstoken)).call(this, opt));
+    }
+
+    _createClass(Accesstoken, [{
+        key: 'Add',
+        value: function Add(data) {
+            return this._makeCall('/accesstoken/add', data, 'POST');
+        }
+    }, {
+        key: 'Delete',
+        value: function Delete(data) {
+            return this._makeCall('/accesstoken/delete', data, 'POST');
+        }
+    }, {
+        key: 'Edit',
+        value: function Edit(data) {
+            return this._makeCall('/accesstoken/edit', data, 'POST');
+        }
+    }, {
+        key: 'GetList',
+        value: function GetList(data) {
+            return this._makeCall('/accesstoken/getlist', data, 'POST');
+        }
+    }]);
+
+    return Accesstoken;
+}(ApiCallAbstarct);
+
+var Account = function (_ApiCallAbstarct2) {
+    _inherits(Account, _ApiCallAbstarct2);
 
     function Account(opt) {
         _classCallCheck(this, Account);
@@ -147,6 +181,11 @@ var Account = function (_ApiCallAbstarct) {
         key: 'LoadEmailCreditsHistory',
         value: function LoadEmailCreditsHistory(data) {
             return this._makeCall('/account/loademailcreditshistory', data, 'POST');
+        }
+    }, {
+        key: 'LoadInfo',
+        value: function LoadInfo(data) {
+            return this._makeCall('/account/loadinfo', data, 'POST');
         }
     }, {
         key: 'LoadLitmusCreditsHistory',
@@ -268,8 +307,8 @@ var Account = function (_ApiCallAbstarct) {
     return Account;
 }(ApiCallAbstarct);
 
-var Campaign = function (_ApiCallAbstarct2) {
-    _inherits(Campaign, _ApiCallAbstarct2);
+var Campaign = function (_ApiCallAbstarct3) {
+    _inherits(Campaign, _ApiCallAbstarct3);
 
     function Campaign(opt) {
         _classCallCheck(this, Campaign);
@@ -312,8 +351,8 @@ var Campaign = function (_ApiCallAbstarct2) {
     return Campaign;
 }(ApiCallAbstarct);
 
-var Channel = function (_ApiCallAbstarct3) {
-    _inherits(Channel, _ApiCallAbstarct3);
+var Channel = function (_ApiCallAbstarct4) {
+    _inherits(Channel, _ApiCallAbstarct4);
 
     function Channel(opt) {
         _classCallCheck(this, Channel);
@@ -361,8 +400,8 @@ var Channel = function (_ApiCallAbstarct3) {
     return Channel;
 }(ApiCallAbstarct);
 
-var Contact = function (_ApiCallAbstarct4) {
-    _inherits(Contact, _ApiCallAbstarct4);
+var Contact = function (_ApiCallAbstarct5) {
+    _inherits(Contact, _ApiCallAbstarct5);
 
     function Contact(opt) {
         _classCallCheck(this, Contact);
@@ -475,8 +514,8 @@ var Contact = function (_ApiCallAbstarct4) {
     return Contact;
 }(ApiCallAbstarct);
 
-var Domain = function (_ApiCallAbstarct5) {
-    _inherits(Domain, _ApiCallAbstarct5);
+var Domain = function (_ApiCallAbstarct6) {
+    _inherits(Domain, _ApiCallAbstarct6);
 
     function Domain(opt) {
         _classCallCheck(this, Domain);
@@ -529,8 +568,8 @@ var Domain = function (_ApiCallAbstarct5) {
     return Domain;
 }(ApiCallAbstarct);
 
-var Email = function (_ApiCallAbstarct6) {
-    _inherits(Email, _ApiCallAbstarct6);
+var Email = function (_ApiCallAbstarct7) {
+    _inherits(Email, _ApiCallAbstarct7);
 
     function Email(opt) {
         _classCallCheck(this, Email);
@@ -563,8 +602,8 @@ var Email = function (_ApiCallAbstarct6) {
     return Email;
 }(ApiCallAbstarct);
 
-var Export = function (_ApiCallAbstarct7) {
-    _inherits(Export, _ApiCallAbstarct7);
+var Export = function (_ApiCallAbstarct8) {
+    _inherits(Export, _ApiCallAbstarct8);
 
     function Export(opt) {
         _classCallCheck(this, Export);
@@ -597,8 +636,8 @@ var Export = function (_ApiCallAbstarct7) {
     return Export;
 }(ApiCallAbstarct);
 
-var File = function (_ApiCallAbstarct8) {
-    _inherits(File, _ApiCallAbstarct8);
+var File = function (_ApiCallAbstarct9) {
+    _inherits(File, _ApiCallAbstarct9);
 
     function File(opt) {
         _classCallCheck(this, File);
@@ -641,8 +680,8 @@ var File = function (_ApiCallAbstarct8) {
     return File;
 }(ApiCallAbstarct);
 
-var List = function (_ApiCallAbstarct9) {
-    _inherits(List, _ApiCallAbstarct9);
+var List = function (_ApiCallAbstarct10) {
+    _inherits(List, _ApiCallAbstarct10);
 
     function List(opt) {
         _classCallCheck(this, List);
@@ -720,8 +759,8 @@ var List = function (_ApiCallAbstarct9) {
     return List;
 }(ApiCallAbstarct);
 
-var Log = function (_ApiCallAbstarct10) {
-    _inherits(Log, _ApiCallAbstarct10);
+var Log = function (_ApiCallAbstarct11) {
+    _inherits(Log, _ApiCallAbstarct11);
 
     function Log(opt) {
         _classCallCheck(this, Log);
@@ -774,8 +813,8 @@ var Log = function (_ApiCallAbstarct10) {
     return Log;
 }(ApiCallAbstarct);
 
-var Segment = function (_ApiCallAbstarct11) {
-    _inherits(Segment, _ApiCallAbstarct11);
+var Segment = function (_ApiCallAbstarct12) {
+    _inherits(Segment, _ApiCallAbstarct12);
 
     function Segment(opt) {
         _classCallCheck(this, Segment);
@@ -823,8 +862,8 @@ var Segment = function (_ApiCallAbstarct11) {
     return Segment;
 }(ApiCallAbstarct);
 
-var Sms = function (_ApiCallAbstarct12) {
-    _inherits(Sms, _ApiCallAbstarct12);
+var Sms = function (_ApiCallAbstarct13) {
+    _inherits(Sms, _ApiCallAbstarct13);
 
     function Sms(opt) {
         _classCallCheck(this, Sms);
@@ -842,8 +881,8 @@ var Sms = function (_ApiCallAbstarct12) {
     return Sms;
 }(ApiCallAbstarct);
 
-var Survey = function (_ApiCallAbstarct13) {
-    _inherits(Survey, _ApiCallAbstarct13);
+var Survey = function (_ApiCallAbstarct14) {
+    _inherits(Survey, _ApiCallAbstarct14);
 
     function Survey(opt) {
         _classCallCheck(this, Survey);
@@ -891,8 +930,8 @@ var Survey = function (_ApiCallAbstarct13) {
     return Survey;
 }(ApiCallAbstarct);
 
-var Template = function (_ApiCallAbstarct14) {
-    _inherits(Template, _ApiCallAbstarct14);
+var Template = function (_ApiCallAbstarct15) {
+    _inherits(Template, _ApiCallAbstarct15);
 
     function Template(opt) {
         _classCallCheck(this, Template);

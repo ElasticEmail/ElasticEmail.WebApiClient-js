@@ -4,7 +4,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width">
-	<title>Documentation Class: Campaign</title>
+	<title>Documentation Class: Accesstoken</title>
 
 	<!--[if lt IE 9]>
 	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -72,13 +72,13 @@
 		<div id="main">
 			
 
-	<h1 class="page-title">Class: Campaign</h1>
+	<h1 class="page-title">Class: Accesstoken</h1>
 <section>
 
 <header>
     
         <h2>
-        Campaign
+        Accesstoken
         </h2>
         
     
@@ -91,7 +91,7 @@
         
 <hr>
 <dt>
-    <h4 class="name" id="Campaign"><span class="type-signature"></span>new Campaign()</h4>
+    <h4 class="name" id="Accesstoken"><span class="type-signature"></span>new Accesstoken()</h4>
     
     
 </dt>
@@ -191,7 +191,7 @@
 
     
     <div class="description">
-        <p>Adds a campaign to the queue for processing based on the configuration</p>
+        <p>Add new AccessToken</p>
     </div>
     
 
@@ -269,13 +269,13 @@
 
         <tr>
             
-                <td class="name"><code>campaign</code></td>
+                <td class="name"><code>tokenName</code></td>
             
 
             <td class="type">
             
                 
-<span class="param-type"><a href="Campaign.html">Campaign</a></span>
+<span class="param-type">String</span>
 
 
 
@@ -286,151 +286,20 @@
 
             
 
-            <td class="description last"><p>Json representation of a campaign</p></td>
+            <td class="description last"><p>-</p></td>
         </tr>
 
-    
-    </tbody>
-</table>
-
-            </td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-    
-
-    
-<dl class="details">
-    
-
-	
-
-	
-
-	
-
-    
-
-    
-
-    
-
-    
-
-	
-
-	
-
-	
-
-	
-
-	
-
-
-
-	
-
-	
-
-	
-
-	
-</dl>
-
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <h5>Returns:</h5>
-    
-            
-
-
-<dl>
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type">Promise</span>
-
-
-
-    </dd>
-</dl>
-
-
-        
-
-    
-</dd>
-
-        
-            
-<hr>
-<dt>
-    <h4 class="name" id="Copy"><span class="type-signature"></span>Copy(data)</h4>
-    
-    
-</dt>
-<dd>
-
-    
-    <div class="description">
-        <p>Copy selected campaign</p>
-    </div>
-    
-
-    
-
-    
-
-    
-    
-        <h5>Parameters:</h5>
-        
-
-<table class="params table table-striped">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
     
 
         <tr>
             
-                <td class="name"><code>data</code></td>
+                <td class="name"><code>accessLevel</code></td>
             
 
             <td class="type">
             
                 
-<span class="param-type">Object</span>
+<span class="param-type">AccessLevel</span>
 
 
 
@@ -441,50 +310,7 @@
 
             
 
-            <td class="description last"><p>data object.</p>
-                <h6 class="method-params-label method-subparams-label">Properties</h6>
-                
-
-<table class="params table table-striped">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>channelID</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">Number</span>
-
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>ID number of selected Channel.</p></td>
+            <td class="description last"><p>-</p></td>
         </tr>
 
     
@@ -587,7 +413,7 @@
 
     
     <div class="description">
-        <p>Delete selected campaign</p>
+        <p>Permanently delete AccessToken.</p>
     </div>
     
 
@@ -665,277 +491,7 @@
 
         <tr>
             
-                <td class="name"><code>channelID</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">Number</span>
-
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>ID number of selected Channel.</p></td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-            </td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-    
-
-    
-<dl class="details">
-    
-
-	
-
-	
-
-	
-
-    
-
-    
-
-    
-
-    
-
-	
-
-	
-
-	
-
-	
-
-	
-
-
-
-	
-
-	
-
-	
-
-	
-</dl>
-
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <h5>Returns:</h5>
-    
-            
-
-
-<dl>
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type">Promise</span>
-
-
-
-    </dd>
-</dl>
-
-
-        
-
-    
-</dd>
-
-        
-            
-<hr>
-<dt>
-    <h4 class="name" id="Export"><span class="type-signature"></span>Export(data)</h4>
-    
-    
-</dt>
-<dd>
-
-    
-    <div class="description">
-        <p>Export selected campaigns to chosen file format.</p>
-    </div>
-    
-
-    
-
-    
-
-    
-    
-        <h5>Parameters:</h5>
-        
-
-<table class="params table table-striped">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>data</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">Object</span>
-
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>data object.</p>
-                <h6 class="method-params-label method-subparams-label">Properties</h6>
-                
-
-<table class="params table table-striped">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>channelIDs</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">Object</span>
-
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>List of campaign IDs used for processing</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>fileFormat</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">ExportFileFormats</span>
-
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>Format of the exported file</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>compressionFormat</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">CompressionFormat</span>
-
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>FileResponse compression format. None or Zip.</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>fileName</code></td>
+                <td class="name"><code>tokenName</code></td>
             
 
             <td class="type">
@@ -952,7 +508,7 @@
 
             
 
-            <td class="description last"><p>Name of your file.</p></td>
+            <td class="description last"><p>-</p></td>
         </tr>
 
     
@@ -1047,7 +603,7 @@
             
 <hr>
 <dt>
-    <h4 class="name" id="List"><span class="type-signature"></span>List(data)</h4>
+    <h4 class="name" id="Edit"><span class="type-signature"></span>Edit(data)</h4>
     
     
 </dt>
@@ -1055,7 +611,7 @@
 
     
     <div class="description">
-        <p>List all of your campaigns</p>
+        <p>Edit AccessToken.</p>
     </div>
     
 
@@ -1133,7 +689,7 @@
 
         <tr>
             
-                <td class="name"><code>search</code></td>
+                <td class="name"><code>tokenName</code></td>
             
 
             <td class="type">
@@ -1150,20 +706,20 @@
 
             
 
-            <td class="description last"><p>Text fragment used for searching.</p></td>
+            <td class="description last"><p>-</p></td>
         </tr>
 
     
 
         <tr>
             
-                <td class="name"><code>offset</code></td>
+                <td class="name"><code>accessLevel</code></td>
             
 
             <td class="type">
             
                 
-<span class="param-type">Number</span>
+<span class="param-type">AccessLevel</span>
 
 
 
@@ -1174,20 +730,20 @@
 
             
 
-            <td class="description last"><p>How many items should be loaded ahead.</p></td>
+            <td class="description last"><p>-</p></td>
         </tr>
 
     
 
         <tr>
             
-                <td class="name"><code>limit</code></td>
+                <td class="name"><code>tokenNameNew</code></td>
             
 
             <td class="type">
             
                 
-<span class="param-type">Number</span>
+<span class="param-type">String</span>
 
 
 
@@ -1198,7 +754,7 @@
 
             
 
-            <td class="description last"><p>Maximum of loaded items.</p></td>
+            <td class="description last"><p>-</p></td>
         </tr>
 
     
@@ -1293,7 +849,7 @@
             
 <hr>
 <dt>
-    <h4 class="name" id="Update"><span class="type-signature"></span>Update(data)</h4>
+    <h4 class="name" id="GetList"><span class="type-signature"></span>GetList(data)</h4>
     
     
 </dt>
@@ -1301,7 +857,7 @@
 
     
     <div class="description">
-        <p>Updates a previously added campaign.  Only Active and Paused campaigns can be updated.</p>
+        <p>Get AccessToken list.</p>
     </div>
     
 
@@ -1353,57 +909,7 @@
 
             
 
-            <td class="description last"><p>data object.</p>
-                <h6 class="method-params-label method-subparams-label">Properties</h6>
-                
-
-<table class="params table table-striped">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>campaign</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type"><a href="Campaign.html">Campaign</a></span>
-
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>Json representation of a campaign</p></td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-            </td>
+            <td class="description last"><p>data object.</p></td>
         </tr>
 
     
