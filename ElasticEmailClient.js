@@ -104,14 +104,14 @@ var Accesstoken = function (_ApiCallAbstarct) {
             return this._makeCall('/accesstoken/delete', data, 'POST');
         }
     }, {
-        key: 'Edit',
-        value: function Edit(data) {
-            return this._makeCall('/accesstoken/edit', data, 'POST');
+        key: 'List',
+        value: function List(data) {
+            return this._makeCall('/accesstoken/list', data, 'POST');
         }
     }, {
-        key: 'GetList',
-        value: function GetList(data) {
-            return this._makeCall('/accesstoken/getlist', data, 'POST');
+        key: 'Update',
+        value: function Update(data) {
+            return this._makeCall('/accesstoken/update', data, 'POST');
         }
     }]);
 

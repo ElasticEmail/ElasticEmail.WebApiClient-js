@@ -121,29 +121,29 @@ class Accesstoken extends ApiCallAbstarct {
     }
 
     /**
+     * Get AccessToken list.
+     * @name List
+     * @method Accesstoken#List
+     * @param {Object} data - data object.
+
+     * @return {Promise}
+     */
+     List(data) {
+        return this._makeCall('/accesstoken/list', data, 'POST');
+    }
+
+    /**
      * Edit AccessToken.
-     * @name Edit
-     * @method Accesstoken#Edit
+     * @name Update
+     * @method Accesstoken#Update
      * @param {Object} data - data object.
      * @param {String} data.tokenName - 
      * @param {AccessLevel} data.accessLevel - 
      * @param {String} data.tokenNameNew - 
      * @return {Promise}
      */
-     Edit(data) {
-        return this._makeCall('/accesstoken/edit', data, 'POST');
-    }
-
-    /**
-     * Get AccessToken list.
-     * @name GetList
-     * @method Accesstoken#GetList
-     * @param {Object} data - data object.
-
-     * @return {Promise}
-     */
-     GetList(data) {
-        return this._makeCall('/accesstoken/getlist', data, 'POST');
+     Update(data) {
+        return this._makeCall('/accesstoken/update', data, 'POST');
     }
 }
 
@@ -2286,7 +2286,7 @@ class Template extends ApiCallAbstarct {
      */
      RemoveScreenshot(data) {
         return this._makeCall('/template/removescreenshot', data, 'POST');
-    } 
+    }
 
     /**
      * Saves screenshot of chosen Template
