@@ -17,18 +17,24 @@ const jsdoc = require('gulp-jsdoc3');
 const browserify = require('browserify');
 const source = require('vinyl-source-stream');
 const buffer = require('vinyl-buffer');
+const download = require('gulp-download-stream');
  
 const files = [
     './src/ElasticEmailClient.js'
 ];
 
 gulp.task('clean', () => {
-    return gulp.src(['./bin/*', './ElasticEmailClient.js', 'ElasticEmailClient.js.map'])
+    return gulp.src(['./bin/*', './ElasticEmailClient.js', 'ElasticEmailClient.js.map', './src/**/*'])
         .pipe(clean());
 });
 
+gulp.task('download', ['clean'], () => {
+    return download('https://api.elasticemail.com/public/client/js')
+    .pipe(rename('ElasticEmailClient.js'))
+	.pipe(gulp.dest('src/'));
+});
 
-gulp.task('lint', () => {
+gulp.task('lint', ['download'], () => {
     return gulp.src(files)
     .pipe(plumber())
     .pipe(
@@ -62,7 +68,7 @@ gulp.task('browserify', ['babel'], () => {
     .pipe(gulp.dest('./bin'));
 });
 
-gulp.task('doc', ['clean'], (cb) => {
+gulp.task('doc', ['lint'], (cb) => {
     gulp.src(['./src/**/*.js'], {read: false})
         .pipe(jsdoc(cb));
 });
@@ -80,8 +86,8 @@ gulp.task('babel', ['lint'], () => {
     )
 });
 
-gulp.task('build', ['clean'], () => {
-    gulp.start(['lint', 'doc', 'babel', 'browserify']);
+gulp.task('build', () => {
+    gulp.start(['download', 'lint', 'doc', 'babel', 'browserify']);
 });
 
 gulp.task('default', () => {
