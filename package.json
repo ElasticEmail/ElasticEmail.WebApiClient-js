@@ -1,12 +1,13 @@
 {
   "name": "elasticemail-webapiclient",
-  "version": "2.0.3",
+  "version": "2.0.4",
   "description": "This library created by Elastic Email developers allow you to use our API on both customer and server-side without the need of creating your own implementation. Elastic Email is the Email Service Provider (ESP) with powerful API allowing you to send transactional emails as well as newsletters and marketing mailings.",
   "keywords": "mailing, transactional email, email marketing",
   "main": "ElasticEmailClient.js",
   "scripts": {
     "gulp": "gulp",
-    "watch": "gulp watch"
+    "watch": "gulp watch",
+    "dev": "gulp build-local"
   },
   "repository": {
     "type": "git",
@@ -21,8 +22,8 @@
   "dependencies": {
     "lodash.includes": "^4.3.0",
     "lodash.isobject": "^3.0.2",
-    "request": "^2.81.0",
-    "reqwest": "^2.0.5",
+    "request": "^2.87.0",
+    "request-promise": "^4.2.2",
     "xhr2": "^0.1.4"
   },
   "devDependencies": {

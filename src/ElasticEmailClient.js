@@ -1,6 +1,6 @@
 import includes from 'lodash.includes';
 import isObject from 'lodash.isobject';
-import request from 'reqwest';
+import request from 'request-promise';
 
 /**
 * @class EEAPI
@@ -69,9 +69,9 @@ class ApiCallAbstarct {
 
             const params = {
                 url: options.apiUri + options.apiVersion + method,
-                type: 'json',
                 method: methodType,
-                data: data
+                formData: data,
+                json: true
             };
     
             return request(params)

@@ -90,6 +90,10 @@ gulp.task('build', () => {
     gulp.start(['download', 'lint', 'doc', 'babel', 'browserify']);
 });
 
+gulp.task('build-local', () => {
+    gulp.start(['lint', 'doc', 'babel', 'browserify']);
+});
+
 gulp.task('default', () => {
     gulp.start(['build']);
 })

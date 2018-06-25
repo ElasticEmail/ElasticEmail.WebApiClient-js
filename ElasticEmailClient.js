@@ -15,9 +15,9 @@ var _lodash3 = require('lodash.isobject');
 
 var _lodash4 = _interopRequireDefault(_lodash3);
 
-var _reqwest = require('reqwest');
+var _requestPromise = require('request-promise');
 
-var _reqwest2 = _interopRequireDefault(_reqwest);
+var _requestPromise2 = _interopRequireDefault(_requestPromise);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -70,12 +70,12 @@ var ApiCallAbstarct = function ApiCallAbstarct(options) {
 
         var params = {
             url: options.apiUri + options.apiVersion + method,
-            type: 'json',
             method: methodType,
-            data: data
+            formData: data,
+            json: true
         };
 
-        return (0, _reqwest2.default)(params).then(function (resp) {
+        return (0, _requestPromise2.default)(params).then(function (resp) {
             if (!resp.success) {
                 throw resp.error;
             }

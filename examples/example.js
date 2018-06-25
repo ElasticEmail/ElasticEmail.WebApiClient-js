@@ -1,7 +1,7 @@
 const eeClient = require('../ElasticEmailClient').client;
 
 const options = {
-    apiKey: 'YourApiKey',
+    apiKey: 'yourapikey',
     apiUri: 'https://api.elasticemail.com/',
     apiVersion: 'v2'
 }
