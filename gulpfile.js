@@ -34,7 +34,7 @@ gulp.task('download', ['clean'], () => {
 	.pipe(gulp.dest('src/'));
 });
 
-gulp.task('lint', ['download'], () => {
+gulp.task('lint', () => {
     return gulp.src(files)
     .pipe(plumber())
     .pipe(
