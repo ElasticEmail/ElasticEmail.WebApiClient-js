@@ -1,6 +1,6 @@
 {
   "name": "elasticemail-webapiclient",
-  "version": "2.0.5",
+  "version": "2.0.6",
   "description": "This library created by Elastic Email developers allow you to use our API on both customer and server-side without the need of creating your own implementation. Elastic Email is the Email Service Provider (ESP) with powerful API allowing you to send transactional emails as well as newsletters and marketing mailings.",
   "keywords": "mailing, transactional email, email marketing",
   "main": "ElasticEmailClient.js",

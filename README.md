@@ -45,7 +45,7 @@ const emailParams = {
 };
 
 // Send email
-EE.Email.Send(params)
+EE.Email.Send(emailParams)
 .catch((err) => {
     throw new Error(err);
 });
