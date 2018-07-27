@@ -30,7 +30,7 @@ const emailParams = {
     "subject": 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
     "to": 'example@foo.com',
     "from": 'example@bar.com',
-    "replyTo": 'pawel.podolak+reply@elasticemail.com',
+    "replyTo": 'replyto@baz.com',
     "body": 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.' +
     ' Curabitur in lectus id ipsum laoreet dignissim in ut odio. Duis volutpat arcu dolor, eu cursus mi vestibulum ut.' +
     ' Etiam eu ipsum orci. Vestibulum aliquam eros in massa dapibus malesuada. Proin sit amet blandit nulla, eu porttitor neque.' +
