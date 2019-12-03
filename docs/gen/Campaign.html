@@ -40,7 +40,7 @@
 			<li class="dropdown">
 				<a href="classes.list.html" class="dropdown-toggle" data-toggle="dropdown">Classes<b class="caret"></b></a>
 				<ul class="dropdown-menu ">
-					<li><a href="Accesstoken.html">Accesstoken</a></li><li><a href="Account.html">Account</a></li><li><a href="ApiCallAbstarct.html">ApiCallAbstarct</a></li><li><a href="Campaign.html">Campaign</a></li><li><a href="Channel.html">Channel</a></li><li><a href="Contact.html">Contact</a></li><li><a href="Domain.html">Domain</a></li><li><a href="EEAPI.html">EEAPI</a></li><li><a href="Email.html">Email</a></li><li><a href="Export.html">Export</a></li><li><a href="File.html">File</a></li><li><a href="List.html">List</a></li><li><a href="Log.html">Log</a></li><li><a href="module-EEAPI-Accesstoken.html">EEAPI~Accesstoken</a></li><li><a href="module-EEAPI-Account.html">EEAPI~Account</a></li><li><a href="module-EEAPI-ApiCallAbstarct.html">EEAPI~ApiCallAbstarct</a></li><li><a href="module-EEAPI-Campaign.html">EEAPI~Campaign</a></li><li><a href="module-EEAPI-Channel.html">EEAPI~Channel</a></li><li><a href="module-EEAPI-Contact.html">EEAPI~Contact</a></li><li><a href="module-EEAPI-Domain.html">EEAPI~Domain</a></li><li><a href="module-EEAPI-Email.html">EEAPI~Email</a></li><li><a href="module-EEAPI-Export.html">EEAPI~Export</a></li><li><a href="module-EEAPI-File.html">EEAPI~File</a></li><li><a href="module-EEAPI-List.html">EEAPI~List</a></li><li><a href="module-EEAPI-Log.html">EEAPI~Log</a></li><li><a href="module-EEAPI-Segment.html">EEAPI~Segment</a></li><li><a href="module-EEAPI-Sms.html">EEAPI~Sms</a></li><li><a href="module-EEAPI-Survey.html">EEAPI~Survey</a></li><li><a href="module-EEAPI-Template.html">EEAPI~Template</a></li><li><a href="Segment.html">Segment</a></li><li><a href="Sms.html">Sms</a></li><li><a href="Survey.html">Survey</a></li><li><a href="Template.html">Template</a></li>
+					<li><a href="Accesstoken.html">Accesstoken</a></li><li><a href="Account.html">Account</a></li><li><a href="ApiCallAbstarct.html">ApiCallAbstarct</a></li><li><a href="Campaign.html">Campaign</a></li><li><a href="Channel.html">Channel</a></li><li><a href="Contact.html">Contact</a></li><li><a href="Domain.html">Domain</a></li><li><a href="EEAPI.html">EEAPI</a></li><li><a href="Email.html">Email</a></li><li><a href="Export.html">Export</a></li><li><a href="File.html">File</a></li><li><a href="List.html">List</a></li><li><a href="Log.html">Log</a></li><li><a href="module-EEAPI-Accesstoken.html">EEAPI~Accesstoken</a></li><li><a href="module-EEAPI-Account.html">EEAPI~Account</a></li><li><a href="module-EEAPI-ApiCallAbstarct.html">EEAPI~ApiCallAbstarct</a></li><li><a href="module-EEAPI-Campaign.html">EEAPI~Campaign</a></li><li><a href="module-EEAPI-Channel.html">EEAPI~Channel</a></li><li><a href="module-EEAPI-Contact.html">EEAPI~Contact</a></li><li><a href="module-EEAPI-Domain.html">EEAPI~Domain</a></li><li><a href="module-EEAPI-Email.html">EEAPI~Email</a></li><li><a href="module-EEAPI-Export.html">EEAPI~Export</a></li><li><a href="module-EEAPI-File.html">EEAPI~File</a></li><li><a href="module-EEAPI-List.html">EEAPI~List</a></li><li><a href="module-EEAPI-Log.html">EEAPI~Log</a></li><li><a href="module-EEAPI-Segment.html">EEAPI~Segment</a></li><li><a href="module-EEAPI-Sms.html">EEAPI~Sms</a></li><li><a href="module-EEAPI-Template.html">EEAPI~Template</a></li><li><a href="module-EEAPI-Validemail.html">EEAPI~Validemail</a></li><li><a href="Segment.html">Segment</a></li><li><a href="Sms.html">Sms</a></li><li><a href="Template.html">Template</a></li><li><a href="Validemail.html">Validemail</a></li>
 				</ul>
 			</li>
 			
@@ -191,7 +191,7 @@
 
     
     <div class="description">
-        <p>Adds a campaign to the queue for processing based on the configuration</p>
+        <p>Adds a Campaign to the queue for processing based on the configuration.</p>
     </div>
     
 
@@ -286,7 +286,7 @@
 
             
 
-            <td class="description last"><p>Json representation of a campaign</p></td>
+            <td class="description last"><p>JSON representation of a campaign</p></td>
         </tr>
 
     
@@ -389,7 +389,7 @@
 
     
     <div class="description">
-        <p>Copy selected campaign</p>
+        <p>Makes a copy of a campaign configuration and leaves it in draft mode for further editing.</p>
     </div>
     
 
@@ -485,6 +485,30 @@
             
 
             <td class="description last"><p>ID number of selected Channel.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>newCampaignName</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>-</p></td>
         </tr>
 
     
@@ -587,7 +611,7 @@
 
     
     <div class="description">
-        <p>Delete selected campaign</p>
+        <p>Deletes the Campaign.  This will not cancel emails that are in progress, see /log/cancelinprogress for this option.</p>
     </div>
     
 
@@ -785,7 +809,7 @@
 
     
     <div class="description">
-        <p>Export selected campaigns to chosen file format.</p>
+        <p>Export Campaign data to the chosen file format.</p>
     </div>
     
 
@@ -952,7 +976,7 @@
 
             
 
-            <td class="description last"><p>Name of your file.</p></td>
+            <td class="description last"><p>Name of your file including extension.</p></td>
         </tr>
 
     
@@ -1055,7 +1079,7 @@
 
     
     <div class="description">
-        <p>List all of your campaigns</p>
+        <p>Returns a list all of your Campaigns.</p>
     </div>
     
 
@@ -1174,7 +1198,7 @@
 
             
 
-            <td class="description last"><p>How many items should be loaded ahead.</p></td>
+            <td class="description last"><p>How many items should be returned ahead.</p></td>
         </tr>
 
     
@@ -1198,7 +1222,7 @@
 
             
 
-            <td class="description last"><p>Maximum of loaded items.</p></td>
+            <td class="description last"><p>Maximum number of returned items.</p></td>
         </tr>
 
     
@@ -1301,7 +1325,7 @@
 
     
     <div class="description">
-        <p>Updates a previously added campaign.  Only Active and Paused campaigns can be updated.</p>
+        <p>Updates a previously added Campaign.  Only Active and Paused campaigns can be updated.</p>
     </div>
     
 
@@ -1396,7 +1420,7 @@
 
             
 
-            <td class="description last"><p>Json representation of a campaign</p></td>
+            <td class="description last"><p>JSON representation of a campaign</p></td>
         </tr>
 
     
@@ -1537,7 +1561,7 @@
 <span class="jsdoc-message">
 	Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a>
 	
-		on June 25th 2018, 3:21:49 pm
+		on December 3rd 2019, 1:53:57 pm
 	
 	using the <a href="https://github.com/docstrap/docstrap">DocStrap template</a>.
 </span>

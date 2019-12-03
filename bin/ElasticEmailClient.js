@@ -70,8 +70,8 @@ var EEAPI = function EEAPI(options) {
     this.Log = new Log(options);
     this.Segment = new Segment(options);
     this.Sms = new Sms(options);
-    this.Survey = new Survey(options);
     this.Template = new Template(options);
+    this.Validemail = new Validemail(options);
 };
 
 var client = exports.client = EEAPI;
@@ -151,6 +151,11 @@ var Account = function (_ApiCallAbstarct2) {
     }
 
     _createClass(Account, [{
+        key: 'AddDedicatedSupport',
+        value: function AddDedicatedSupport(data) {
+            return this._makeCall('/account/adddedicatedsupport', data, 'POST');
+        }
+    }, {
         key: 'AddSubAccount',
         value: function AddSubAccount(data) {
             return this._makeCall('/account/addsubaccount', data, 'POST');
@@ -159,6 +164,11 @@ var Account = function (_ApiCallAbstarct2) {
         key: 'AddSubAccountCredits',
         value: function AddSubAccountCredits(data) {
             return this._makeCall('/account/addsubaccountcredits', data, 'POST');
+        }
+    }, {
+        key: 'AddWebhook',
+        value: function AddWebhook(data) {
+            return this._makeCall('/account/addwebhook', data, 'POST');
         }
     }, {
         key: 'ChangeEmail',
@@ -171,14 +181,19 @@ var Account = function (_ApiCallAbstarct2) {
             return this._makeCall('/account/changepassword', data, 'POST');
         }
     }, {
+        key: 'ChangeSubAccountPassword',
+        value: function ChangeSubAccountPassword(data) {
+            return this._makeCall('/account/changesubaccountpassword', data, 'POST');
+        }
+    }, {
         key: 'DeleteSubAccount',
         value: function DeleteSubAccount(data) {
             return this._makeCall('/account/deletesubaccount', data, 'POST');
         }
     }, {
-        key: 'GetAccountAbilityToSendEmail',
-        value: function GetAccountAbilityToSendEmail(data) {
-            return this._makeCall('/account/getaccountabilitytosendemail', data, 'POST');
+        key: 'DeleteWebhook',
+        value: function DeleteWebhook(data) {
+            return this._makeCall('/account/deletewebhook', data, 'POST');
         }
     }, {
         key: 'GetSubAccountApiKey',
@@ -206,19 +221,9 @@ var Account = function (_ApiCallAbstarct2) {
             return this._makeCall('/account/loademailcreditshistory', data, 'POST');
         }
     }, {
-        key: 'LoadInfo',
-        value: function LoadInfo(data) {
-            return this._makeCall('/account/loadinfo', data, 'POST');
-        }
-    }, {
-        key: 'LoadLitmusCreditsHistory',
-        value: function LoadLitmusCreditsHistory(data) {
-            return this._makeCall('/account/loadlitmuscreditshistory', data, 'POST');
-        }
-    }, {
-        key: 'LoadNotificationQueue',
-        value: function LoadNotificationQueue(data) {
-            return this._makeCall('/account/loadnotificationqueue', data, 'POST');
+        key: 'LoadInboundOptions',
+        value: function LoadInboundOptions(data) {
+            return this._makeCall('/account/loadinboundoptions', data, 'POST');
         }
     }, {
         key: 'LoadPaymentHistory',
@@ -261,14 +266,19 @@ var Account = function (_ApiCallAbstarct2) {
             return this._makeCall('/account/loadsubaccountsettings', data, 'POST');
         }
     }, {
-        key: 'LoadSubAccountsLitmusCreditsHistory',
-        value: function LoadSubAccountsLitmusCreditsHistory(data) {
-            return this._makeCall('/account/loadsubaccountslitmuscreditshistory', data, 'POST');
-        }
-    }, {
         key: 'LoadUsage',
         value: function LoadUsage(data) {
             return this._makeCall('/account/loadusage', data, 'POST');
+        }
+    }, {
+        key: 'LoadWebhook',
+        value: function LoadWebhook(data) {
+            return this._makeCall('/account/loadwebhook', data, 'POST');
+        }
+    }, {
+        key: 'LoadWebNotificationOptions',
+        value: function LoadWebNotificationOptions(data) {
+            return this._makeCall('/account/loadwebnotificationoptions', data, 'POST');
         }
     }, {
         key: 'Overview',
@@ -291,11 +301,6 @@ var Account = function (_ApiCallAbstarct2) {
             return this._makeCall('/account/requestnewapikey', data, 'POST');
         }
     }, {
-        key: 'RequestPremiumSupport',
-        value: function RequestPremiumSupport(data) {
-            return this._makeCall('/account/requestpremiumsupport', data, 'POST');
-        }
-    }, {
         key: 'RequestPrivateIP',
         value: function RequestPrivateIP(data) {
             return this._makeCall('/account/requestprivateip', data, 'POST');
@@ -311,9 +316,9 @@ var Account = function (_ApiCallAbstarct2) {
             return this._makeCall('/account/updatecustombranding', data, 'POST');
         }
     }, {
-        key: 'UpdateHttpNotification',
-        value: function UpdateHttpNotification(data) {
-            return this._makeCall('/account/updatehttpnotification', data, 'POST');
+        key: 'UpdateInboundNotifications',
+        value: function UpdateInboundNotifications(data) {
+            return this._makeCall('/account/updateinboundnotifications', data, 'POST');
         }
     }, {
         key: 'UpdateProfile',
@@ -324,6 +329,11 @@ var Account = function (_ApiCallAbstarct2) {
         key: 'UpdateSubAccountSettings',
         value: function UpdateSubAccountSettings(data) {
             return this._makeCall('/account/updatesubaccountsettings', data, 'POST');
+        }
+    }, {
+        key: 'UpdateWebhook',
+        value: function UpdateWebhook(data) {
+            return this._makeCall('/account/updatewebhook', data, 'POST');
         }
     }]);
 
@@ -394,19 +404,9 @@ var Channel = function (_ApiCallAbstarct4) {
             return this._makeCall('/channel/delete', data, 'POST');
         }
     }, {
-        key: 'ExportCsv',
-        value: function ExportCsv(data) {
-            return this._makeCall('/channel/exportcsv', data, 'POST');
-        }
-    }, {
-        key: 'ExportJson',
-        value: function ExportJson(data) {
-            return this._makeCall('/channel/exportjson', data, 'POST');
-        }
-    }, {
-        key: 'ExportXml',
-        value: function ExportXml(data) {
-            return this._makeCall('/channel/exportxml', data, 'POST');
+        key: 'Export',
+        value: function Export(data) {
+            return this._makeCall('/channel/export', data, 'POST');
         }
     }, {
         key: 'List',
@@ -451,6 +451,11 @@ var Contact = function (_ApiCallAbstarct5) {
         key: 'ChangeStatus',
         value: function ChangeStatus(data) {
             return this._makeCall('/contact/changestatus', data, 'POST');
+        }
+    }, {
+        key: 'Count',
+        value: function Count(data) {
+            return this._makeCall('/contact/count', data, 'POST');
         }
     }, {
         key: 'CountByStatus',
@@ -567,6 +572,11 @@ var Domain = function (_ApiCallAbstarct6) {
             return this._makeCall('/domain/setdefault', data, 'POST');
         }
     }, {
+        key: 'SetVerp',
+        value: function SetVerp(data) {
+            return this._makeCall('/domain/setverp', data, 'POST');
+        }
+    }, {
         key: 'VerifyDkim',
         value: function VerifyDkim(data) {
             return this._makeCall('/domain/verifydkim', data, 'POST');
@@ -606,6 +616,11 @@ var Email = function (_ApiCallAbstarct7) {
             return this._makeCall('/email/getstatus', data, 'POST');
         }
     }, {
+        key: 'ListAttachments',
+        value: function ListAttachments(data) {
+            return this._makeCall('/email/listattachments', data, 'POST');
+        }
+    }, {
         key: 'Send',
         value: function Send(data) {
             return this._makeCall('/email/send', data, 'POST');
@@ -614,6 +629,21 @@ var Email = function (_ApiCallAbstarct7) {
         key: 'Status',
         value: function Status(data) {
             return this._makeCall('/email/status', data, 'POST');
+        }
+    }, {
+        key: 'VerificationResult',
+        value: function VerificationResult(data) {
+            return this._makeCall('/email/verificationresult', data, 'POST');
+        }
+    }, {
+        key: 'Verify',
+        value: function Verify(data) {
+            return this._makeCall('/email/verify', data, 'POST');
+        }
+    }, {
+        key: 'VerifyList',
+        value: function VerifyList(data) {
+            return this._makeCall('/email/verifylist', data, 'POST');
         }
     }, {
         key: 'View',
@@ -640,14 +670,14 @@ var Export = function (_ApiCallAbstarct8) {
             return this._makeCall('/export/checkstatus', data, 'POST');
         }
     }, {
-        key: 'CountByType',
-        value: function CountByType(data) {
-            return this._makeCall('/export/countbytype', data, 'POST');
-        }
-    }, {
         key: 'Delete',
         value: function Delete(data) {
             return this._makeCall('/export/delete', data, 'POST');
+        }
+    }, {
+        key: 'DownloadBulk',
+        value: function DownloadBulk(data) {
+            return this._makeCall('/export/downloadbulk', data, 'POST');
         }
     }, {
         key: 'List',
@@ -677,11 +707,6 @@ var File = function (_ApiCallAbstarct9) {
         key: 'Download',
         value: function Download(data) {
             return this._makeCall('/file/download', data, 'POST');
-        }
-    }, {
-        key: 'List',
-        value: function List(data) {
-            return this._makeCall('/file/list', data, 'POST');
         }
     }, {
         key: 'ListAll',
@@ -797,9 +822,19 @@ var Log = function (_ApiCallAbstarct11) {
             return this._makeCall('/log/cancelinprogress', data, 'POST');
         }
     }, {
+        key: 'Events',
+        value: function Events(data) {
+            return this._makeCall('/log/events', data, 'POST');
+        }
+    }, {
         key: 'Export',
         value: function Export(data) {
             return this._makeCall('/log/export', data, 'POST');
+        }
+    }, {
+        key: 'ExportEvents',
+        value: function ExportEvents(data) {
+            return this._makeCall('/log/exportevents', data, 'POST');
         }
     }, {
         key: 'ExportLinkTracking',
@@ -820,11 +855,6 @@ var Log = function (_ApiCallAbstarct11) {
         key: 'LoadNotifications',
         value: function LoadNotifications(data) {
             return this._makeCall('/log/loadnotifications', data, 'POST');
-        }
-    }, {
-        key: 'RetryNow',
-        value: function RetryNow(data) {
-            return this._makeCall('/log/retrynow', data, 'POST');
         }
     }, {
         key: 'Summary',
@@ -876,6 +906,11 @@ var Segment = function (_ApiCallAbstarct12) {
             return this._makeCall('/segment/loadbyname', data, 'POST');
         }
     }, {
+        key: 'LoadTrackedHistory',
+        value: function LoadTrackedHistory(data) {
+            return this._makeCall('/segment/loadtrackedhistory', data, 'POST');
+        }
+    }, {
         key: 'Update',
         value: function Update(data) {
             return this._makeCall('/segment/update', data, 'POST');
@@ -904,57 +939,8 @@ var Sms = function (_ApiCallAbstarct13) {
     return Sms;
 }(ApiCallAbstarct);
 
-var Survey = function (_ApiCallAbstarct14) {
-    _inherits(Survey, _ApiCallAbstarct14);
-
-    function Survey(opt) {
-        _classCallCheck(this, Survey);
-
-        return _possibleConstructorReturn(this, (Survey.__proto__ || Object.getPrototypeOf(Survey)).call(this, opt));
-    }
-
-    _createClass(Survey, [{
-        key: 'Add',
-        value: function Add(data) {
-            return this._makeCall('/survey/add', data, 'POST');
-        }
-    }, {
-        key: 'Delete',
-        value: function Delete(data) {
-            return this._makeCall('/survey/delete', data, 'POST');
-        }
-    }, {
-        key: 'Export',
-        value: function Export(data) {
-            return this._makeCall('/survey/export', data, 'POST');
-        }
-    }, {
-        key: 'List',
-        value: function List(data) {
-            return this._makeCall('/survey/list', data, 'POST');
-        }
-    }, {
-        key: 'LoadResponseList',
-        value: function LoadResponseList(data) {
-            return this._makeCall('/survey/loadresponselist', data, 'POST');
-        }
-    }, {
-        key: 'LoadResults',
-        value: function LoadResults(data) {
-            return this._makeCall('/survey/loadresults', data, 'POST');
-        }
-    }, {
-        key: 'Update',
-        value: function Update(data) {
-            return this._makeCall('/survey/update', data, 'POST');
-        }
-    }]);
-
-    return Survey;
-}(ApiCallAbstarct);
-
-var Template = function (_ApiCallAbstarct15) {
-    _inherits(Template, _ApiCallAbstarct15);
+var Template = function (_ApiCallAbstarct14) {
+    _inherits(Template, _ApiCallAbstarct14);
 
     function Template(opt) {
         _classCallCheck(this, Template);
@@ -968,9 +954,9 @@ var Template = function (_ApiCallAbstarct15) {
             return this._makeCall('/template/add', data, 'POST');
         }
     }, {
-        key: 'CheckUsage',
-        value: function CheckUsage(data) {
-            return this._makeCall('/template/checkusage', data, 'POST');
+        key: 'AddTag',
+        value: function AddTag(data) {
+            return this._makeCall('/template/addtag', data, 'POST');
         }
     }, {
         key: 'Copy',
@@ -983,9 +969,14 @@ var Template = function (_ApiCallAbstarct15) {
             return this._makeCall('/template/delete', data, 'POST');
         }
     }, {
-        key: 'GetEmbeddedHtml',
-        value: function GetEmbeddedHtml(data) {
-            return this._makeCall('/template/getembeddedhtml', data, 'POST');
+        key: 'DeleteBulk',
+        value: function DeleteBulk(data) {
+            return this._makeCall('/template/deletebulk', data, 'POST');
+        }
+    }, {
+        key: 'DeleteTag',
+        value: function DeleteTag(data) {
+            return this._makeCall('/template/deletetag', data, 'POST');
         }
     }, {
         key: 'GetList',
@@ -993,28 +984,72 @@ var Template = function (_ApiCallAbstarct15) {
             return this._makeCall('/template/getlist', data, 'POST');
         }
     }, {
+        key: 'GetTagList',
+        value: function GetTagList(data) {
+            return this._makeCall('/template/gettaglist', data, 'POST');
+        }
+    }, {
+        key: 'IsUsedByCampaign',
+        value: function IsUsedByCampaign(data) {
+            return this._makeCall('/template/isusedbycampaign', data, 'POST');
+        }
+    }, {
         key: 'LoadTemplate',
         value: function LoadTemplate(data) {
             return this._makeCall('/template/loadtemplate', data, 'POST');
         }
     }, {
-        key: 'RemoveScreenshot',
-        value: function RemoveScreenshot(data) {
-            return this._makeCall('/template/removescreenshot', data, 'POST');
-        }
-    }, {
-        key: 'SaveScreenshot',
-        value: function SaveScreenshot(data) {
-            return this._makeCall('/template/savescreenshot', data, 'POST');
+        key: 'ReadRssFeed',
+        value: function ReadRssFeed(data) {
+            return this._makeCall('/template/readrssfeed', data, 'POST');
         }
     }, {
         key: 'Update',
         value: function Update(data) {
             return this._makeCall('/template/update', data, 'POST');
         }
+    }, {
+        key: 'UpdateDefaultOptions',
+        value: function UpdateDefaultOptions(data) {
+            return this._makeCall('/template/updatedefaultoptions', data, 'POST');
+        }
     }]);
 
     return Template;
+}(ApiCallAbstarct);
+
+var Validemail = function (_ApiCallAbstarct15) {
+    _inherits(Validemail, _ApiCallAbstarct15);
+
+    function Validemail(opt) {
+        _classCallCheck(this, Validemail);
+
+        return _possibleConstructorReturn(this, (Validemail.__proto__ || Object.getPrototypeOf(Validemail)).call(this, opt));
+    }
+
+    _createClass(Validemail, [{
+        key: 'Add',
+        value: function Add(data) {
+            return this._makeCall('/validemail/add', data, 'POST');
+        }
+    }, {
+        key: 'List',
+        value: function List(data) {
+            return this._makeCall('/validemail/list', data, 'POST');
+        }
+    }, {
+        key: 'Remove',
+        value: function Remove(data) {
+            return this._makeCall('/validemail/remove', data, 'POST');
+        }
+    }, {
+        key: 'ResendEmailVerification',
+        value: function ResendEmailVerification(data) {
+            return this._makeCall('/validemail/resendemailverification', data, 'POST');
+        }
+    }]);
+
+    return Validemail;
 }(ApiCallAbstarct);
 
 },{"lodash.includes":208,"lodash.isobject":209,"request-promise":276}],2:[function(require,module,exports){
@@ -31964,30 +31999,36 @@ utils.intFromLE = intFromLE;
 
 },{"bn.js":70,"minimalistic-assert":227,"minimalistic-crypto-utils":228}],148:[function(require,module,exports){
 module.exports={
-  "_from": "elliptic@^6.0.0",
+  "_args": [
+    [
+      "elliptic@6.4.0",
+      "/Users/pawelpodolak/Praca/ElasticEmail.WebApiClient-js"
+    ]
+  ],
+  "_development": true,
+  "_from": "elliptic@6.4.0",
   "_id": "elliptic@6.4.0",
   "_inBundle": false,
   "_integrity": "sha1-ysmvh2LIWDYYcAPI3+GT5eLq5d8=",
   "_location": "/elliptic",
   "_phantomChildren": {},
   "_requested": {
-    "type": "range",
+    "type": "version",
     "registry": true,
-    "raw": "elliptic@^6.0.0",
+    "raw": "elliptic@6.4.0",
     "name": "elliptic",
     "escapedName": "elliptic",
-    "rawSpec": "^6.0.0",
+    "rawSpec": "6.4.0",
     "saveSpec": null,
-    "fetchSpec": "^6.0.0"
+    "fetchSpec": "6.4.0"
   },
   "_requiredBy": [
     "/browserify-sign",
     "/create-ecdh"
   ],
   "_resolved": "https://registry.npmjs.org/elliptic/-/elliptic-6.4.0.tgz",
-  "_shasum": "cac9af8762c85836187003c8dfe193e5e2eae5df",
-  "_spec": "elliptic@^6.0.0",
-  "_where": "C:\\Users\\pawel\\praca\\ElasticEmail.WebApiClient-js\\node_modules\\browserify-sign",
+  "_spec": "6.4.0",
+  "_where": "/Users/pawelpodolak/Praca/ElasticEmail.WebApiClient-js",
   "author": {
     "name": "Fedor Indutny",
     "email": "fedor@indutny.com"
@@ -31995,7 +32036,6 @@ module.exports={
   "bugs": {
     "url": "https://github.com/indutny/elliptic/issues"
   },
-  "bundleDependencies": false,
   "dependencies": {
     "bn.js": "^4.4.0",
     "brorand": "^1.0.1",
@@ -32005,7 +32045,6 @@ module.exports={
     "minimalistic-assert": "^1.0.0",
     "minimalistic-crypto-utils": "^1.0.0"
   },
-  "deprecated": false,
   "description": "EC cryptography",
   "devDependencies": {
     "brfs": "^1.4.3",
@@ -72612,29 +72651,35 @@ Store.prototype.getAllCookies = function(cb) {
 
 },{}],365:[function(require,module,exports){
 module.exports={
-  "_from": "tough-cookie@~2.3.3",
+  "_args": [
+    [
+      "tough-cookie@2.3.4",
+      "/Users/pawelpodolak/Praca/ElasticEmail.WebApiClient-js"
+    ]
+  ],
+  "_from": "tough-cookie@2.3.4",
   "_id": "tough-cookie@2.3.4",
   "_inBundle": false,
   "_integrity": "sha512-TZ6TTfI5NtZnuyy/Kecv+CnoROnyXn2DN97LontgQpCwsX2XyLYCC0ENhYkehSOwAp8rTQKc/NUIF7BkQ5rKLA==",
   "_location": "/tough-cookie",
   "_phantomChildren": {},
   "_requested": {
-    "type": "range",
+    "type": "version",
     "registry": true,
-    "raw": "tough-cookie@~2.3.3",
+    "raw": "tough-cookie@2.3.4",
     "name": "tough-cookie",
     "escapedName": "tough-cookie",
-    "rawSpec": "~2.3.3",
+    "rawSpec": "2.3.4",
     "saveSpec": null,
-    "fetchSpec": "~2.3.3"
+    "fetchSpec": "2.3.4"
   },
   "_requiredBy": [
-    "/request"
+    "/request",
+    "/request-promise"
   ],
   "_resolved": "https://registry.npmjs.org/tough-cookie/-/tough-cookie-2.3.4.tgz",
-  "_shasum": "ec60cee38ac675063ffc97a5c18970578ee83655",
-  "_spec": "tough-cookie@~2.3.3",
-  "_where": "C:\\Users\\pawel\\praca\\ElasticEmail.WebApiClient-js\\node_modules\\request",
+  "_spec": "2.3.4",
+  "_where": "/Users/pawelpodolak/Praca/ElasticEmail.WebApiClient-js",
   "author": {
     "name": "Jeremy Stashewsky",
     "email": "jstashewsky@salesforce.com"
@@ -72642,7 +72687,6 @@ module.exports={
   "bugs": {
     "url": "https://github.com/salesforce/tough-cookie/issues"
   },
-  "bundleDependencies": false,
   "contributors": [
     {
       "name": "Alexander Savin"
@@ -72666,7 +72710,6 @@ module.exports={
   "dependencies": {
     "punycode": "^1.4.1"
   },
-  "deprecated": false,
   "description": "RFC6265 Cookies and Cookie Jar for node.js",
   "devDependencies": {
     "async": "^1.4.2",
