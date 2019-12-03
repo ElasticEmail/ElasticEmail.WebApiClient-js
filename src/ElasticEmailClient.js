@@ -1,6 +1,6 @@
-import includes from 'lodash.includes';
-import isObject from 'lodash.isobject';
-import request from 'request-promise';
+import { includes, isObject, forEach }from 'lodash';
+import axios from "axios";
+import FormData from 'form-data';
 
 /**
 * @class EEAPI
@@ -42,6 +42,7 @@ class EEAPI {
  * @module EEAPI
  */
 export const client = EEAPI;
+export default EEAPI;
 
 /**
 * @class ApiCallAbstarct
@@ -67,16 +68,24 @@ class ApiCallAbstarct {
 
             data.apikey = options.apiKey;
 
-            const params = {
-                url: options.apiUri + options.apiVersion + method,
-                method: methodType,
-                formData: data,
-                json: true
+            const headers = {
+                'Content-Type': 'multipart/form-data',
             };
-    
-            return request(params)
+
+            const form = new FormData();
+
+            forEach(data, (val, index) => {
+                form.append(index, val);
+            });
+
+            return axios({
+                method: methodType,
+                url: options.apiUri + options.apiVersion + method,
+                data: form,
+                headers: headers
+            })
             .then((resp) => {
-                if(!resp.success) { throw(resp.error); }   
+                if(!resp.success) { throw(resp.error); } 
                 return resp;
             });
         };

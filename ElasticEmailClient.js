@@ -7,17 +7,15 @@ exports.client = undefined;
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _lodash = require('lodash.includes');
+var _lodash = require('lodash');
 
-var _lodash2 = _interopRequireDefault(_lodash);
+var _axios = require('axios');
 
-var _lodash3 = require('lodash.isobject');
+var _axios2 = _interopRequireDefault(_axios);
 
-var _lodash4 = _interopRequireDefault(_lodash3);
+var _formData = require('form-data');
 
-var _requestPromise = require('request-promise');
-
-var _requestPromise2 = _interopRequireDefault(_requestPromise);
+var _formData2 = _interopRequireDefault(_formData);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -52,30 +50,39 @@ var EEAPI = function EEAPI(options) {
 };
 
 var client = exports.client = EEAPI;
+exports.default = EEAPI;
 
 var ApiCallAbstarct = function ApiCallAbstarct(options) {
     _classCallCheck(this, ApiCallAbstarct);
 
     this._makeCall = function (method, data, methodType) {
-        if (!(0, _lodash2.default)(['POST', 'GET'], methodType.toUpperCase())) {
+        if (!(0, _lodash.includes)(['POST', 'GET'], methodType.toUpperCase())) {
             console.error('makeCall: unsupported method type: ' + methodType);
             return;
         }
 
-        if (!(0, _lodash4.default)(data)) {
+        if (!(0, _lodash.isObject)(data)) {
             data = {};
         }
 
         data.apikey = options.apiKey;
 
-        var params = {
-            url: options.apiUri + options.apiVersion + method,
-            method: methodType,
-            formData: data,
-            json: true
+        var headers = {
+            'Content-Type': 'multipart/form-data'
         };
 
-        return (0, _requestPromise2.default)(params).then(function (resp) {
+        var form = new _formData2.default();
+
+        (0, _lodash.forEach)(data, function (val, index) {
+            form.append(index, val);
+        });
+
+        return (0, _axios2.default)({
+            method: methodType,
+            url: options.apiUri + options.apiVersion + method,
+            data: form,
+            headers: headers
+        }).then(function (resp) {
             if (!resp.success) {
                 throw resp.error;
             }
