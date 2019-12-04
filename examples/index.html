@@ -9,13 +9,16 @@
         <script>
             document.addEventListener("DOMContentLoaded", function(event) {
                 var options = {
-                    apiKey: 'your api key',
+                    apiKey: '',
                     apiUri: 'https://api.elasticemail.com/',
                     apiVersion: 'v2'
                 }
                 var EE = new EEAPI.client(options);
                 EE.Account.Load().then(function(resp) {
                     console.log(resp);
+                })
+                .catch((err) => {
+                    console.log(err)
                 });
             });
         </script>
