@@ -83,8 +83,9 @@ var ApiCallAbstarct = function ApiCallAbstarct(options) {
             data: form,
             headers: headers
         }).then(function (resp) {
+            console.log(resp);
             if (!resp.data.success) {
-                throw resp.error;
+                throw resp.data.error;
             }
             return resp.data;
         });
