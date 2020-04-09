@@ -67,11 +67,8 @@ var ApiCallAbstarct = function ApiCallAbstarct(options) {
 
         data.apikey = options.apiKey;
 
-        var headers = {
-            'Content-Type': 'multipart/form-data'
-        };
-
         var form = new _formData2.default();
+        var headers = form.getHeaders();
 
         (0, _lodash.forEach)(data, function (val, index) {
             form.append(index, val);
@@ -83,9 +80,8 @@ var ApiCallAbstarct = function ApiCallAbstarct(options) {
             data: form,
             headers: headers
         }).then(function (resp) {
-            console.log(resp);
             if (!resp.data.success) {
-                throw resp.data.error;
+                throw resp.error;
             }
             return resp.data;
         });

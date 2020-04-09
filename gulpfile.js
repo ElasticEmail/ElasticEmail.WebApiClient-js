@@ -87,7 +87,7 @@ gulp.task('babel', ['lint'], () => {
 });
 
 gulp.task('build', () => {
-    gulp.start(['download', 'lint', 'doc', 'babel', 'browserify']);
+    gulp.start(['lint', 'babel', 'browserify']);
 });
 
 gulp.task('build-local', () => {

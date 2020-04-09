@@ -68,11 +68,8 @@ class ApiCallAbstarct {
 
             data.apikey = options.apiKey;
 
-            const headers = {
-                'Content-Type': 'multipart/form-data',
-            };
-
             const form = new FormData();
+            const headers = form.getHeaders();
 
             forEach(data, (val, index) => {
                 form.append(index, val);
