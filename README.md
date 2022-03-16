@@ -1,4 +1,6 @@
-# Elasticemail-webapiclient
+# Elasticemail-webapiclient (LEGACY)
+
+New version of API - https://github.com/ElasticEmail/elasticemail-js
 
 [![N|ElasticEmail](https://elasticemail.com/wp-content/uploads/2018/05/100x100.png)](https://elasticemail.com)
 
