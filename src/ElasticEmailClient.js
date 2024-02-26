@@ -82,7 +82,7 @@ class ApiCallAbstarct {
                 headers: headers
             })
             .then((resp) => {
-                if(!resp.data.success) { throw(resp.error); } 
+                if(!resp.data.success) { throw(resp.data.error); } 
                 return resp.data;
             });
         };
