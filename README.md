@@ -1,6 +1,8 @@
-# Elasticemail-webapiclient (LEGACY)
+# Elasticemail-webapiclient
 
-New version of API - https://github.com/ElasticEmail/elasticemail-js
+> [!WARNING]
+> **Deprecated.** This is the legacy JavaScript / Node.js client for the Elastic Email **Web API v2**. It is archived and no longer maintained.
+> Use the official [elasticemail-js](https://github.com/ElasticEmail/elasticemail-js) SDK for the [REST API v4](https://elasticemail.com/developers/api-documentation/rest-api) instead.
 
 [![N|ElasticEmail](https://elasticemail.com/wp-content/uploads/2018/05/100x100.png)](https://elasticemail.com)
 
